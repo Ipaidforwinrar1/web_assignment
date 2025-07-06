@@ -1,0 +1,18 @@
+body {
+    margin: 0px;
+    background-color: aliceblue;
+}
+
+header {
+    background-color: black;
+    color: aquamarine;
+}
+
+section {
+    color: midnightblue;
+}
+
+footer {
+    background-color: black;
+    color: aquamarine;
+}
