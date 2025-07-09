@@ -1,0 +1,88 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>example page</title>
+        <script src="https://kit.fontawesome.com/c99bb18f64.js" crossorigin="anonymous"></script>
+        <style>
+            body {
+                margin: 0;
+                font-family: Helvetica, sans-serif;
+            }
+        
+            .grid-container {
+
+                width: 100%;
+                height: 100vh;
+                display: grid;
+                grid-template-areas: 
+                "mainA mainB"
+                "map map";
+                grid-template-rows: 1fr 1fr;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .item1 {
+                                background-color: #F7FAFC;
+                color: #1A202C;
+                grid-area: mainA;  
+                font-size: 1.5rem;
+                text-align: center; 
+
+            }
+
+            
+            .item2 {
+                background-color: #F7FAFC;
+                color: #1A202C;
+                grid-area: mainB;
+                text-align: center;
+                
+            }
+
+            a {
+                color: #1A202C;
+            }
+
+            input {
+                width: 60%;
+                height: 100px;
+            }
+
+            .item3 {
+                grid-area: map;
+            }
+
+            @media only screen and (max-width:800px) {
+                .item1 {grid-area: 1 / span 2;}
+                .item2 {grid-area: 2 / span 2;}
+                .item3 {grid-area: 3 / span 2;}
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="item1">
+                <h2>Contact Us</h2>
+                <a href="" rel="noopener noreferrer"><i class="fa-solid fa-phone"></i>&nbsp;+6 (03) 7491 8622</a><br><br>
+                <a href="mailto:info@sunway.edu.my" rel="noopener noreferrer"><i class="fa-regular fa-envelope"></i>&nbsp;Email</a><br><br>
+                <a href="https://api.whatsapp.com/send/?phone=60193867863&text=Say+hello%21&type=phone_number&app_absent=0" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i>&nbsp;Whatsapp</a><br><br>
+                <a href="https://www.instagram.com/sunwayuniversity?utm_source=ig_web_button_share_sheet&igsh=MW1qemE2amtnb2FjdA==" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i>&nbsp;Instagram</a>
+            </div>
+            <div class="item2">
+                <form>
+                    <h2>Submit Us Feedback!</h2>
+                    <label for="feedback-form">Your Feedback:</label><br><br>
+                    <input type="text" id="feedback-form" name="feedback-form"><br><br>
+                    <button type="submit">Submit Now</button>
+                </form>
+            </div>
+            <div class="item3">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1992.050360287958!2d101.6032468!3d3.067749!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4c8f5d98b46d%3A0xed55e2cca5c2d394!2sSunway%20University!5e0!3m2!1sen!2smy!4v1752021026547!5m2!1sen!2smy" width="100%" height="" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+    </body>
+    </html>
