@@ -1,18 +1,33 @@
+html {height: 100%}
 body {
     margin: 0px;
     background-color: aliceblue;
+    height: 100%;
 }
 
 header {
-    background-color: black;
+    background-color: rgb(34, 34, 34);
     color: aquamarine;
+    padding: 10px;
+}
+nav {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 section {
-    color: midnightblue;
+    color: rgb(34, 34, 34);
+    min-height: 90%;
+    font-size: x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 footer {
-    background-color: black;
+    background-color: rgb(34, 34, 34);
     color: aquamarine;
+    padding: 20px 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#logo {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
 }
