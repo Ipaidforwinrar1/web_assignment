@@ -1,37 +1,36 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>example page</title>
-        <script src="https://kit.fontawesome.com/c99bb18f64.js" crossorigin="anonymous"></script>
-        <style>
-            body {
-                margin: 0;
-                font-family: Helvetica, sans-serif;
-                background: linear-gradient(135deg, #f7fafc 0%, #dbeafe 100%);
-            }
+<!DOCTYPE html>
+<html lang="en">
 
-            header {
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example page</title>
+    <script src="https://kit.fontawesome.com/c99bb18f64.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Helvetica, sans-serif;
+            background: linear-gradient(135deg, #f7fafc 0%, #dbeafe 100%);
+        }
+
+        header {
             background-color: white;
             padding: 15px 15px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             border-bottom: 1px solid #ccc;
-            }
+        }
 
-            nav ul {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-                list-style: none;
-                font-size: 1.1rem;
-            }
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            list-style: none;
+            font-size: 1.1rem;
+        }
 
-            
-
-            .join-btn {
+        .join-btn {
             background-color: #d6001c;
             color: white;
             padding: 10px;
@@ -40,150 +39,169 @@
             font-weight: bold;
             cursor: pointer;
             border-radius: 3px;
+        }
 
-            }
-
-            .logo {
+        .logo {
             font-weight: bold;
             color: #d6001c;
             font-size: 2rem;
-            }
+        }
 
-            .grid-container {
-                width: 100%;
-                height: 100vh;
-                display: grid;
-                grid-template-areas: 
+        .grid-container {
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            grid-template-areas:
                 "mainA mainB"
                 "map map";
-                grid-template-rows: 1fr 1fr;
-                grid-template-columns: 1fr 1fr;
-            }
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+        }
 
+        .item1 {
+            background-color: #F7FAFC;
+            color: #1A202C;
+            grid-area: mainA;
+            font-size: 1.5rem;
+            text-align: center;
+            padding-bottom: 50px;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            left: -9999px;
+        }
+
+
+        .item2 {
+            background-color: #F7FAFC;
+            color: #1A202C;
+            grid-area: mainB;
+            text-align: center;
+
+        }
+
+        a {
+            color: #1A202C;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #3182ce;
+            text-decoration: underline;
+        }
+
+        textarea {
+            width: 60%;
+            height: 100px;
+        }
+
+        button {
+            margin: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #4A5568;
+        }
+
+        .item3 {
+            grid-area: map;
+        }
+
+        @media only screen and (max-width:800px) {
             .item1 {
-                background-color: #F7FAFC;
-                color: #1A202C;
-                grid-area: mainA;  
-                font-size: 1.5rem;
-                text-align: center; 
-                padding-bottom: 50px;
+                grid-area: 1 / span 2;
             }
 
-            .visually-hidden {
-                position: absolute;
-                left: -9999px;
-            }
-
-            
             .item2 {
-                background-color: #F7FAFC;
-                color: #1A202C;
-                grid-area: mainB;
-                text-align: center;
-                
+                grid-area: 2 / span 2;
             }
 
-            a {
-                color: #1A202C;
-                text-decoration: none;
-            }
-
-            a:hover {
-                color: #3182ce;
-                text-decoration: underline;
-            }
-
-            textarea {
-                width: 60%;
-                height: 100px;
-            }
-
-            button {
-                margin: 20px;
-                padding: 10px;
-                border-radius: 5px;
-                font-size: 1rem;
-                cursor: pointer;
-                transition: 0.2s;
-            }
-
-            button:hover {
-                background: #4A5568;
-            }
             .item3 {
-                grid-area: map;
+                grid-area: 3 / span 2;
             }
+        }
+    </style>
+</head>
 
-            @media only screen and (max-width:800px) {
-                .item1 {grid-area: 1 / span 2;}
-                .item2 {grid-area: 2 / span 2;}
-                .item3 {grid-area: 3 / span 2;}
-            }
-
-        </style>
-    </head>
-    <body>
-        <header>
-            <div class="logo">Herculean Gym</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Packages</a></li>
-                </ul>
-            </nav>
-            <button class="join-btn" onclick="window.location.href='login.html'">Sign In</button>
-         </header>
-        <div class="grid-container">
-            <div class="item1">
-                <h2>Contact Us</h2>
-                <a href="tel:+60374918622" rel="noopener noreferrer"><i class="fa-solid fa-phone" aria-hidden="true"></i>&nbsp;+6 (03) 7491 8622<span class="visually-hidden">Call us on +60374918622</span></a><br><br>
-                <a href="mailto:info@sunway.edu.my" rel="noopener noreferrer"><i class="fa-regular fa-envelope" aria-hidden="true"></i>&nbsp;Email<span class="visually-hidden">Send us an email</span></a><br><br>
-                <a href="https://api.whatsapp.com/send/?phone=60193867863&text=Say+hello%21&type=phone_number&app_absent=0" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>&nbsp;Whatsapp<span class="visually-hidden">Text us on Whatsapp</span></a><br><br>
-                <a href="https://www.instagram.com/sunwayuniversity?utm_source=ig_web_button_share_sheet&igsh=MW1qemE2amtnb2FjdA==" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i>&nbsp;Instagram<span class="visually-hidden">Sunway University Offical Instagram Account</span></a>
-            </div>
-            <div class="item2">
-                <form id="feedbackForm">
-                    <h2>Send Us Your Feedback!</h2>
-                    <label for="fmail">Your Email:</label><br>
-                    <input type="email" id="fmail" name="fmail" required/><br><br>
-                    <label for="feedback">Your Feedback:</label><br><br>
-                    <textarea id="feedback" name="feedback" rows="5" placeholder="type your feedback here"></textarea><br>
-                    <button onclick="validateTextArea()" type="submit">Submit Now</button>
-                    <p id="error-message"></p>
-                </form>
-            </div>
-            <div class="item3">
-                <h2>&nbsp;&nbsp;Locate Us:</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1992.050360287958!2d101.6032468!3d3.067749!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4c8f5d98b46d%3A0xed55e2cca5c2d394!2sSunway%20University!5e0!3m2!1sen!2smy!4v1752021026547!5m2!1sen!2smy" width="100%" min-height="200px" height="300px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+<body>
+    <header>
+        <div class="logo">Herculean Gym</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Packages</a></li>
+            </ul>
+        </nav>
+        <button class="join-btn" onclick="window.location.href='login.html'">Sign In</button>
+    </header>
+    <div class="grid-container">
+        <div class="item1">
+            <h2>Contact Us</h2>
+            <a href="tel:+60374918622" rel="noopener noreferrer"><i class="fa-solid fa-phone"
+                    aria-hidden="true"></i>&nbsp;+6 (03) 7491 8622<span class="visually-hidden">Call us on
+                    +60374918622</span></a><br><br>
+            <a href="mailto:info@sunway.edu.my" rel="noopener noreferrer"><i class="fa-regular fa-envelope"
+                    aria-hidden="true"></i>&nbsp;Email<span class="visually-hidden">Send us an email</span></a><br><br>
+            <a href="https://api.whatsapp.com/send/?phone=60193867863&text=Say+hello%21&type=phone_number&app_absent=0"
+                rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>&nbsp;Whatsapp<span
+                    class="visually-hidden">Text us on Whatsapp</span></a><br><br>
+            <a href="https://www.instagram.com/sunwayuniversity?utm_source=ig_web_button_share_sheet&igsh=MW1qemE2amtnb2FjdA=="
+                rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i>&nbsp;Instagram<span
+                    class="visually-hidden">Sunway University Offical Instagram Account</span></a>
         </div>
-        <script>
-            function validateTextArea() { //function for validating the form 
-               
-                    const textarea = document.getElementById("feedback"); // get element so you can read its value
-                    const errorMessage = document.getElementById("error-message");
-                    const value = textarea.value.trim(); // read the textarea value
-                    const email = document.getElementById("fmail")
+        <div class="item2">
+            <form id="feedbackForm">
+                <h2>Send Us Your Feedback!</h2>
+                <label for="fmail">Your Email:</label><br>
+                <input type="email" id="fmail" name="fmail" required /><br><br>
+                <label for="feedback">Your Feedback:</label><br><br>
+                <textarea id="feedback" name="feedback" rows="5" placeholder="type your feedback here"></textarea><br>
+                <button onclick="validateTextArea()" type="submit">Submit Now</button>
+                <p id="error-message"></p>
+            </form>
+        </div>
+        <div class="item3">
+            <h2>&nbsp;&nbsp;Locate Us:</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1992.050360287958!2d101.6032468!3d3.067749!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4c8f5d98b46d%3A0xed55e2cca5c2d394!2sSunway%20University!5e0!3m2!1sen!2smy!4v1752021026547!5m2!1sen!2smy"
+                width="100%" min-height="200px" height="300px" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <script>
+        function validateTextArea() { //function for validating the form 
 
-                    if (value.length == 0) { // checking the form text 
-                        document.getElementById("feedbackForm").addEventListener('submit', function(event) {event.preventDefault()}); // prevent the page from reloading to display the error msg
-                        errorMessage.textContent = "Feedback cannot be empty.";
-                        textarea.focus();
-                    } else if (value.length < 10) {
-                        document.getElementById("feedbackForm").addEventListener('submit', function(event) {event.preventDefault()}); // prevent the page from reloading to display the error msg
-                        errorMessage.textContent = "Feedback must be at least 10 characters";
-                        textarea.focus();
-                    }
-                    else {
-                        document.getElementById("feedbackForm").addEventListener('submit', function() {
-                            errorMessage.textContent = "";
-                            alert("Feedback submitted!");
-                        });
-                    }
+            const textarea = document.getElementById("feedback"); // get element so you can read its value
+            const errorMessage = document.getElementById("error-message");
+            const value = textarea.value.trim(); // read the textarea value
+            const email = document.getElementById("fmail")
+
+            if (value.length == 0) { // checking the form text 
+                document.getElementById("feedbackForm").addEventListener('submit', function (event) { event.preventDefault() }); // prevent the page from reloading to display the error msg
+                errorMessage.textContent = "Feedback cannot be empty.";
+                textarea.focus();
+            } else if (value.length < 10) {
+                document.getElementById("feedbackForm").addEventListener('submit', function (event) { event.preventDefault() }); // prevent the page from reloading to display the error msg
+                errorMessage.textContent = "Feedback must be at least 10 characters";
+                textarea.focus();
             }
-        </script>
-    </body>
-    </html>
+            else {
+                document.getElementById("feedbackForm").addEventListener('submit', function () {
+                    errorMessage.textContent = "";
+                    alert("Feedback submitted!");
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>
