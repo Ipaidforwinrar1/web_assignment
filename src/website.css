@@ -3,15 +3,18 @@ body {
     margin: 0px;
     background-color: aliceblue;
     height: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 header {
     background-color: rgb(34, 34, 34);
     color: aquamarine;
     padding: 10px;
+    overflow: hidden;
 }
 nav {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 25px;
 }
 
 section {
@@ -30,4 +33,19 @@ footer {
 #logo {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: xx-large;
+    float: left;
+    width: 15%;
+    margin-left: 10%;
+}
+nav button {
+    float: right;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    font-family: inherit;
+}
+.signup-login {
+    float: right;
+    margin-right: 10%;
 }
