@@ -95,11 +95,14 @@
                 <a href="https://www.instagram.com/sunwayuniversity?utm_source=ig_web_button_share_sheet&igsh=MW1qemE2amtnb2FjdA==" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i>&nbsp;Instagram<span class="visually-hidden">Sunway University Offical Instagram Account</span></a>
             </div>
             <div class="item2">
-                <form>
+                <form id="feedbackForm">
                     <h2>Send Us Your Feedback!</h2>
-                    <label for="feedback-form">Your Feedback:</label><br><br>
-                    <textarea id="feedback-form" name="feedback-form" rows="5" placeholder="type your feedback here"></textarea><br>
-                    <button type="submit">Submit Now</button>
+                    <label for="fmail">Your Email:</label><br>
+                    <input type="email" id="fmail" name="fmail" required/><br><br>
+                    <label for="feedback">Your Feedback:</label><br><br>
+                    <textarea id="feedback" name="feedback" rows="5" placeholder="type your feedback here"></textarea><br>
+                    <button onclick="validateTextArea()" type="submit">Submit Now</button>
+                    <p id="error-message"></p>
                 </form>
             </div>
             <div class="item3">
@@ -107,6 +110,30 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1992.050360287958!2d101.6032468!3d3.067749!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4c8f5d98b46d%3A0xed55e2cca5c2d394!2sSunway%20University!5e0!3m2!1sen!2smy!4v1752021026547!5m2!1sen!2smy" width="100%" min-height="200px" height="300px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
+        <script>
+            function validateTextArea() { //function for validating the form 
+               
+                    const textarea = document.getElementById("feedback"); // get element so you can read its value
+                    const errorMessage = document.getElementById("error-message");
+                    const value = textarea.value.trim(); // read the textarea value
+                    const email = document.getElementById("fmail")
 
+                    if (value.length == 0) { // checking the form text 
+                        document.getElementById("feedbackForm").addEventListener('submit', function(event) {event.preventDefault()}); // prevent the page from reloading to display the error msg
+                        errorMessage.textContent = "Feedback cannot be empty.";
+                        textarea.focus();
+                    } else if (value.length < 10) {
+                        document.getElementById("feedbackForm").addEventListener('submit', function(event) {event.preventDefault()}); // prevent the page from reloading to display the error msg
+                        errorMessage.textContent = "Feedback must be at least 10 characters";
+                        textarea.focus();
+                    }
+                    else {
+                        document.getElementById("feedbackForm").addEventListener('submit', function() {
+                            errorMessage.textContent = "";
+                            alert("Feedback submitted!");
+                        });
+                    }
+            }
+        </script>
     </body>
     </html>
