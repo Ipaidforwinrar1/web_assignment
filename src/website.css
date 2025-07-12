@@ -17,7 +17,7 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-
+    z-index: 1000;
     position: sticky;
     top: 0px;
 }
