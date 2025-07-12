@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HERCULEAN GYM</title>
+  <link rel="stylesheet" href="website.css">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -12,11 +16,7 @@
       font-family: 'Segoe UI', sans-serif;
     }
 
-    body {
-      background-color: #fff;
-    }
-
-    header {
+    /* header {
       background-color: #ffffff;
       padding: 15px 30px;
       display: flex;
@@ -24,34 +24,34 @@
       justify-content: space-between;
       border-bottom: 1px solid #ccc;
       flex-wrap: wrap;
-    }
+    } */
 
-    .logo {
+    /* .logo {
       font-weight: bold;
       color: #0052a3;
       font-size: 24px;
-    }
+    } */
 
-    nav ul {
+    /* nav ul {
       list-style: none;
       display: flex;
       gap: 25px;
-    }
+    } */
 
-    nav ul li a {
+    /* nav ul li a {
       text-decoration: none;
       color: black;
       font-weight: 600;
       transition: color 0.3s, border-bottom 0.3s;
-    }
+    } */
 
-    nav ul li a:hover {
+    /* nav ul li a:hover {
       color: #0052a3;
       border-bottom: 2px solid #0052a3;
       padding-bottom: 4px;
-    }
+    } */
 
-    .join-btn {
+    /* .join-btn {
       background-color: #0052a3;
       color: white;
       padding: 10px 16px;
@@ -60,7 +60,7 @@
       cursor: pointer;
       border-radius: 3px;
       margin-top: 10px;
-    }
+    } */
 
     .hero {
       position: relative;
@@ -166,7 +166,7 @@
       position: relative;
       width: 100%;
       height: 400px;
-      background-image: url('gym8.jpg');
+      background-image: url('./resources/images/gym8.jpg');
       background-size: cover;
       background-position: center;
       display: flex;
@@ -308,7 +308,8 @@
         margin: 10px 0;
       }
 
-      .text-box h1, .text-box h2 {
+      .text-box h1,
+      .text-box h2 {
         font-size: 28px;
       }
 
@@ -330,8 +331,9 @@
     }
   </style>
 </head>
+
 <body>
-  <header>
+  <!-- <header>
     <div class="logo">Herculean Gym</div>
     <nav>
       <ul>
@@ -343,6 +345,19 @@
       </ul>
     </nav>
     <button class="join-btn" onclick="window.location.href='login.html'">Sign In</button>
+  </header> -->
+
+  <header>
+    <a href="homepage.html">
+      <h4 id="logo">Logo here</h4>
+    </a>
+    <nav>
+      <a href="services.html">Services</a> - <a href="packages.html">Packages</a> - <a href="about.html">About Us</a> -
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <div class="signup-login">
+      <a href="signup.html">Sign Up</a><span>/</span><a href="login.html">Log In</a>
+    </div>
   </header>
 
   <section class="hero">
@@ -357,21 +372,21 @@
   </section>
 
   <section class="cards-section">
-    <div class="card" style="background-image: url('gym4.jpg');">
+    <div class="card" style="background-image: url('./resources/images/gym4.jpg');">
       <div class="card-content">
         <h3>MALAYSIA'S MOST SUCCESSFUL GYM COMMUNITY</h3>
         <p>Official IFBB PRO, OLYMPIANS trainers.</p>
         <a href="services.html">Learn More</a>
       </div>
     </div>
-    <div class="card" style="background-image: url('gym5.jpeg');">
+    <div class="card" style="background-image: url('./resources/images/gym5.jpeg');">
       <div class="card-content">
         <h3>CONQUER YOUR PEAK SELF</h3>
         <p>Join our intense training programs.</p>
         <a href="packages.html">Learn More</a>
       </div>
     </div>
-    <div class="card" style="background-image: url('gym6.jpeg');">
+    <div class="card" style="background-image: url('./resources/images/gym6.jpeg');">
       <div class="card-content">
         <h3>EVENTS & ACTIVITIES</h3>
         <p>Check out our unique events, classes and experiences</p>
@@ -395,19 +410,20 @@
     </div>
     <div class="testimonial-cards">
       <div class="testimonial-box">
-        <img src="client1.jpeg" alt="Happy Customer">
-        <p>"Joining Herculean Gym changed my life especially with the help of their various coaches. The energy here is unmatched!"</p>
+        <img src="./resources/images/client1.jpeg" alt="Happy Customer">
+        <p>"Joining Herculean Gym changed my life especially with the help of their various coaches. The energy here is
+          unmatched!"</p>
       </div>
       <div class="testimonial-box">
-        <img src="client2.png" alt="Happy Customer">
+        <img src="./resources/images/client2.png" alt="Happy Customer">
         <p>"Top-notch equipment, amazing classes, and the best trainers around."</p>
       </div>
       <div class="testimonial-box">
-        <img src="client3.jpeg" alt="Happy Customer">
+        <img src="./resources/images/client3.jpeg" alt="Happy Customer">
         <p>"I’ve never felt stronger or more supported. Highly recommend!"</p>
       </div>
       <div class="testimonial-box">
-        <img src="client4.jpeg" alt="Happy Customer">
+        <img src="./resources/images/client4.jpeg" alt="Happy Customer">
         <p>"Great value and a fantastic fitness community even for women of all ages."</p>
       </div>
     </div>
@@ -435,8 +451,8 @@
         <h4>Stay up to date</h4>
         <p>Subscribe now and get the latest news!</p>
         <form>
-          <input type="email" placeholder="Email" required><br/>
-          <label><input type="checkbox"> Are you an existing customer?</label><br/>
+          <input type="email" placeholder="Email" required><br />
+          <label><input type="checkbox"> Are you an existing customer?</label><br />
           <button type="submit">Subscribe</button>
         </form>
       </div>
@@ -445,7 +461,7 @@
 
   <script>
     const hero = document.querySelector('.hero');
-    const images = ['gym1.jpg', 'gym2.jpg', 'gym3.jpg'];
+    const images = ['./resources/images/gym1.jpg', './resources/images/gym2.jpg', './resources/images/gym3.jpg'];
     let index = 0;
 
     function changeBackground() {
@@ -456,7 +472,7 @@
     changeBackground();
     setInterval(changeBackground, 4000);
 
-    window.onscroll = function() {
+    window.onscroll = function () {
       const btn = document.getElementById("backToTopBtn");
       btn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
     };
@@ -466,4 +482,5 @@
     }
   </script>
 </body>
+
 </html>
