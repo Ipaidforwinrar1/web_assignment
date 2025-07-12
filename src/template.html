@@ -1,30 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page title here...</title>
-    <link rel="stylesheet" href="website.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HERCULEAN GYM</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <a href="homepage.html"><h4 id="logo">Logo here</h4></a>
-        <nav>
-            <a href="services.html">Services</a> - <a href="packages.html">Packages</a> - <a href="about.html">About Us</a> - <a href="contact.html">Contact Us</a>
-        </nav>
-        <div class="signup-login">
-           <a href="signup.html">Sign Up</a><span>/</span><a href="login.html">Log In</a>
-        </div>
-    </header>
-    
-    <main>
-        <p>Place webpage's content here, in this main element</p>
-    </main>
+  <!-- Header (Shared) -->
+  <header>
+    <div class="logo">Herculean Gym</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="packages.html">Packages</a></li>
+      </ul>
+    </nav>
+    <button class="join-btn" onclick="window.location.href='login.html'">Sign In</button>
+  </header>
 
-    <footer>
-        <!--more detailed navigation section-->
-        <!--Social Media links-->
-        <small>Copyright (C) 2025 Herculean Fitness inc. All Rights Reserved</small>
-    </footer>
+  <!-- === Page-Specific Content Goes Here === -->
+  <main>
+    <!-- Content will be inserted per page -->
+  </main>
+
+  <!-- Back to Top Button (Shared) -->
+  <button onclick="scrollToTop()" id="backToTopBtn" title="Back to Top">↑</button>
+
+  <!-- Footer (Shared) -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="logo">Herculean Gym</div>
+        <p>&copy; 2025 Herculean Gym. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="packages.html">Packages</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Stay up to date</h4>
+        <p>Subscribe now and get the latest news!</p>
+        <form>
+          <input type="email" placeholder="Email" required><br/>
+          <label><input type="checkbox"> Are you an existing customer?</label><br/>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript (Shared) -->
+  <script>
+    // Optional: Only use this if a page has a .hero section
+    const hero = document.querySelector('.hero');
+    if (hero) {
+      const images = ['gym1.jpg', 'gym2.jpg', 'gym3.jpg'];
+      let index = 0;
+
+      function changeBackground() {
+        hero.style.backgroundImage = `url(${images[index]})`;
+        index = (index + 1) % images.length;
+      }
+
+      changeBackground();
+      setInterval(changeBackground, 4000);
+    }
+
+    // Back to Top button logic
+    window.onscroll = function() {
+      const btn = document.getElementById("backToTopBtn");
+      btn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
