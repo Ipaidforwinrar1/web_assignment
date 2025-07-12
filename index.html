@@ -1,114 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example Page</title>
+    <title>Herculean Gym</title>
     <style>
-        body {
-            margin: 0px;
-            background: linear-gradient(135deg, #f7fafc 0%, #dbeafe 100%);
-            font-family: Helvetica, sans-serif;
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
         }
-
+        body {
+            background: #dbeafe;
+            font-family: Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
         header {
-            background-color: white;
-            padding: 15px 15px;
+            background-color: #fff;
+            padding: 18px 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid #ccc;
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         }
-
+        .logo {
+            font-weight: bold;
+            color: #d6001c;
+            font-size: 2.1rem;
+            letter-spacing: 2px;
+        }
         nav ul {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 24px;
             list-style: none;
-            font-size: 1.1rem;
+            font-size: 1.13rem;
+            margin: 0;
+            padding: 0;
         }
-
-        a {
+        nav ul li a {
             color: #1A202C;
             text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: background 0.2s, color 0.2s;
         }
-
-        a:hover {
-            color: #3182ce;
-            text-decoration: underline;
+        nav ul li a:hover, nav ul li.active a {
+            color: #fff;
+            background: #3182ce;
         }
-
-
         .join-btn {
             background-color: #d6001c;
-            color: white;
-            padding: 10px;
+            color: #fff;
+            padding: 10px 20px;
             font-size: 1.1rem;
             border: none;
             font-weight: bold;
             cursor: pointer;
-            border-radius: 3px;
+            border-radius: 4px;
+            transition: background 0.2s;
         }
-
-        .logo {
-            font-weight: bold;
-            color: #d6001c;
-            font-size: 2rem;
+        .join-btn:hover {
+            background-color: #a00015;
         }
-
-
-        h1 {
-            text-align: center;
+        main {
+            flex: 1 0 auto;
+            width: 100%;
         }
-
         section {
-            color: midnightblue;
+            color: #1A202C;
+            padding: 36px 0 20px 0;
         }
+        h1, h2 {
+            text-align: center;
 
-        footer {
-            background-color: black;
-            color: aquamarine;
         }
-
+        h1 {
+            font-size: 2rem;
+            color: #26326f;
+            margin-bottom: 12px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            color: #3751b5;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        .our-story {
+            background: rgba(255,255,255,0.8);
+            margin: 0 auto;
+            max-width: 700px;
+            border-radius: 12px;
+            padding: 24px 30px;
+            text-align: justify;
+            font-size: 1.08rem;
+            line-height: 1.7;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
         .flex-container {
             width: 100%;
-            height: 100vh;
-            background-color: #F7FAFC;
+            margin: 0 auto;
+            background: none;
             color: #1A202C;
-            
+            padding-top: 26px;
         }
-
+        .flex-container h1 {
+            margin-bottom: 38px;
+            color: #26326f;
+        }
         .team-flex {
-            height: 90vh;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            margin: 20px 100px;
-            background-color: red;
+            gap: 38px;
+            margin: 0 auto 60px auto;
         }
-
         .member {
-            width: 40%;
-            background: transparent;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+            flex-basis: 250px;
+            flex-grow: 1;
+            max-width: 340px;
+            min-width: 220px;
+            text-align: center;
+            padding: 28px 16px;
+            margin-bottom: 0;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .member:hover {
+            box-shadow: 0 6px 20px rgba(49,130,206,0.13);
+            transform: translateY(-6px) scale(1.03);
+        }
+        .member img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.11);
+        }
+        .member p {
+            font-size: 0.98rem;
+            line-height: 1.5rem;
+            color: #26326f;
+            margin-top: 0;
+        }
+        /* Footer styles */
+        .site-footer {
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #111;
+            color: #eee;
+            padding: 20px 50px;
+
         }
 
-        img {
-            width: 20%;
-            height: auto;
-            border-radius: 50%;
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+ 
+        .footer-links h4,
+        .footer-newsletter h4 {
+            margin-bottom: 12px;
+            color: #F7FAFC;
+            font-size: 1.2rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 2px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: #d6001c;
+        }
+
+        .footer-newsletter input[type="email"] {
+            padding: 8px;
+            width: 100%;
+            max-width: 250px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .footer-newsletter label {
+            display: block;
+            margin-bottom: 10px;
+            color: #bbb;
+        }
+
+        .footer-newsletter button {
+            background-color: #d6001c;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .footer-newsletter button:hover {
+            background-color: #a00015;
+        }
+        /* Responsive styles */
+        @media (max-width: 1200px) {
+            .team-flex,
+            .footer-container {
+                max-width: 990px;
+            }
+        }
+        @media (max-width: 900px) {
+            .team-flex,
+            .footer-container {
+                max-width: 700px;
+            }
+            .our-story {
+                max-width: 92vw;
+                padding: 18px 10px;
+            }
+        }
+        @media (max-width: 800px) {
+            .team-flex {
+                flex-direction: column;
+                margin: 0 8px 36px 8px;
+                gap: 22px;
+                align-items: center;
+            }
+            .member {
+                max-width: 96vw;
+                min-width: 0;
+            }
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 24px;
+                padding: 20px 0 10px 0;
+            }
+            .footer-brand,
+            .footer-links,
+            .footer-newsletter {
+                min-width: 0;
+            }
+            .site-footer {
+                padding: 16px 5px;
+            }
+            nav ul {
+                gap: 12px;
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 500px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 5px;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 7px;
+                padding: 0;
+                margin: 7px 0 0 0;
+            }
+            .join-btn {
+                margin-top: 6px;
+            }
+            .our-story {
+                padding: 8px 2vw;
+            }
         }
     </style>
 </head>
-
 <body>
     <header>
         <div class="logo">Herculean Gym</div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="#">Home</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">Services</a></li>
@@ -117,79 +303,122 @@
         </nav>
         <button class="join-btn" onclick="window.location.href='login.html'">Sign In</button>
     </header>
-
-    <section>
-        <h1>&lt;3333 GYM</h1>
-        <h1>What brings us here</h1>
-        <p>
-            Once I was seven years old, my mama told me,
-            Go hit that playground, run hard, make friends and keep it healthy.
-            Once I was seven years old.</p>
-
-        <p>It was a big, big world, but I got even bigger,
-            Started with some push-ups, now my bench is getting slicker.
-            By eleven years old, my friends and I would race,
-            Who could run the fastest, who would finish in first place?</p>
-
-        <p>Once I was eleven years old, my daddy told me,
-            Go lift those weights, stay strong, and eat your protein.
-            Once I was eleven years old.</p>
-
-        <p>I always had that dream, just like my coach before me,
-            So I started training early, kept that motivation on me.
-            By twenty years old, I hit my first 10K,
-            Running through the city, nothing standing in my way.</p>
-
-        <p>Soon I'll be thirty years old, still running every morning,
-            My body's feeling strong, and my energy's still soaring.
-            Soon I'll be thirty years old.</p>
-        </pre>
-    </section>
-
-    <div class="flex-container">
-        <h1>Meet Our Team</h1>
-        <div class="team-flex">
-            <div class="member">
-                <img src="images/Bombardiro_crocodilo_cover.jpg">
-                <p>Bombardiro Crocodilo refers to a series of brainrot-style AI videos and memes of an anthropomorphic
-                    crocodile military bomber plane narrated by a male Italian text-to-speech voice that rhymes words
-                    similar to the Bitcoin Burger IbraTV French meme. The meme started in mid-February 2025 on TikTok,
-                    spawning other anthropomorphic characters, such as Bombombini Gusini, following the same rhyming
-                    text-to-speech soundbite jokes.</p>
+    <main>
+        <section>
+            <h1>We are a group of person who enjoy staying healthy</h1>
+            <h2>What brings us here</h2>
+            <div class="our-story">
+                <p>
+                    Once I was seven years old, my mama told me,
+                    Go hit that playground, run hard, make friends and keep it healthy.
+                    Once I was seven years old.
+                </p>
+                <p>
+                    It was a big, big world, but I got even bigger,
+                    Started with some push-ups, now my bench is getting slicker.
+                    By eleven years old, my friends and I would race,
+                    Who could run the fastest, who would finish in first place?
+                </p>
+                <p>
+                    Once I was eleven years old, my daddy told me,
+                    Go lift those weights, stay strong, and eat your protein.
+                    Once I was eleven years old.
+                </p>
+                <p>
+                    I always had that dream, just like my coach before me,
+                    So I started training early, kept that motivation on me.
+                    By twenty years old, I hit my first 10K,
+                    Running through the city, nothing standing in my way.
+                </p>
+                <p>
+                    Soon I'll be thirty years old, still running every morning,
+                    My body's feeling strong, and my energy's still soaring.
+                    Soon I'll be thirty years old.
+                </p>
             </div>
-            <div class="member">
-                <img src="images/brr-brr-patapim.jpg">
-                <p>Brr Brr Patapim refers to an AI-generated Italian Brainrot character that's a hybrid between a tree
-                    forest and a monkey with large feet. The meme became popular on TikTok and YouTube in late March
-                    2025. Brr Brr Patapim was often powerscaled against Tung Tung Tung Sahur which was a similar
-                    brainrot character but from Indonesian meme creators. Other Italian Brainrot characters like
-                    Bombardiro Crocodilo and Tralalero Tralala predate Brr Brr Patapim.</p>
-            </div>
-            <div class="member">
-                <img src="images/tung_tung_tung_sahur.jpg">
-                <p>Tung Tung Tung Sahur is a series of brainrot-style AI videos and memes of an anthropomorphic wooden
-                    creature holding a baseball bat alongside an Indonesian voice-over. The meme is part of a series of
-                    brainrot memes from early 2025 in which a male Italian text-to-speech voice presents viewers with
-                    fantastical AI-generated creatures, like Bombardiro Crocodilo (an anthropomorphic crocodile military
-                    bomber plane) and Tralalero Tralala (a shark wearing Nike shoes). Tung Tung Tung Sahur was often
-                    powerscaled against Brr Brr Patapim (a monkey creature covered in trees and moss). Similar
-                    Indonesian brainrot characters like Hotspot Bro trended during the same timeframe. The meme may have
-                    been inspired by French Bitcoin Burger IbraTV videos with a similar text-to-speech word association
-                    style. In Indonesian and Malaysian culture, a large double-headed drum called a "bedug" is employed
-                    to signal prayer times and, during Ramadan, to announce Suhoor. "Tung tung tung" is onomatopoeia
-                    made to resemble the sound of the drum.</p>
-            </div>
-            <div class="member">
-                <img src="images/tralalero-tralala.webp">
-                <p>Tralalero Tralala (rarely "Tralalelo Tralala") (Italian: Trallallero Trallallà) is one of the original italian brainrot animals. He has a son, Merdardo, who is friends with Zip Zip Gnoccolino. He was considered brother in arms by Libyan dictator, Muammar Gaddaffi. He also met Benito Mussolini.
-He has a son, Merdardo, who is friends with Zip Zip Gnoccolino. He was considered brother in arms by Libyan dictator, Muammar Gaddaffi. He also met Benito Mussolini.</p>
+        </section>
+        <div class="flex-container">
+            <h1>Meet Our Team</h1>
+            <div class="team-flex">
+                <div class="member">
+                    <img src="images/bombardiro-crocodilo.webp" alt="Bombardiro Crocodilo">
+                    <p>
+                        Bombardiro Crocodilo refers to a series of brainrot-style AI videos and memes of an anthropomorphic
+                        crocodile military bomber plane narrated by a male Italian text-to-speech voice that rhymes words
+                        similar to the Bitcoin Burger IbraTV French meme. The meme started in mid-February 2025 on TikTok,
+                        spawning other anthropomorphic characters, such as Bombombini Gusini, following the same rhyming
+                        text-to-speech soundbite jokes.
+                    </p>
+                </div>
+                <div class="member">
+                    <img src="images/brr-brr-patapim.webp" alt="Brr Brr Patapim">
+                    <p>
+                        Brr Brr Patapim refers to an AI-generated Italian Brainrot character that's a hybrid between a tree
+                        forest and a monkey with large feet. The meme became popular on TikTok and YouTube in late March
+                        2025. Brr Brr Patapim was often powerscaled against Tung Tung Tung Sahur which was a similar
+                        brainrot character but from Indonesian meme creators. Other Italian Brainrot characters like
+                        Bombardiro Crocodilo and Tralalero Tralala predate Brr Brr Patapim.
+                    </p>
+                </div>
+                <div class="member">
+                    <img src="images/tung-tung-tung-sahur.webp" alt="Tung Tung Tung Sahur">
+                    <p>
+                        Tung Tung Tung Sahur is a series of brainrot-style AI videos and memes of an anthropomorphic wooden
+                        creature holding a baseball bat alongside an Indonesian voice-over. The meme is part of a series of
+                        brainrot memes from early 2025 in which a male Italian text-to-speech voice presents viewers with
+                        fantastical AI-generated creatures, like Bombardiro Crocodilo (an anthropomorphic crocodile military
+                        bomber plane) and Tralalero Tralala (a shark wearing Nike shoes). Tung Tung Tung Sahur was often
+                        powerscaled against Brr Brr Patapim (a monkey creature covered in trees and moss). Similar
+                        Indonesian brainrot characters like Hotspot Bro trended during the same timeframe. The meme may have
+                        been inspired by French Bitcoin Burger IbraTV videos with a similar text-to-speech word association
+                        style. In Indonesian and Malaysian culture, a large double-headed drum called a "bedug" is employed
+                        to signal prayer times and, during Ramadan, to announce Suhoor. "Tung tung tung" is onomatopoeia
+                        made to resemble the sound of the drum.
+                    </p>
+                </div>
+                <div class="member">
+                    <img src="images/tralalero-tralala.webp" alt="Tralalero Tralala">
+                    <p>
+                        Tralalero Tralala (rarely "Tralalelo Tralala") (Italian: Trallallero Trallallà) is one of the
+                        original italian brainrot animals. He has a son, Merdardo, who is friends with Zip Zip Gnoccolino.
+                        He was considered brother in arms by Libyan dictator, Muammar Gaddaffi. He also met Benito
+                        Mussolini. He has a son, Merdardo, who is friends with Zip Zip Gnoccolino. He was considered brother
+                        in arms by Libyan dictator, Muammar Gaddaffi. He also met Benito Mussolini.
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-
-    <footer>
-        <p>Footer's content belongs here</p>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h1 class="logo">Herculean Gym</h1>
+                <p>&copy; 2025 Herculean Gym. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Packages</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Stay up to date</h4>
+                <p>Subscribe now and get the latest news!</p>
+                <form>
+                    <input type="email" placeholder="Email" required />
+                    <br />
+                    <label>
+                        <input type="checkbox" /> Are you an existing customer?
+                    </label>
+                    <br />
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
     </footer>
 </body>
-
 </html>
