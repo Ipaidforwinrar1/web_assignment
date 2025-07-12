@@ -8,21 +8,26 @@ body {
     box-sizing: border-box;
 }
 
+/* Semantic Elements styles */
 header {
-    /*background-color: rgb(34, 34, 34);*/
-    /*background: #050505;
-    background: linear-gradient(180deg, rgba(5, 5, 5, 1) 15%, rgba(111, 237, 83, 0) 100%);*/
-    background: #15263b;
-    background: linear-gradient(180deg, rgba(21, 38, 59, 0.75) 50%, rgba(111, 237, 83, 0) 100%);
+    background-color: #15263b;
     color: rgb(203, 220, 250);
-    padding: 10px;
-    overflow: hidden;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
     position: sticky;
     top: 0px;
 }
 nav {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin-top: 25px;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 1.5rem;
 }
 
 main {
@@ -32,10 +37,11 @@ main {
     font-size: x-large;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0px 0px;
+    padding: 0px;
 }
 
 main div {
-    padding: 10px 13%;
+    padding: 40px 13%;
     margin-bottom: 40px;
 }
 
@@ -45,6 +51,8 @@ footer {
     padding: 20px 100px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+/* Elements of Header styling */
 #logo {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: xx-large;
@@ -59,19 +67,36 @@ a {
     color: inherit;
     text-decoration: none;
     font-family: inherit;
+    transition: 0.3s;
+}
+a:hover {
+    color: blue;
+    text-decoration: underline;
 }
 .signup-login {
-    float: right;
-    margin-right: 10%;
+    display: flex;
+    gap: 10px;
+    font-size: 0.95rem;
 }
 img {
     border-radius: 8px;
 }
-img.on-left {
-    float: left;
-}
+
+/* Card styles */
 .card {
     background-color: rgb(5, 96, 175);
-    padding: 0px 0px;
-    width: 300px;
+    color: rgb(203, 220, 250);
+    border-radius: 6px;
+    padding: 30px;
+    max-width: 500px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card h1 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+.card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
 }

@@ -3,34 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page title here...</title>
+    <title>Herculean Fitness | Services</title>
     <link rel="stylesheet" href="website.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
+        /* Styling for table */
         .service-table {
-            background-color: rgb(23, 100, 167);
-            border: 0px;
+            width: 100%;
+            margin-top: 20px;
             border-collapse: collapse;
         }
         .service-table td, .service-table th {
             padding: 15px;
-            margin: 0px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        .service-table td:nth-child(3), .service-table th:nth-child(3) {
+        /*.service-table td:nth-child(3), .service-table th:nth-child(3) {
             background-color: rgb(7, 78, 140);
         }
         .service-table td:nth-child(4), .service-table th:nth-child(4) {
             background-color: rgb(5, 96, 175);
+        }*/
+        .service-table th, .service-table td {
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            color: white;
+        }
+        .service-table tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .service-table th {
+            background-color: rgba(0, 0, 0, 0.2);
+            font-weight: bold;
         }
 
+        /* Styling for the main content's layout */
         .benefit-section {
             background-color: rgb(31, 49, 150);
             color: rgb(203, 220, 250);
         }
         .first-section {
-            overflow: hidden;
-            flex: 0 0 auto;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
         }
+
+
+    @media (max-width: 768px) {
+        header, .first-section, footer {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .first-section {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .signup-login {
+            justify-content: center;
+        }
+}
     </style>
 </head>
 <body>
@@ -47,8 +89,8 @@
     <main>
         <div class="first-section">
             <div class="card">
-                <h1 style="float: left;">Exercise, Supersized</h1>
-                <p style="float: none;">Choose the right service for your strength building needs needs!</p>
+                <h1">Exercise, Supersized</h1>
+                <p>Choose the right service for your strength building needs needs!</p>
             </div>
             <img src="../asset/personal-trainer-1-compressor.jpg" alt="person training" class="" height="300">
         </div>
@@ -64,17 +106,21 @@
                 </tr>
                 <tr>
                     <td>Gym Access</td>
-                    <td>V</td>
-                    <td>V</td>
-                    <td>V</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
                 </tr>
                 <tr>
                     <td>Personalized Training Sessions</td>
-                    <td>X</td>
-                    <td>V</td>
-                    <td>V</td>
+                    <td>✕</td>
+                    <td>✓</td>
+                    <td>✓</td>
                 </tr>
             </table>
+        </div>
+
+        <div class="third-section">
+            <p>For packages, go to the <a href="packages.html">Packages</a> page.</p>
         </div>
     </main>
 
