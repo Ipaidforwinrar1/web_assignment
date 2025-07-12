@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HERCULEAN GYM</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-weight: bold;
+      color: #0052a3;
+      font-size: 24px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+      transition: color 0.3s, border-bottom 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #0052a3;
+      border-bottom: 2px solid #0052a3;
+      padding-bottom: 4px;
+    }
+
+    .join-btn {
+      background-color: #0052a3;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 3px;
+      margin-top: 10px;
+    }
+
+    .hero {
+      position: relative;
+      height: 500px;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
+    }
+
+    .overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px 80px;
+      color: white;
+    }
+
+    .text-box {
+      max-width: 700px;
+    }
+
+    .text-box h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .fit {
+      background-color: black;
+      padding: 5px 10px;
+      margin-right: 5px;
+    }
+
+    .pass {
+      background-color: #0052a3;
+      padding: 5px 10px;
+    }
+
+    .text-box h2 {
+      font-size: 38px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .text-box p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .cta-btn {
+      background-color: #0052a3;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      border: none;
+      border-radius: 3px;
+      text-decoration: none;
+    }
+
+    .cards-section {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .card {
+      position: relative;
+      width: 350px;
+      height: 250px;
+      overflow: hidden;
+      border-radius: 8px;
+      color: white;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card-content h3 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .card-content p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .card-content a {
+      color: white;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .full-image-section {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background-image: url('gym8.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 20px;
+      margin-bottom: 60px;
+    }
+
+    .image-overlay {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 25px 35px;
+      margin-left: 60px;
+      border-radius: 8px;
+      max-width: 500px;
+      color: #000;
+    }
+
+    .image-overlay h2 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .image-overlay p {
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .image-overlay .cta-btn {
+      background-color: #0052a3;
+    }
+
+    .testimonial-section {
+      display: flex;
+      padding: 60px 40px;
+      background-color: #f9f9f9;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .testimonial-text {
+      flex: 1 1 300px;
+      max-width: 350px;
+    }
+
+    .testimonial-text h2 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .testimonial-cards {
+      display: grid;
+      flex: 2 1 600px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .testimonial-box {
+      background-color: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      color: #333;
+    }
+
+    .testimonial-box img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    #backToTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      background-color: #0052a3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 12px 16px;
+      border-radius: 50%;
+      display: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    #backToTopBtn:hover {
+      background-color: #003d7a;
+    }
+
+    footer.site-footer {
+      background-color: #111;
+      color: #eee;
+      padding: 50px 30px;
+      font-size: 14px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #0052a3;
+    }
+
+    .footer-newsletter button {
+      background-color: #0052a3;
+    }
+
+    .footer-newsletter button:hover {
+      background-color: #003d7a;
+    }
+
+    @media screen and (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px 0;
+      }
+
+      .text-box h1, .text-box h2 {
+        font-size: 28px;
+      }
+
+      .cards-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image-overlay {
+        margin-left: 0;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Herculean Gym</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Packages</a></li>
+      </ul>
+    </nav>
+    <button class="join-btn" onclick="window.location.href='login.html'">Sign In</button>
+  </header>
+
+  <section class="hero">
+    <div class="overlay">
+      <div class="text-box">
+        <h1><span class="fit">Herculean</span><span class="pass">Gym</span></h1>
+        <h2>START YOUR FITNESS JOURNEY NOW</h2>
+        <p>Get full access to all Herculean Gym clubs with our variety of memberships.</p>
+        <a href="membership.html" class="cta-btn">Explore Memberships</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cards-section">
+    <div class="card" style="background-image: url('gym4.jpg');">
+      <div class="card-content">
+        <h3>MALAYSIA'S MOST SUCCESSFUL GYM COMMUNITY</h3>
+        <p>Official IFBB PRO, OLYMPIANS trainers.</p>
+        <a href="services.html">Learn More</a>
+      </div>
+    </div>
+    <div class="card" style="background-image: url('gym5.jpeg');">
+      <div class="card-content">
+        <h3>CONQUER YOUR PEAK SELF</h3>
+        <p>Join our intense training programs.</p>
+        <a href="packages.html">Learn More</a>
+      </div>
+    </div>
+    <div class="card" style="background-image: url('gym6.jpeg');">
+      <div class="card-content">
+        <h3>EVENTS & ACTIVITIES</h3>
+        <p>Check out our unique events, classes and experiences</p>
+        <a href="packages.html">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="full-image-section">
+    <div class="image-overlay">
+      <h2>BE THE STRONGEST<br>VERSION OF YOURSELF</h2>
+      <p>You define your limits. Push beyond them.</p>
+      <a href="membership.html" class="cta-btn">Explore Memberships</a>
+    </div>
+  </section>
+
+  <section class="testimonial-section">
+    <div class="testimonial-text">
+      <h2>DON'T TAKE OUR WORD FOR IT</h2>
+      <p>Here's what our clients have to say about us.</p>
+    </div>
+    <div class="testimonial-cards">
+      <div class="testimonial-box">
+        <img src="client1.jpeg" alt="Happy Customer">
+        <p>"Joining Herculean Gym changed my life especially with the help of their various coaches. The energy here is unmatched!"</p>
+      </div>
+      <div class="testimonial-box">
+        <img src="client2.png" alt="Happy Customer">
+        <p>"Top-notch equipment, amazing classes, and the best trainers around."</p>
+      </div>
+      <div class="testimonial-box">
+        <img src="client3.jpeg" alt="Happy Customer">
+        <p>"I’ve never felt stronger or more supported. Highly recommend!"</p>
+      </div>
+      <div class="testimonial-box">
+        <img src="client4.jpeg" alt="Happy Customer">
+        <p>"Great value and a fantastic fitness community even for women of all ages."</p>
+      </div>
+    </div>
+  </section>
+
+  <button onclick="scrollToTop()" id="backToTopBtn" title="Back to Top">↑</button>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="logo">Herculean Gym</div>
+        <p>&copy; 2025 Herculean Gym. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="packages.html">Packages</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Stay up to date</h4>
+        <p>Subscribe now and get the latest news!</p>
+        <form>
+          <input type="email" placeholder="Email" required><br/>
+          <label><input type="checkbox"> Are you an existing customer?</label><br/>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hero = document.querySelector('.hero');
+    const images = ['gym1.jpg', 'gym2.jpg', 'gym3.jpg'];
+    let index = 0;
+
+    function changeBackground() {
+      hero.style.backgroundImage = `url(${images[index]})`;
+      index = (index + 1) % images.length;
+    }
+
+    changeBackground();
+    setInterval(changeBackground, 4000);
+
+    window.onscroll = function() {
+      const btn = document.getElementById("backToTopBtn");
+      btn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
