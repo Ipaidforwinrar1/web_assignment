@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Herculean Fitness | Services</title>
-    <link rel="stylesheet" href="website.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!--<link rel="stylesheet" href="website.css"> one day... -->
+    <!-- maybe i will use these one day
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    -->
     <style>
         /* Styling for table */
         .service-table {
@@ -39,6 +42,10 @@
         }
 
         /* Styling for the main content's layout */
+        .first-section, .benefit-section, .third-section, .sessions-section {
+            padding: 40px 13%;
+            margin-bottom: 40px;
+        }
         .benefit-section {
             background-color: rgb(31, 49, 150);
             color: rgb(203, 220, 250);
@@ -50,6 +57,9 @@
             justify-content: space-between;
             flex-wrap: wrap;
             margin-bottom: 60px;
+        }
+        .sessions-section {
+            display: flex;
         }
 
 
@@ -73,6 +83,109 @@
             justify-content: center;
         }
 }
+
+/******** TEMPORARY *********/
+footer {
+    background-color: rgb(34, 34, 34);
+    color: rgb(164, 203, 240);
+    padding: 20px 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* Elements of Header styling */
+#logo {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
+    float: left;
+    width: 15%;
+    margin-left: 10%;
+}
+nav button {
+    float: right;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    font-family: inherit;
+    transition: 0.3s;
+}
+main a:hover {
+    color: #0f5888;
+    text-decoration: underline;
+}
+header a:hover {
+    color: #9797e7;
+    text-decoration: underline;
+}
+.signup-login {
+    display: flex;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+img {
+    border-radius: 8px;
+}
+/* Card styles */
+.card {
+    background-color: rgb(5, 77, 140);
+    color: rgb(164, 203, 240);
+    border-radius: 6px;
+    padding: 30px;
+    max-width: 500px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card h1 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: rgb(217, 240, 254);
+}
+.card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+.small-card {
+    width: 200px;
+    background-color: #0f5888;
+    color: aliceblue;
+    border-left: 3px solid #15263b;
+    border-radius: 4px;
+    margin: 10px 20px;
+    padding: 10px;
+}
+.small-card p, .small-card a {
+    font-size: small;
+}
+.small-card-image {
+    width: 200px;
+    height: auto;
+}
+.small-card-holder {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Semantic Elements styles */
+header {
+    background-color: #15263b;
+    color: rgb(164, 203, 240);
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    position: sticky;
+    top: 0px;
+}
+main {
+    /*color: rgb(34, 34, 34);*/
+    color: rgb(31, 49, 150);
+    min-height: 90%;
+    font-size: x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0px 0px;
+    padding: 0px;
+}
     </style>
 </head>
 <body>
@@ -89,10 +202,67 @@
     <main>
         <div class="first-section">
             <div class="card">
-                <h1>Exercise, Supersized</h1>
-                <p>Choose the right service for your strength building needs needs!</p>
+                <h1>Get Stronger!</h1>
+                <p>Choose the right service to gain some muscles!</p>
             </div>
             <img src="../asset/personal-trainer-1-compressor.jpg" alt="person training" class="" height="300">
+        </div>
+        <div class="first-section">
+            <div class="card">
+                <h1>Get Fitter!</h1>
+                <p>Choose the right service to lose those pounds!</p>
+            </div>
+            <img src="../asset/personal-trainer-1-compressor.jpg" alt="person training" class="" height="300">
+        </div>
+        <div class="first-section">
+            <div class="card">
+                <h1>Get Flexible!</h1>
+                <p>Choose the service that will make you more flexible and agile!</p>
+            </div>
+            <img src="../asset/personal-trainer-1-compressor.jpg" alt="person training" class="" height="300">
+        </div>
+
+        <div class="sessions-section">
+            <div class="small-card-holder">
+                <div>
+                        <!--image here-->
+                </div>
+                <div class="small-card">
+                    <p>Combat your way to tougher body</p>
+                    <h3>Martial Arts Combat</h3>
+                    <a href="#">View Session Details</a>
+                </div>
+            </div>
+            <div class="small-card-holder">
+                <div>
+                        <!--image here-->
+                </div>
+                <div class="small-card">
+                    <p>Hone your muscles</p>
+                    <h3>Strength Training</h3>
+                    <a href="#">View Session Details</a>
+                </div>
+            </div>
+            <div class="small-card-holder">
+                <div>
+                    <!--image here-->
+                </div>
+                <div class="small-card">
+                    <p>Flex your body and mind</p>
+                    <h3>Yoga Flex</h3>
+                    <a href="#">View Session Details</a>
+                </div>
+            </div>
+            <div class="small-card-holder">
+                <div>
+                    <!--image here-->
+                </div>
+                <div class="small-card">
+                    <p>Soaring through</p>
+                    <h3>Athletic Cycling</h3>
+                    <a href="#">View Session Details</a>
+                </div>
+            </div>
         </div>
 
         <div class="benefit-section">
@@ -115,6 +285,31 @@
                     <td>✕</td>
                     <td>✓</td>
                     <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Reschedule Sessions</td>
+                    <td>✕</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Choice of Personal Trainer</td>
+                    <td>✕</td>
+                    <td>✕</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Free Fitness Assessments</td>
+                    <td>✕</td>
+                    <td>✕</td>
+                    <td>✓</td>
+                </tr>
+                
+                <tr>
+                    <td>No. of Sessions (per month)</td>
+                    <td>5</td>
+                    <td>14</td>
+                    <td>25</td>
                 </tr>
             </table>
         </div>
