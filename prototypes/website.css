@@ -12,17 +12,22 @@ header {
     /*background-color: rgb(34, 34, 34);*/
     /*background: #050505;
     background: linear-gradient(180deg, rgba(5, 5, 5, 1) 15%, rgba(111, 237, 83, 0) 100%);*/
+    /* Final Gradient, i changed my mind
     background: #15263b;
-    background: linear-gradient(180deg, rgba(21, 38, 59, 0.75) 50%, rgba(111, 237, 83, 0) 100%);
+    background: linear-gradient(180deg, rgba(21, 38, 59, 0.75) 50%, rgba(111, 237, 83, 0) 100%); */
     color: rgb(203, 220, 250);
-    padding: 10px;
-    overflow: hidden;
-    position: sticky;
-    top: 0px;
+    background-color: navy;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 10%;
 }
 nav {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin-top: 25px;
+    /*font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; MAY RETURN TO USING IT*/
+    gap: 20px;
+    display: flex;
 }
 
 main {
@@ -35,14 +40,17 @@ main {
 }
 
 main div {
-    padding: 10px 13%;
+    padding: 30px 13%;
+    margin-top: 40px;
     margin-bottom: 40px;
 }
 
 footer {
     background-color: rgb(34, 34, 34);
     color: rgb(203, 220, 250);
-    padding: 20px 100px;
+    text-align: center;
+    padding: 30px 10%;
+    font-size: 0.9rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 #logo {
@@ -60,18 +68,39 @@ a {
     text-decoration: none;
     font-family: inherit;
 }
+a:hover {
+    color: #6fed53;
+    text-decoration: underline;
+    transition: 0.3s;
+}
 .signup-login {
-    float: right;
-    margin-right: 10%;
+    display: flex;
+    gap: 10px;
 }
 img {
-    border-radius: 8px;
-}
-img.on-left {
-    float: left;
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
 }
 .card {
     background-color: rgb(5, 96, 175);
-    padding: 0px 0px;
-    width: 300px;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: fit-content;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+.card h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+.card p {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease;
 }

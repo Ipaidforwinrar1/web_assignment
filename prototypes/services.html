@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herculean Fitness | Services</title>
+    <link rel="stylesheet" href="website.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <style>
+        .service-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        .service-table td, .service-table th {
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        /*.service-table td:nth-child(3), .service-table th:nth-child(3) {
+            background-color: rgb(7, 78, 140);
+        }
+        .service-table td:nth-child(4), .service-table th:nth-child(4) {
+            background-color: rgb(5, 96, 175);
+        }*/
+        .service-table th, .service-table td {
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            color: white;
+        }
+        .service-table tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .service-table th {
+            background-color: rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+
+        .benefit-section {
+            background-color: rgb(31, 49, 150);
+            color: rgb(203, 220, 250);
+        }
+        .first-section {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            padding: 30px 10%;
+            flex-wrap: wrap;
+        }
+
+
+        @media (max-width: 768px) {
+    header, .first-section, footer {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .first-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .signup-login {
+        justify-content: center;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="homepage.html"><h4 id="logo">Logo here</h4></a>
+        <nav>
+            <a href="services.html">Services</a> - <a href="packages.html">Packages</a> - <a href="about.html">About Us</a> - <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="signup-login">
+           <a href="signup.html">Sign Up</a><span>/</span><a href="login.html">Log In</a>
+        </div>
+    </header>
+    
+    <main>
+        <div class="first-section">
+            <div class="card">
+                <h1">Exercise, Supersized</h1>
+                <p>Choose the right service for your strength building needs needs!</p>
+            </div>
+            <img src="../asset/personal-trainer-1-compressor.jpg" alt="person training" class="" height="300">
+        </div>
+
+        <div class="benefit-section">
+            <h2>All Services Available:</h2>
+            <table class="service-table">
+                <tr>
+                    <th>Service</th>
+                    <th>Basic</th>
+                    <th>Pro</th>
+                    <th>Olympic</th>
+                </tr>
+                <tr>
+                    <td>Gym Access</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Personalized Training Sessions</td>
+                    <td>✕</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="third-section">
+            <p>For packages, go to the <a href="packages.html">Packages</a> page.</p>
+        </div>
+    </main>
+
+    <footer>
+        <!--more detailed navigation section-->
+        <!--Social Media links-->
+        <small>Copyright (C) 2025 Herculean Fitness inc. All Rights Reserved</small>
+    </footer>
+</body>
+</html>

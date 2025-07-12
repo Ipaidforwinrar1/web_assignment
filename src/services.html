@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page title here...</title>
+    <link rel="stylesheet" href="website.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <style>
+        .service-table {
+            background-color: rgb(23, 100, 167);
+            border: 0px;
+            border-collapse: collapse;
+        }
+        .service-table td, .service-table th {
+            padding: 15px;
+            margin: 0px;
+        }
+        .service-table td:nth-child(3), .service-table th:nth-child(3) {
+            background-color: rgb(7, 78, 140);
+        }
+        .service-table td:nth-child(4), .service-table th:nth-child(4) {
+            background-color: rgb(5, 96, 175);
+        }
+
+        .benefit-section {
+            background-color: rgb(31, 49, 150);
+            color: rgb(203, 220, 250);
+        }
+        .first-section {
+            overflow: hidden;
+            flex: 0 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="homepage.html"><h4 id="logo">Logo here</h4></a>
+        <nav>
+            <a href="services.html">Services</a> - <a href="packages.html">Packages</a> - <a href="about.html">About Us</a> - <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="signup-login">
+           <a href="signup.html">Sign Up</a><span>/</span><a href="login.html">Log In</a>
+        </div>
+    </header>
+    
+    <main>
+        <div class="first-section">
+            <div class="card">
+                <h1 style="float: left;">Exercise, Supersized</h1>
+                <p style="float: none;">Choose the right service for your strength building needs needs!</p>
+            </div>
+            <img src="../asset/personal-trainer-1-compressor.jpg" alt="person training" class="" height="300">
+        </div>
+
+        <div class="benefit-section">
+            <h2>All Services Available:</h2>
+            <table class="service-table">
+                <tr>
+                    <th>Service</th>
+                    <th>Basic</th>
+                    <th>Pro</th>
+                    <th>Olympic</th>
+                </tr>
+                <tr>
+                    <td>Gym Access</td>
+                    <td>V</td>
+                    <td>V</td>
+                    <td>V</td>
+                </tr>
+                <tr>
+                    <td>Personalized Training Sessions</td>
+                    <td>X</td>
+                    <td>V</td>
+                    <td>V</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <!--more detailed navigation section-->
+        <!--Social Media links-->
+        <small>Copyright (C) 2025 Herculean Fitness inc. All Rights Reserved</small>
+    </footer>
+</body>
+</html>
