@@ -61,21 +61,6 @@
 
   <!-- JavaScript (Shared) -->
   <script>
-    // Optional: Only use this if a page has a .hero section
-    const hero = document.querySelector('.hero');
-    if (hero) {
-      const images = ['gym1.jpg', 'gym2.jpg', 'gym3.jpg'];
-      let index = 0;
-
-      function changeBackground() {
-        hero.style.backgroundImage = `url(${images[index]})`;
-        index = (index + 1) % images.length;
-      }
-
-      changeBackground();
-      setInterval(changeBackground, 4000);
-    }
-
     // Back to Top button logic
     window.onscroll = function() {
       const btn = document.getElementById("backToTopBtn");
