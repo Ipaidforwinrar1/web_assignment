@@ -4,34 +4,38 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>example page</title>
+    <title>Contact Us | Herculean Gym</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:500,600,700&display=swap">
     <script src="https://kit.fontawesome.com/c99bb18f64.js" crossorigin="anonymous"></script>
     <style>
-        html,
-        body {
-            height: 100%;
+        :root {
+            --main-blue: #2258a4;
+            --main-blue-dark: #174486;
+            --main-bg: #eef2fa;
+            --heading-dark: #22304e;
+            --accent-orange: #ea5e2a;
+            --body-gray: #31435a;
+            --contact-left-bg: var(--main-bg);
+            --contact-right-bg: #fff;
+            --input-border: #b8c7e7;
+            --input-bg: #f7faff;
+            --input-focus: var(--main-blue);
+            --link-blue: #0052a3;
+            --icon-gray: #222;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-        }
-
-        :root {
-            --primary-colour: #1f3196;
-            --background-colour: #f0f7ff;
-            --lite-color: #5785b1;
-            --regular-color: #2e2a2a;
-            --premium-color: #ac4830;
+            box-sizing: border-box;
+            font-family: "Work Sans", 'Segoe UI', sans-serif;
+            font-weight: 500;
         }
 
         body {
-            margin: 0;
-            font-family: Helvetica, sans-serif;
-            background-color: var(--background-colour);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            background-color: #fff;
         }
 
-        /* header & navigation */
         header {
             background-color: #ffffff;
             padding: 15px 30px;
@@ -44,7 +48,7 @@
 
         .logo {
             font-weight: bold;
-            color: var(--primary-colour);
+            color: var(--main-blue);
             font-size: 24px;
         }
 
@@ -62,14 +66,13 @@
         }
 
         nav ul li a:hover {
-            color: #0052a3;
-            border-bottom: 2px solid #0052a3;
+            color: var(--main-blue);
+            border-bottom: 2px solid var(--main-blue);
             padding-bottom: 4px;
         }
 
-        /* Sign In Button */
         .join-btn {
-            background-color: #0052a3;
+            background-color: var(--main-blue);
             color: white;
             padding: 10px 16px;
             border: none;
@@ -78,68 +81,215 @@
             border-radius: 3px;
             margin-top: 10px;
             text-decoration: none;
-        }
-
-        /*site main content */
-        .flex-container {
-            background-color: var(--background-colour);
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .item1 {
-            color: var(--primary-colour);
-            font-size: 1.5rem;
-            text-align: center;
-            padding-top: 30px;
-            min-width: 200px;
-            flex-basis: 400px;
-            flex-grow: 1;
-        }
-
-        .item1 a {
-            color: var(--regular-color);
-            font-size: 1.2rem;
-        }
-
-        .visually-hidden {
-            position: absolute;
-            left: -9999px;
-        }
-
-
-        .item2 {
-            color: var(--regular-color);
-            text-align: center;
-            padding-top: 50px;
-            min-width: 200px;
-            flex-basis: 400px;
-            flex-grow: 1;
-        }
-
-        .item2-button {
-            background-color: var(--primary-colour);
-            color: var(--background-colour);
-            border-radius: 5px;
-            border-style: none;
-            margin-top: 10px;
-            font-size: 1.2rem;
-            padding: 10px;
             transition: background 0.2s;
         }
 
-        .item2-button:hover {
-            background-color: var(--lite-color);
+        .join-btn:hover {
+            background-color: var(--main-blue-dark);
         }
 
-        textarea {
-            width: 60%;
-            height: 100px;
+        .contact-main {
+            width: 100vw;
+            min-height: 80vh;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            background: var(--main-bg);
+            margin: 0;
         }
 
+        .contact-left {
+            flex: 1.10 1 0;
+            background: var(--contact-left-bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 60px 60px 120px;
+            border-right: 2px solid #e2e6ed;
+        }
 
+        .contact-left h1 {
+            color: var(--main-blue-dark);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+        }
+
+        .contact-left p {
+            color: var(--body-gray);
+            font-size: 1.13rem;
+            margin-bottom: 26px;
+            max-width: 420px;
+        }
+
+        .contact-info {
+            margin-bottom: 22px;
+            font-size: 1.08rem;
+            color: var(--body-gray);
+        }
+
+        .contact-info b {
+            font-weight: bold;
+            color: var(--main-blue-dark);
+        }
+
+        .contact-info a {
+            color: var(--link-blue);
+            text-decoration: underline;
+            font-size: 1.08rem;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-orange);
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 18px;
+        }
+
+        .contact-links a {
+            color: var(--icon-gray);
+            text-decoration: none;
+            font-size: 1.08rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.2s;
+        }
+
+        .contact-links a:hover {
+            color: var(--accent-orange);
+        }
+
+        .contact-right {
+            flex: 1.3 1 0;
+            background: var(--contact-right-bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 120px 60px 60px;
+            box-shadow: 0 2px 14px rgba(34, 88, 164, 0.03);
+        }
+
+        .contact-right h2 {
+            color: var(--accent-orange);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            letter-spacing: 1px;
+        }
+
+        .contact-right p {
+            font-size: 1.08rem;
+            color: var(--body-gray);
+            margin-bottom: 18px;
+        }
+
+        .whatsapp-btn {
+            background: var(--accent-orange);
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            padding: 14px 0;
+            font-size: 1.13rem;
+            margin-bottom: 22px;
+            text-align: center;
+            width: 100%;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgba(234, 94, 42, 0.08);
+        }
+
+        .whatsapp-btn:hover {
+            background: var(--main-blue-dark);
+        }
+
+        .contact-form {
+            width: 100%;
+            max-width: 520px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form label {
+            color: var(--main-blue-dark);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 6px;
+            border: 1.5px solid var(--input-border);
+            padding: 15px 12px;
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            background: var(--input-bg);
+            color: var(--body-gray);
+            transition: border 0.2s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border: 1.5px solid var(--accent-orange);
+            outline: none;
+        }
+
+        .contact-form textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--main-blue);
+            color: #fff;
+            border-radius: 6px;
+            border: none;
+            font-size: 1.15rem;
+            font-weight: 600;
+            padding: 15px 0;
+            width: 100%;
+            margin-top: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            box-shadow: 0 2px 4px rgba(34, 88, 164, 0.09);
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-orange);
+        }
+
+        #error-message {
+            color: #ac4830;
+            font-size: 1rem;
+            margin: 7px 0 0 0;
+        }
+
+        .contact-map {
+            width: 100vw;
+            min-height: 220px;
+            height: 300px;
+            border: none;
+            display: block;
+            margin: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        /* Footer */
         footer.site-footer {
             background-color: #111;
             color: #eee;
@@ -161,23 +311,17 @@
         }
 
         .footer-links a:hover {
-            color: #0052a3;
+            color: var(--main-blue);
         }
 
         .footer-newsletter button {
-            background-color: var(--primary-colour);
-            margin: 10px 0px;
-            padding: 7px 15px;
-            border-radius: 15px;
-            border-width: 4px;
-
+            background-color: var(--main-blue);
         }
 
         .footer-newsletter button:hover {
-            background-color: #003d7a;
+            background-color: var(--main-blue-dark);
         }
 
-        /* Form elements styling */
         .footer-newsletter h4 {
             font-size: 16px;
             margin-bottom: 6px;
@@ -185,9 +329,9 @@
             letter-spacing: 0.1rem;
         }
 
-        input[type=email] {
+        .input-subscription {
             background-color: inherit;
-            color: #ccc;
+            color: black;
             border: 2px solid #ccc;
             border-radius: 4px;
             padding: 10px;
@@ -199,21 +343,63 @@
             padding: 10px 0px;
         }
 
+        button {
+            margin: 10px 0px;
+            background-color: inherit;
+            padding: 7px 15px;
+            border-radius: 15px;
+            border-width: 4px;
+        }
 
-        @media (max-width: 800px) {
+        @media (max-width: 1100px) {
+            .contact-main {
+                flex-direction: column;
+                align-items: stretch;
+                min-height: unset;
+            }
+
+            .contact-left,
+            .contact-right {
+                padding: 38px 18px;
+            }
+
+            .contact-right {
+                padding-bottom: 28px;
+            }
+        }
+
+        @media (max-width:900px) {
+            .contact-main {
+                flex-direction: column;
+                gap: 0;
+                padding: 0 0;
+            }
+
+            .contact-left,
+            .contact-right {
+                padding: 28px 10px 18px 10px;
+            }
+
+            .contact-map {
+                height: 160px;
+                margin: 0;
+                border-radius: 5px;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                margin: 10px 0;
+            }
+
             .footer-container {
                 flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-brand,
-            .footer-links,
-            .footer-newsletter {
-                min-width: 200px;
-            }
-
-            .site-footer {
-                padding: 20px 5px;
+                align-items: flex-start;
             }
         }
     </style>
@@ -226,45 +412,55 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about_us.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li class="active"><a href="contact.html">Contact Us</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="packages.html">Packages</a></li>
             </ul>
         </nav>
         <button class="join-btn" onclick="window.location.href='login.html'">Sign In</button>
     </header>
-    <div class="flex-container">
-        <div class="item1">
-            <h1>Contact Us</h1>
-            <a href="tel:+60374918622" rel="noopener noreferrer"><i class="fa-solid fa-phone"
-                    aria-hidden="true"></i>&nbsp;+6 (03) 7491 8622<span class="visually-hidden">Call us on
-                    +60374918622</span></a><br><br>
-            <a href="mailto:info@sunway.edu.my" rel="noopener noreferrer"><i class="fa-regular fa-envelope"
-                    aria-hidden="true"></i>&nbsp;Email<span class="visually-hidden">Send us an email</span></a><br><br>
-            <a href="https://api.whatsapp.com/send/?phone=60193867863&text=Say+hello%21&type=phone_number&app_absent=0"
-                rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>&nbsp;Whatsapp<span
-                    class="visually-hidden">Text us on Whatsapp</span></a><br><br>
-            <a href="https://www.instagram.com/sunwayuniversity?utm_source=ig_web_button_share_sheet&igsh=MW1qemE2amtnb2FjdA=="
-                rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i>&nbsp;Instagram<span
-                    class="visually-hidden">Sunway University Offical Instagram Account</span></a>
+    <div class="contact-main">
+        <div class="contact-left">
+            <h1>Get in touch</h1>
+            <p>We bridge the gap between gym training and personal wellness.</p>
+            <div class="contact-info">
+                <b>Herculean Gym, Level 2, Sunway University</b><br>
+                <a href="https://maps.google.com/?q=Sunway+University" target="_blank">Jalan Universiti, Bandar Sunway,
+                    47500 Subang Jaya</a>
+            </div>
+            <div class="contact-links">
+                <a href="mailto:info@sunway.edu.my"><i class="fa-regular fa-envelope"></i> info@sunway.edu.my</a>
+                <a
+                    href="https://api.whatsapp.com/send/?phone=60193867863&text=Say+hello%21&type=phone_number&app_absent=0"><i
+                        class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+                <a href="https://www.facebook.com/sunwayuniversity"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                <a
+                    href="https://www.instagram.com/sunwayuniversity?utm_source=ig_web_button_share_sheet&igsh=MW1qemE2amtnb2FjdA=="><i
+                        class="fa-brands fa-instagram"></i> Instagram</a>
+            </div>
         </div>
-        <div class="item2">
-            <form id="feedbackForm">
-                <h2>Send Us Your Feedback!</h2>
-                <label for="fmail">Your Email:</label><br>
-                <input type="email" id="fmail" name="fmail" required /><br><br>
-                <label for="feedback">Your Feedback:</label><br><br>
-                <textarea id="feedback" name="feedback" rows="5" placeholder="type your feedback here"></textarea><br>
-                <button class="item2-button" onclick="validateTextArea()" type="submit">Submit Now</button>
-                <p id="error-message"></p>
+        <div class="contact-right">
+            <h2>Contact Us To Book A Discovery Session</h2>
+            <p>For faster replies, please reach out to us via WhatsApp.</p>
+            <a class="whatsapp-btn"
+                href="https://api.whatsapp.com/send/?phone=60193867863&text=Say+hello%21&type=phone_number&app_absent=0"><i
+                    class="fa-brands fa-whatsapp"></i> WhatsApp Us Here</a>
+            <p style="color: var(--body-gray); margin-bottom: 10px;">For more inquiries, please leave a message below.
+            </p>
+            <form class="contact-form" id="feedbackForm" autocomplete="off">
+                <input type="text" id="fname" name="fname" placeholder="Full name" required>
+                <input type="email" id="fmail" name="fmail" placeholder="Email" required>
+                <input type="tel" id="fphone" name="fphone" placeholder="Phone">
+                <textarea id="feedback" name="feedback" placeholder="Message" required></textarea>
+                <button class="submit-btn" type="submit">Submit Message</button>
+                <p id="error-message" aria-live="assertive"></p>
             </form>
         </div>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1992.050360287958!2d101.6032468!3d3.067749!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4c8f5d98b46d%3A0xed55e2cca5c2d394!2sSunway%20University!5e0!3m2!1sen!2smy!4v1752021026547!5m2!1sen!2smy"
-            width="100%" min-height="200px" height="300px" style="border:0;" allowfullscreen="" loading="lazy" alt
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-
+    <iframe class="contact-map"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1992.050360287958!2d101.6032468!3d3.067749!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4c8f5d98b46d%3A0xed55e2cca5c2d394!2sSunway%20University!5e0!3m2!1sen!2smy!4v1752021026547!5m2!1sen!2smy"
+        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Sunway University Location"></iframe>
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -275,7 +471,7 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="packages.html">Packages</a></li>
@@ -285,7 +481,8 @@
                 <h4>Stay up to date</h4>
                 <p>Subscribe now and get the latest news!</p>
                 <form>
-                    <input type="email" placeholder="Email" required><br />
+                    <input class="input-subscription" type="email" placeholder="Email" required
+                        aria-label="Newsletter Email"><br />
                     <label><input type="checkbox"> Are you an existing customer?</label><br />
                     <button type="submit">Subscribe</button>
                 </form>
@@ -293,30 +490,33 @@
         </div>
     </footer>
     <script>
-        function validateTextArea() { //function for validating the form 
-
-            const textarea = document.getElementById("feedback"); // get element so you can read its value
-            const errorMessage = document.getElementById("error-message");
-            const value = textarea.value.trim(); // read the textarea value
-            const email = document.getElementById("fmail")
-
-            if (value.length == 0) { // checking the form text 
-                document.getElementById("feedbackForm").addEventListener('submit', function (event) { event.preventDefault() }); // prevent the page from reloading to display the error msg
-                errorMessage.textContent = "Feedback cannot be empty.";
-                textarea.focus();
-            } else if (value.length < 10) {
-                document.getElementById("feedbackForm").addEventListener('submit', function (event) { event.preventDefault() }); // prevent the page from reloading to display the error msg
-                errorMessage.textContent = "Feedback must be at least 10 characters";
-                textarea.focus();
+        document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+            var name = document.getElementById("fname").value.trim();
+            var email = document.getElementById("fmail").value.trim();
+            var phone = document.getElementById("fphone").value.trim();
+            var feedback = document.getElementById("feedback").value.trim();
+            var errorMessage = document.getElementById("error-message");
+            if (name.length === 0) {
+                event.preventDefault();
+                errorMessage.textContent = "Full name cannot be empty.";
+                document.getElementById("fname").focus();
+            } else if (email.length === 0) {
+                event.preventDefault();
+                errorMessage.textContent = "Email cannot be empty.";
+                document.getElementById("fmail").focus();
+            } else if (feedback.length === 0) {
+                event.preventDefault();
+                errorMessage.textContent = "Message cannot be empty.";
+                document.getElementById("feedback").focus();
+            } else if (feedback.length < 10) {
+                event.preventDefault();
+                errorMessage.textContent = "Message must be at least 10 characters.";
+                document.getElementById("feedback").focus();
+            } else {
+                errorMessage.textContent = "";
+                alert("Message submitted!");
             }
-            else {
-                document.getElementById("feedbackForm").addEventListener('submit', function () {
-                    errorMessage.textContent = "";
-                    alert("Feedback submitted!");
-                });
-            }
-        }
-
+        });
     </script>
 </body>
 
