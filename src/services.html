@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Herculean Fitness | Services</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!--<link rel="stylesheet" href="website.css"> one day... -->
     <!-- maybe i will use these one day
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -42,7 +43,7 @@
         }
 
         /* Styling for the main content's layout */
-        .first-section, .benefit-section, .third-section, .sessions-section {
+        .first-section, .benefit-section, .third-section, .highlight-section {
             padding: 40px 13%;
             margin-bottom: 40px;
         }
@@ -58,9 +59,31 @@
             flex-wrap: wrap;
             margin-bottom: 60px;
         }
-        .sessions-section {
-            display: flex;
-        }
+.highlight-section {
+    background-color: #eaf4fb;
+}
+.highlight-section h1 {
+    font-weight: bold;
+    font-size:  38px;
+}
+.highlight-card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 60px 13%;
+}
+.explore-section {
+  padding: 60px 10%;
+  background-color: #1f2f4d;
+  color: #e0f4ff;
+  text-align: center;
+}
+
+.explore-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
 
 
     @media (max-width: 768px) {
@@ -85,20 +108,7 @@
 }
 
 /******** TEMPORARY *********/
-footer {
-    background-color: rgb(34, 34, 34);
-    color: rgb(164, 203, 240);
-    padding: 20px 100px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
 /* Elements of Header styling */
-#logo {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: xx-large;
-    float: left;
-    width: 15%;
-    margin-left: 10%;
-}
 nav button {
     float: right;
 }
@@ -143,40 +153,110 @@ img {
     font-size: 1.1rem;
     line-height: 1.6;
 }
-.small-card {
-    width: 200px;
-    background-color: #0f5888;
-    color: aliceblue;
-    border-left: 3px solid #15263b;
-    border-radius: 4px;
-    margin: 10px 20px;
-    padding: 10px;
-}
-.small-card p, .small-card a {
-    font-size: small;
-}
-.small-card-image {
-    width: 200px;
-    height: auto;
-}
+/* Small Card Container */
 .small-card-holder {
-    margin: 0px;
-    padding: 0px;
+  width: 100%;
+  max-width: 260px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
 }
+
+.small-card-holder:hover {
+  transform: translateY(-5px);
+}
+
+/* Image Styling */
+.small-card-holder img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  border-radius: 0px;
+}
+
+/* Card Content */
+.small-card {
+  background-color: #0f5888;
+  color: #e0f4ff;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.small-card h3 {
+  margin: 5px 0;
+  font-size: 1.05rem;
+  color: #ffffff;
+}
+
+.small-card p {
+  font-size: 0.9rem;
+  color: #d0eaff;
+}
+
+.small-card a {
+  font-size: 0.85rem;
+  color: #aee2ff;
+  text-decoration: underline;
+  align-self: flex-start;
+  transition: color 0.3s ease;
+}
+
+.small-card a:hover {
+  color: #ffffff;
+}
+
+.class-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.class-card {
+  background-color: #0f5888;
+  color: white;
+  border-radius: 8px;
+  width: 260px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.class-card:hover {
+  box-shadow: 0 9px 18px rgba(0, 0, 0, 0.4);
+}
+
+.class-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.class-card h3 {
+  margin: 15px;
+  font-size: 1.25rem;
+}
+
+.class-card p {
+  margin: 0 15px 20px;
+  font-size: 0.95rem;
+  color: #d0eaff;
+}
+
+.class-card a:hover {
+    color: #aee2ff;
+}
+
 
 /* Semantic Elements styles */
-header {
-    background-color: #15263b;
-    color: rgb(164, 203, 240);
-    padding: 20px 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-
-    position: sticky;
-    top: 0px;
-}
 main {
     /*color: rgb(34, 34, 34);*/
     color: rgb(31, 49, 150);
@@ -190,13 +270,17 @@ main {
 </head>
 <body>
     <header>
-        <a href="homepage.html"><h4 id="logo">Logo here</h4></a>
+        <div class="logo">Herculean Gym</div>
         <nav>
-            <a href="services.html">Services</a> - <a href="packages.html">Packages</a> - <a href="about.html">About Us</a> - <a href="contact.html">Contact Us</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="packages.html">Packages</a></li>
+            </ul>
         </nav>
-        <div class="signup-login">
-           <a href="signup.html">Sign Up</a><span>/</span><a href="login.html">Log In</a>
-        </div>
+        <a href="login.html" class="join-btn">Sign In</a>
     </header>
     
     <main>
@@ -222,11 +306,11 @@ main {
             <img src="../asset/personal-trainer-1-compressor.jpg" alt="person training" class="" height="300">
         </div>
 
-        <div class="sessions-section">
+        <div class="highlight-section">
+        <h1>Highlights:</h1>
+        <div class="highlight-card-list">
             <div class="small-card-holder">
-                <div>
-                        <!--image here-->
-                </div>
+                <img src="../asset/30_gym.jpg" alt="">
                 <div class="small-card">
                     <p>Combat your way to tougher body</p>
                     <h3>Martial Arts Combat</h3>
@@ -234,9 +318,7 @@ main {
                 </div>
             </div>
             <div class="small-card-holder">
-                <div>
-                        <!--image here-->
-                </div>
+                <img src="../asset/action-athlete-barbell-841130.jpg" alt="">
                 <div class="small-card">
                     <p>Hone your muscles</p>
                     <h3>Strength Training</h3>
@@ -244,9 +326,7 @@ main {
                 </div>
             </div>
             <div class="small-card-holder">
-                <div>
-                    <!--image here-->
-                </div>
+                <img src="../asset/Gym-full-HD.jpg" alt="">
                 <div class="small-card">
                     <p>Flex your body and mind</p>
                     <h3>Yoga Flex</h3>
@@ -254,9 +334,7 @@ main {
                 </div>
             </div>
             <div class="small-card-holder">
-                <div>
-                    <!--image here-->
-                </div>
+                <img src="../asset/personal-trainer-1-compressor.jpg" alt="">
                 <div class="small-card">
                     <p>Soaring through</p>
                     <h3>Athletic Cycling</h3>
@@ -264,65 +342,69 @@ main {
                 </div>
             </div>
         </div>
-
-        <div class="benefit-section">
-            <h2>All Services Available:</h2>
-            <table class="service-table">
-                <tr>
-                    <th>Service</th>
-                    <th>Basic</th>
-                    <th>Pro</th>
-                    <th>Olympic</th>
-                </tr>
-                <tr>
-                    <td>Gym Access</td>
-                    <td>✓</td>
-                    <td>✓</td>
-                    <td>✓</td>
-                </tr>
-                <tr>
-                    <td>Personalized Training Sessions</td>
-                    <td>✕</td>
-                    <td>✓</td>
-                    <td>✓</td>
-                </tr>
-                <tr>
-                    <td>Reschedule Sessions</td>
-                    <td>✕</td>
-                    <td>✓</td>
-                    <td>✓</td>
-                </tr>
-                <tr>
-                    <td>Choice of Personal Trainer</td>
-                    <td>✕</td>
-                    <td>✕</td>
-                    <td>✓</td>
-                </tr>
-                <tr>
-                    <td>Free Fitness Assessments</td>
-                    <td>✕</td>
-                    <td>✕</td>
-                    <td>✓</td>
-                </tr>
-                
-                <tr>
-                    <td>No. of Sessions (per month)</td>
-                    <td>5</td>
-                    <td>14</td>
-                    <td>25</td>
-                </tr>
-            </table>
         </div>
+
+        <section class="explore-section">
+            <h2>Explore Our Classes</h2>
+            <div class="class-grid">
+                <div class="class-card">
+                    <img src="../asset/yoga-class.jpg" alt="Yoga Class">
+                    <h3>Morning Yoga</h3>
+                    <p>Start your day with relaxing stretches and breathing techniques.</p>
+                    <a href="#">View Class</a>
+                </div>
+                <div class="class-card">
+                    <img src="../asset/boxing.jpg" alt="Boxing">
+                    <h3>Boxing Bootcamp</h3>
+                    <p>High-intensity cardio mixed with strength and endurance training.</p>
+                    <a href="#">View Class</a>
+                </div>
+                <div class="class-card">
+                    <img src="../asset/spinning.jpg" alt="Spin Class">
+                    <h3>Spin Class</h3>
+                    <p>Get your heart pumping with high-energy indoor cycling sessions.</p>
+                    <a href="#">View Class</a>
+                </div>
+                <div class="class-card">
+                    <img src="../asset/hiit.jpg" alt="HIIT">
+                    <h3>HIIT Burn</h3>
+                    <p>Short bursts of max-effort exercises followed by quick rests.</p>
+                    <a href="#">View Class</a>
+                </div>
+            </div>
+        </section>
 
         <div class="third-section">
             <p>For packages, go to the <a href="packages.html">Packages</a> page.</p>
         </div>
     </main>
 
-    <footer>
-        <!--more detailed navigation section-->
-        <!--Social Media links-->
-        <small>Copyright (C) 2025 Herculean Fitness inc. All Rights Reserved</small>
-    </footer>
+    <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="logo">Herculean Gym</div>
+        <p>&copy; 2025 Herculean Gym. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="packages.html">Packages</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Stay up to date</h4>
+        <p>Subscribe now and get the latest news!</p>
+        <form>
+          <input type="email" placeholder="Email" required><br/>
+          <label><input type="checkbox"> Are you an existing customer?</label><br/>
+          <button type="submit" style="color: aliceblue;">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
