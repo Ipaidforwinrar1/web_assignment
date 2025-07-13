@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herculean Fitness | Packages & Memberships</title>
+
+    <link href="style.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Reset (optional) -->
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <style>
+        :root {
+            --primary-colour: #1f3196;
+            --background-colour: #f0f7ff;
+            --lite-color: #5785b1;
+            --regular-color: #2e2a2a;
+            --premium-color: #ac4830;
+        }
+
+        .hero-video {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+        }
+
+        .hero-video video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-tint {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 100;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 10vh;
+            left: 2.5vw;
+            color: white;
+            z-index: 200;
+        }
+
+        .hero-overlay h1 {
+            margin: 0;
+            font-size: 3.5em;
+            line-height: 1.1;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-overlay h2 {
+            letter-spacing: 3px;
+            font-size: 1.2em;
+            margin-bottom: 1.5em;
+        }
+
+        .hero-overlay p {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #e0f0ff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        }
+
+        .free-trial {
+            gap: 1.5rem;
+            margin-top: 1rem
+        }
+
+        .btn {
+            color: white;
+            cursor: pointer;
+            background-color: #0052a3;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease, box-shadow 0.2s ease-in-out;
+            border: none;
+            font-weight: 600;
+        }
+
+        .btn a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .btn a:visited {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #003d7a;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 82, 163, 0.3);
+        }
+
+        .join-now-button {
+            margin-top: 1.5rem;
+            padding: 0.75em 2em;
+            font-size: 1rem;
+            border-radius: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .stats-section {
+            justify-content: space-around;
+            padding: 40px 10%;
+            text-align: center;
+            background: linear-gradient(to bottom, #b0cdfc, var(--background-colour));
+        }
+
+        .stat-box {
+            flex: 1 1 220px;
+            margin: 30px 20px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s ease;
+        }
+
+        .stat-box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--primary-colour);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #444;
+            font-weight: 600;
+        }
+
+        .packages-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            /* background: var(--background-colour); */
+            background: linear-gradient(to bottom, var(--background-colour), white);
+
+        }
+
+        .packages-heading {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-colour);
+        }
+
+        .selectors {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .selector-group {
+            display: flex;
+            background: #f0f0f0;
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        .selector-group button {
+            margin: 0px;
+        }
+
+        .selector {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-colour);
+            transition: background-color 0.3s;
+        }
+
+        .selector.active {
+            background-color: var(--primary-colour);
+            color: white;
+        }
+
+        .small-note {
+            display: block;
+            font-size: 0.7rem;
+            color: #44c926;
+            margin-top: 0.2rem;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .package-card {
+            border-radius: 5px;
+            width: 350px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-top img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-top h2 {
+            margin: 1rem 0;
+            color: var(--primary-colour);
+            font-size: 1.5rem;
+        }
+
+        .card-bottom {
+            padding: 1rem;
+            background: #f9f9f9;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .purchase-btn {
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+
+        .features-table-section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .features-heading {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-colour);
+        }
+
+        .features-table {
+            margin: 0 auto;
+            max-width: 80%;
+        }
+
+        .features-table table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .features-table th,
+        .features-table td {
+            padding: 1rem;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .features-table thead th {
+            font-weight: 700;
+        }
+
+        .features-table th.lite {
+            font-size: large;
+            color: var(--lite-color);
+            padding-bottom: 0;
+        }
+
+        .features-table th.regular {
+            font-size: large;
+            color: #2e2a2a;
+            padding-bottom: 0;
+        }
+
+        .features-table th.premium {
+            font-size: large;
+            color: #ac4830;
+            padding-bottom: 0;
+        }
+
+        .features-table td:first-child {
+            text-align: left;
+        }
+
+        .category-separator td {
+            font-weight: bold;
+            text-align: left;
+            padding-top: 1.5rem;
+            color: #444;
+            border-bottom: 1px solid #777;
+            font-size: 1.05rem;
+        }
+
+        .tooltip {
+            position: relative;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            background-color: #444;
+            color: #fff;
+            text-align: left;
+            border-radius: 5px;
+            padding: 8px 10px;
+            position: absolute;
+            z-index: 100;
+            top: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: max-content;
+            min-width: 160px;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            white-space: normal;
+            max-width: 220px;
+        }
+
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .free-trial-section {
+            background: #f5f8ff;
+            padding: 4em 2.5em;
+        }
+
+        .free-trial-section h2 {
+            text-align: left;
+            font-size: 2.5em;
+            color: var(--primary-colour);
+            margin-bottom: 1.5em;
+        }
+
+        .free-trial-section h3 {
+            font-size: 1.5rem;
+            color: var(--primary-colour);
+            margin-bottom: 0.5rem;
+        }
+
+        .free-trial-section p {
+            font-size: 1.1rem;
+            color: var(--primary-colour);
+            margin-bottom: 2rem;
+        }
+
+        .contact-btn {
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .trial-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .trial-text {
+            flex: 1 1 300px;
+            max-width: 400px;
+        }
+
+        .carousel-container {
+            flex: 1 1 500px;
+            max-width: 700px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 100%;
+            animation: slideFullImages 18s infinite;
+            animation-play-state: running;
+        }
+
+        .carousel-container:hover .carousel-track {
+            animation-play-state: paused;
+        }
+
+        .carousel-track img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border-radius: 10px;
+        }
+
+        @keyframes slideFullImages {
+
+            0%,
+            8% {
+                transform: translateX(0);
+            }
+
+            16%,
+            24% {
+                transform: translateX(-100%);
+            }
+
+            32%,
+            40% {
+                transform: translateX(-200%);
+            }
+
+            48%,
+            56% {
+                transform: translateX(-300%);
+            }
+
+            64%,
+            72% {
+                transform: translateX(-400%);
+            }
+
+            80%,
+            88% {
+                transform: translateX(-500%);
+            }
+
+            96%,
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Herculean Gym</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="packages.html">Packages</a></li>
+            </ul>
+        </nav>
+        <button class="join-btn" onclick="window.location.href='login.html'">Sign In</button>
+    </header>
+
+    <main>
+        <section class="hero-video">
+            <video autoplay muted loop playsinline>
+                <source src="resources/packages_hero_video.mp4" type="video/mp4">
+                Your browser doesn&apos;t support the video tag.
+            </video>
+            <div class="video-tint"></div>
+            <div class="hero-overlay">
+                <h2 style="margin-bottom: 2em;">Memberships</h2>
+                <h1>BECOME</h1>
+                <h1>THE BEST VERSION</h1>
+                <h1>OF YOURSELF</h1>
+                <div class="flex-container free-trial">
+                    <p>Start a 7-day FREE trial<br><small>*T&Cs apply</small></p>
+                    <button class="btn join-now-button">Join Now</button>
+                </div>
+            </div>
+        </section>
+        <hr style="height: 3px; background-color: var(--primary-colour); border: none;">
+        <!-- Statistics section -->
+        <section class="flex-container stats-section" id="stats">
+            <div class="stat-box">
+                <div class="stat-number" data-target="18">0</div>
+                <div class="stat-label">Fully Equipped Gyms</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" data-target="100000" data-format="k" data-plus="true">0</div>
+                <div class="stat-label">Loyal Members</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" data-target="22">0</div>
+                <div class="stat-label">Brand Partners</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" data-target="2000" data-plus="true">0</div>
+                <div class="stat-label">Monthly Classes</div>
+            </div>
+        </section>
+
+        <!-- Packages -->
+        <section class="packages-section">
+            <h1 class="packages-heading">Discover our packages</h1>
+
+            <div class="selectors">
+                <div class="selector-group" id="type-selector">
+                    <button class="selector active" data-type="individual">Individual</button>
+                    <button class="selector" data-type="business">Business</button>
+                </div>
+                <div class="selector-group" id="duration-selector">
+                    <button class="selector active" data-duration="monthly">Monthly</button>
+                    <button class="selector" data-duration="quarterly">
+                        Quarterly<span class="small-note">Save up to 10%</span>
+                    </button>
+                    <button class="selector" data-duration="yearly">
+                        Yearly <span class="small-note">Save up to 16%</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="card-container">
+                <div class="package-card" data-plan="lite">
+                    <div class="card-top">
+                        <img src="resources/gym_lite.jpg" alt="Lite Plan">
+                        <h2>Lite</h2>
+                    </div>
+                    <div class="card-bottom">
+                        <p class="price">RM 149.99/mo</p>
+                        <p>Great for getting started<br>Ideal for beginners and teens.</p>
+                        <button class="btn purchase-btn">Select Plan</button>
+                    </div>
+                </div>
+
+                <div class="package-card" data-plan="regular">
+                    <div class="card-top">
+                        <img src="resources/gym_regular.jpeg" alt="Regular Plan">
+                        <h2>Regular</h2>
+                    </div>
+                    <div class="card-bottom">
+                        <p class="price">RM 249.99/mo</p>
+                        <p>Most loved by members<br>The perfect balance of value and variety.</p>
+                        <button class="btn purchase-btn">Select Plan</button>
+                    </div>
+                </div>
+
+                <div class="package-card" data-plan="premium">
+                    <div class="card-top">
+                        <img src="resources/gym_premium.jpg" alt="Premium Plan">
+                        <h2>Premium</h2>
+                    </div>
+                    <div class="card-bottom">
+                        <p class="price">RM 299.99/mo</p>
+                        <p>Elite package for serious goals<br>Train harder, recover smarter, achieve more.</p>
+                        <button class="btn purchase-btn">Select Plan</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-table-section">
+            <h2 class="features-heading">Compare the different perks</h2>
+            <div class="features-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="lite">Lite</th>
+                            <th class="regular">Regular</th>
+                            <th class="premium">Premium</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Access & Facilities -->
+                        <tr class="category-separator">
+                            <td colspan="4">Access & Facilities</td>
+                        </tr>
+                        <tr>
+                            <td>24/7 Access</td>
+                            <td class="bold" style="color: var(--lite-color);">&check;</td>
+                            <td class="bold" style="color: var(--regular-color);">&check;</td>
+                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                        </tr>
+                        <tr>
+                            <td>Locker Room</td>
+                            <td class="bold" style="color: var(--lite-color);">&check;</td>
+                            <td class="bold" style="color: var(--regular-color);">&check;</td>
+                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                        </tr>
+                        <tr>
+                            <td>Free WiFi</td>
+                            <td class="bold" style="color: var(--lite-color);">&check;</td>
+                            <td class="bold" style="color: var(--regular-color);">&check;</td>
+                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                        </tr>
+                        <tr>
+                            <td>Free Parking</td>
+                            <td class="bold" style="color: var(--lite-color);"></td>
+                            <td class="bold" style="color: var(--regular-color);">&check;</td>
+                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                        </tr>
+                        <tr>
+                            <td>Access to All Gyms <span class="tooltip">&#x1F6C8;
+                                    <span class="tooltip-text">Visit our 18 different gyms in the country!</span>
+                                </span>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                        </tr>
+                        <tr class="category-separator">
+                            <td colspan="4">Wellness & Recovery</td>
+                        </tr>
+                        <tr>
+                            <td>Water Fountain</td>
+                            <td class="bold" style="color: var(--lite-color);">&check;</td>
+                            <td class="bold" style="color: var(--regular-color);">&check;</td>
+                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                        </tr>
+                        <tr>
+                            <td>Free Massage Chairs <span class="tooltip">&#x1F6C8;<span class="tooltip-text">Relaxation
+                                        chairs in rest areas.</span></span></td>
+                            <td></td>
+                            <td class="bold" style="color: var(--regular-color);">&check;</td>
+                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                        </tr>
+                        <tr>
+                            <td>Free Sauna</td>
+                            <td></td>
+                            <td class="bold" style="color: var(--regular-color);">&check;</td>
+                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                        </tr>
+
+                        <tr>
+                            <td>Free Refreshment Center</td>
+                            <td></td>
+                            <td></td>
+                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                        </tr>
+                        <tr>
+                            <td>Free Spa</td>
+                            <td></td>
+                            <td></td>
+                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                        </tr>
+
+                        <!-- Services & Support -->
+                        <tr class="category-separator">
+                            <td colspan="4">Services & Support</td>
+                        </tr>
+                        <tr>
+                            <td>Free Nutrition Consultation</td>
+                            <td></td>
+                            <td class="bold" style="color: var(--regular-color);">&check;</td>
+                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                        </tr>
+                        <tr>
+                            <td>Free Personal Trainer <span class="tooltip">&#x1F6C8;<span class="tooltip-text">1-on-1
+                                        coaching sessions with an expert.</span></span></td>
+                            <td></td>
+                            <td></td>
+                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                        </tr>
+
+                        <tr>
+                            <td>Premium Fitness App
+                                <span class="tooltip">&#x1F6C8;
+                                    <span class="tooltip-text">Take your fitness journey to the next level with the
+                                        premium package on our app.</span>
+                                </span>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+
+                        </tr>
+
+                        <!-- Community & Programs -->
+                        <tr class="category-separator">
+                            <td colspan="4">Community & Programs</td>
+                        </tr>
+                        <tr>
+                            <td>Free Gym Classes</td>
+                            <td></td>
+                            <td class="bold" style="color: var(--regular-color);">&check;</td>
+                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                        </tr>
+                        <tr>
+                            <td>Exclusive Member Events</td>
+                            <td></td>
+                            <td></td>
+                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="free-trial-section">
+            <div class="trial-content">
+                <div class="trial-text">
+                    <h2>Still Not Convinced?</h2>
+                    <h3>Start your 7-day trial</h3>
+                    <p>Experience a premium membership for <strong>FREE</strong></p>
+                    <a href="contact.html" class="btn contact-btn">Contact Us</a>
+                </div>
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <img src="resources/gym2.jpg" alt="Gym">
+                        <img src="resources/personal_trainer.jpg" alt="Personal Trainer">
+                        <img src="resources/refreshments.jpg" alt="Refreshments">
+                        <img src="resources/sauna.avif" alt="Sauna">
+                        <img src="resources/private_room.jpg" alt="Private Exercise Room">
+                        <img src="resources/gym_premium.jpg" alt="Spa">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">Herculean Gym</div>
+                <p>&copy; 2025 Herculean Gym. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Stay up to date</h4>
+                <p>Subscribe now and get the latest news!</p>
+                <form>
+                    <input type="email" placeholder="Email" required><br />
+                    <label><input type="checkbox"> Are you an existing customer?</label><br />
+                    <button type="submit" style="color: aliceblue;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const animateCounter = (el, target, formatK, addPlus) => {
+            const duration = 2000;
+            const startTime = performance.now();
+
+            const step = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                let value = Math.floor(target * progress);
+
+                if (formatK) {
+                    value = Math.floor(value / 1000) + "k";
+                }
+
+                el.innerText = addPlus && progress === 1 ? value + "+" : value;
+
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                }
+            };
+
+            requestAnimationFrame(step);
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains("visible")) {
+                    const box = entry.target;
+                    const counter = box.querySelector(".stat-number");
+
+                    const target = +counter.dataset.target;
+                    const formatK = counter.dataset.format === "k";
+                    const addPlus = counter.dataset.plus === "true";
+
+                    box.classList.add("visible");
+                    animateCounter(counter, target, formatK, addPlus);
+                }
+            });
+        }, {
+            threshold: 0.9
+        });
+
+        document.querySelectorAll(".stat-box").forEach(box => observer.observe(box));
+    </script>
+
+    <script>
+        const pricing = {
+            individual: {
+                monthly: [
+                    { price: 149.99, desc: "Great for getting started<br>Ideal for beginners and teens." },
+                    { price: 249.99, desc: "Most loved by members<br>The perfect balance of value and variety." },
+                    { price: 299.99, desc: "Elite package for serious goals<br>Train harder, recover smarter, achieve more." }
+                ],
+                quarterly: [
+                    { price: 399.99, desc: "Jumpstart your fitness journey<br>Consistency made affordable." },
+                    { price: 699.99, desc: "All-access for progress-minded<br>Classes, perks, and more." },
+                    { price: 799.99, desc: "Premium performance experience<br>Everything you need to dominate your goals." }
+                ],
+                yearly: [
+                    { price: 1499.99, desc: "Full-year foundation<br>Commit to results that last." },
+                    { price: 2499.99, desc: "Most value-packed plan<br>Train, recover, and grow without limits." },
+                    { price: 2999.99, desc: "Peak transformation tier<br>Designed for unstoppable dedication." }
+                ]
+            },
+            business: {
+                monthly: [
+                    { price: 99.99, desc: "30+ Members<br>Boost morale with team-wide fitness access." },
+                    { price: 149.99, desc: "15+ Members<br>Reward top performers with premium wellness." },
+                    { price: 199.99, desc: "5+ Members<br>Exclusive access for your executive elite." }
+                ],
+                quarterly: [
+                    { price: 249.99, desc: "30+ Members<br>Inspire collaboration through health and strength." },
+                    { price: 399.99, desc: "15+ Members<br>Show appreciation with premium perks." },
+                    { price: 499.99, desc: "5+ Members<br>Elite wellness tailored for leadership." }
+                ],
+                yearly: [
+                    { price: 999.99, desc: "30+ Members<br>Long-term investment in team well-being." },
+                    { price: 1499.99, desc: "15+ Members<br>Premium health solutions for your top talent." },
+                    { price: 1999.99, desc: "5+ Members<br>The ultimate fitness package for executives." }
+                ]
+            }
+        };
+
+        let currentType = "individual";
+        let currentDuration = "monthly";
+
+        document.querySelectorAll("#type-selector .selector").forEach(btn => {
+            btn.addEventListener("click", () => {
+                document.querySelector("#type-selector .active").classList.remove("active");
+                btn.classList.add("active");
+                currentType = btn.dataset.type;
+                updatePrices();
+            });
+        });
+
+        document.querySelectorAll("#duration-selector .selector").forEach(btn => {
+            btn.addEventListener("click", () => {
+                document.querySelector("#duration-selector .active").classList.remove("active");
+                btn.classList.add("active");
+                currentDuration = btn.dataset.duration;
+                updatePrices();
+            });
+        });
+
+        function updatePrices() {
+            const priceList = pricing[currentType][currentDuration];
+            document.querySelectorAll(".package-card").forEach((card, index) => {
+                const priceEl = card.querySelector(".price");
+                const descEl = card.querySelector(".card-bottom p:nth-of-type(2)");
+
+                card.style.opacity = 0;
+                setTimeout(() => {
+                    const plan = priceList[index];
+                    priceEl.innerText = `RM ${plan.price}/${currentDuration === 'yearly' ? 'yr' : currentDuration === 'quarterly' ? 'qtr' : 'mo'}`;
+                    descEl.innerHTML = plan.desc;
+                    card.style.opacity = 1;
+                }, 200);
+            });
+        }
+    </script>
+</body>
+
+</html>
