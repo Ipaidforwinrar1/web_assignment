@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Herculean Gym – Sign In / Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Herculean Gym | Sign In / Sign Up</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Reset -->
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
   <style>
     main {
       display: flex;
@@ -90,8 +105,8 @@
     }
   </style>
 </head>
-<body>
 
+<body>
   <!-- Header (same as homepage) -->
   <header>
     <div class="logo">Herculean Gym</div>
@@ -101,10 +116,10 @@
         <li><a href="about_us.html">About Us</a></li>
         <li><a href="contact.html">Contact Us</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="#">Packages</a></li>
+        <li><a href="packages.html">Packages</a></li>
       </ul>
     </nav>
-    <button class="join-btn" onclick="window.scrollTo(0, document.body.scrollHeight)">Sign In</button>
+    <a href="login.html" class="join-btn">Sign In</a>
   </header>
 
   <!-- Main Sign In / Sign Up -->
@@ -181,8 +196,8 @@
         <h4>Stay up to date</h4>
         <p>Subscribe now and get the latest news!</p>
         <form>
-          <input type="email" placeholder="Email" required><br/>
-          <label><input type="checkbox"> Are you an existing customer?</label><br/>
+          <input type="email" placeholder="Email" required><br />
+          <label><input type="checkbox"> Are you an existing customer?</label><br />
           <button type="submit" style="color: aliceblue;">Subscribe</button>
         </form>
       </div>
@@ -191,87 +206,88 @@
 
   <!-- JS for form toggling and validation -->
   <script>
-  function showSignUp(e) {
-    e.preventDefault();
-    document.getElementById('signInForm').style.display = 'none';
-    document.getElementById('signUpForm').style.display = 'block';
-    document.getElementById('loginMessage').innerHTML = '';
-  }
-
-  function showSignIn(e) {
-    e.preventDefault();
-    document.getElementById('signUpForm').style.display = 'none';
-    document.getElementById('signInForm').style.display = 'block';
-    document.getElementById('signupMessage').innerHTML = '';
-  }
-
-  
-  function isValidEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-  }
-
-
-  function redirectToHome() {
-    localStorage.setItem("loggedIn", "true");
-    window.location.href = "index.html";  
-  }
-
-  // Sign In Validation + Redirect
-  document.getElementById("loginForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const email = document.getElementById("signin-email").value.trim();
-    const password = document.getElementById("signin-password").value.trim();
-    const message = document.getElementById("loginMessage");
-
-    message.innerHTML = "";
-
-    if (!email || !password) {
-      message.innerHTML = "<div class='error-message'>Please enter both email and password.</div>";
-      return;
+    function showSignUp(e) {
+      e.preventDefault();
+      document.getElementById('signInForm').style.display = 'none';
+      document.getElementById('signUpForm').style.display = 'block';
+      document.getElementById('loginMessage').innerHTML = '';
     }
 
-    if (!isValidEmail(email)) {
-      message.innerHTML = "<div class='error-message'>Please enter a valid email address.</div>";
-      return;
+    function showSignIn(e) {
+      e.preventDefault();
+      document.getElementById('signUpForm').style.display = 'none';
+      document.getElementById('signInForm').style.display = 'block';
+      document.getElementById('signupMessage').innerHTML = '';
     }
 
-    // Redirect after "success"
-    message.innerHTML = "<div class='success-message'>Sign in successful! Redirecting...</div>";
-    setTimeout(redirectToHome, 1500); // delay to show message
-  });
 
-  // Sign Up Validation + Redirect
-  document.getElementById("signupForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const email = document.getElementById("signup-email").value.trim();
-    const password = document.getElementById("signup-password").value;
-    const confirmPassword = document.getElementById("confirm-password").value;
-    const message = document.getElementById("signupMessage");
-
-    message.innerHTML = "";
-
-    if (!isValidEmail(email)) {
-      message.innerHTML = "<div class='error-message'>Please enter a valid email address.</div>";
-      return;
+    function isValidEmail(email) {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
     }
 
-    if (password.length < 6) {
-      message.innerHTML = "<div class='error-message'>Password must be at least 6 characters.</div>";
-      return;
+
+    function redirectToHome() {
+      localStorage.setItem("loggedIn", "true");
+      window.location.href = "index.html";
     }
 
-    if (password !== confirmPassword) {
-      message.innerHTML = "<div class='error-message'>Passwords do not match.</div>";
-      return;
-    }
+    // Sign In Validation + Redirect
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("signin-email").value.trim();
+      const password = document.getElementById("signin-password").value.trim();
+      const message = document.getElementById("loginMessage");
 
-    // Redirect after "success"
-    message.innerHTML = "<div class='success-message'>Registration successful! Redirecting...</div>";
-    setTimeout(redirectToHome, 1500); // delay to show message
-  });
-</script>
+      message.innerHTML = "";
+
+      if (!email || !password) {
+        message.innerHTML = "<div class='error-message'>Please enter both email and password.</div>";
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        message.innerHTML = "<div class='error-message'>Please enter a valid email address.</div>";
+        return;
+      }
+
+      // Redirect after "success"
+      message.innerHTML = "<div class='success-message'>Sign in successful! Redirecting...</div>";
+      setTimeout(redirectToHome, 1500); // delay to show message
+    });
+
+    // Sign Up Validation + Redirect
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("signup-email").value.trim();
+      const password = document.getElementById("signup-password").value;
+      const confirmPassword = document.getElementById("confirm-password").value;
+      const message = document.getElementById("signupMessage");
+
+      message.innerHTML = "";
+
+      if (!isValidEmail(email)) {
+        message.innerHTML = "<div class='error-message'>Please enter a valid email address.</div>";
+        return;
+      }
+
+      if (password.length < 6) {
+        message.innerHTML = "<div class='error-message'>Password must be at least 6 characters.</div>";
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        message.innerHTML = "<div class='error-message'>Passwords do not match.</div>";
+        return;
+      }
+
+      // Redirect after "success"
+      message.innerHTML = "<div class='success-message'>Registration successful! Redirecting...</div>";
+      setTimeout(redirectToHome, 1500); // delay to show message
+    });
+  </script>
 
 
 </body>
+
 </html>
