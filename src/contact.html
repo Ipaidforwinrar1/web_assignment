@@ -14,10 +14,18 @@
             padding: 0;
         }
 
+        :root {
+            --primary-colour: #1f3196;
+            --background-colour: #f0f7ff;
+            --lite-color: #5785b1;
+            --regular-color: #2e2a2a;
+            --premium-color: #ac4830;
+        }
+
         body {
             margin: 0;
             font-family: Helvetica, sans-serif;
-            background: linear-gradient(135deg, #f7fafc 0%, #dbeafe 100%);
+            background-color: var(--background-colour);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -36,7 +44,7 @@
 
         .logo {
             font-weight: bold;
-            color: #0052a3;
+            color: var(--primary-colour);
             font-size: 24px;
         }
 
@@ -74,7 +82,7 @@
 
         /*site main content */
         .flex-container {
-            background-color: #F7FAFC;
+            background-color: var(--background-colour);
             width: 100%;
             display: flex;
             flex-wrap: wrap;
@@ -82,7 +90,7 @@
         }
 
         .item1 {
-            color: #1A202C;
+            color: var(--primary-colour);
             font-size: 1.5rem;
             text-align: center;
             padding-top: 30px;
@@ -92,7 +100,7 @@
         }
 
         .item1 a {
-            color: #1A202C;
+            color: var(--regular-color);
             font-size: 1.2rem;
         }
 
@@ -103,7 +111,7 @@
 
 
         .item2 {
-            color: #1A202C;
+            color: var(--regular-color);
             text-align: center;
             padding-top: 50px;
             min-width: 200px;
@@ -111,23 +119,26 @@
             flex-grow: 1;
         }
 
+        .item2-button {
+            background-color: var(--primary-colour);
+            color: var(--background-colour);
+            border-radius: 5px;
+            border-style: none;
+            margin-top: 10px;
+            font-size: 1.2rem;
+            padding: 10px;
+            transition: background 0.2s;
+        }
+
+        .item2-button:hover {
+            background-color: var(--lite-color);
+        }
+
         textarea {
             width: 60%;
             height: 100px;
         }
 
-        button {
-            margin: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        button:hover {
-            background: #4A5568;
-        }
 
         footer.site-footer {
             background-color: #111;
@@ -154,7 +165,12 @@
         }
 
         .footer-newsletter button {
-            background-color: #0052a3;
+            background-color: var(--primary-colour);
+            margin: 10px 0px;
+            padding: 7px 15px;
+            border-radius: 15px;
+            border-width: 4px;
+
         }
 
         .footer-newsletter button:hover {
@@ -183,13 +199,6 @@
             padding: 10px 0px;
         }
 
-        button {
-            margin: 10px 0px;
-            background-color: inherit;
-            padding: 7px 15px;
-            border-radius: 15px;
-            border-width: 4px;
-        }
 
         @media (max-width: 800px) {
             .footer-container {
@@ -216,7 +225,7 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="about_us.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="packages.html">Packages</a></li>
@@ -246,7 +255,7 @@
                 <input type="email" id="fmail" name="fmail" required /><br><br>
                 <label for="feedback">Your Feedback:</label><br><br>
                 <textarea id="feedback" name="feedback" rows="5" placeholder="type your feedback here"></textarea><br>
-                <button onclick="validateTextArea()" type="submit">Submit Now</button>
+                <button class="item2-button" onclick="validateTextArea()" type="submit">Submit Now</button>
                 <p id="error-message"></p>
             </form>
         </div>
@@ -255,6 +264,7 @@
             width="100%" min-height="200px" height="300px" style="border:0;" allowfullscreen="" loading="lazy" alt
             referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
+
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -306,6 +316,7 @@
                 });
             }
         }
+
     </script>
 </body>
 
