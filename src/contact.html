@@ -23,64 +23,56 @@
             flex-direction: column;
         }
 
-
-
+        /* header & navigation */
         header {
-            background-color: white;
-            padding: 15px 15px;
+            background-color: #ffffff;
+            padding: 15px 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             border-bottom: 1px solid #ccc;
+            flex-wrap: wrap;
         }
 
         .logo {
             font-weight: bold;
-            color: #d6001c;
-            font-size: 2rem;
-            letter-spacing: 2px;
+            color: #0052a3;
+            font-size: 24px;
         }
 
         nav ul {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
             list-style: none;
-            font-size: 1.13rem;
-            margin: 0;
-            padding: 0;
+            display: flex;
+            gap: 25px;
         }
 
         nav ul li a {
-            color: #1A202C;
             text-decoration: none;
-            padding: 6px 12px;
-            border-radius: 4px;
-            transition: background 0.2s, color 0.2s;
+            color: black;
+            font-weight: 600;
+            transition: color 0.3s, border-bottom 0.3s;
         }
 
-        nav ul li a:hover,
-        nav ul li.active a {
-            color: #fff;
-            background: #3182ce;
+        nav ul li a:hover {
+            color: #0052a3;
+            border-bottom: 2px solid #0052a3;
+            padding-bottom: 4px;
         }
 
+        /* Sign In Button */
         .join-btn {
-            background-color: #d6001c;
-            color: #fff;
-            padding: 10px 20px;
-            font-size: 1.1rem;
+            background-color: #0052a3;
+            color: white;
+            padding: 10px 16px;
             border: none;
             font-weight: bold;
             cursor: pointer;
-            border-radius: 4px;
-            transition: background 0.2s;
+            border-radius: 3px;
+            margin-top: 10px;
+            text-decoration: none;
         }
 
-        .join-btn:hover {
-            background-color: #a00015;
-        }
-
+        /*site main content */
         .flex-container {
             background-color: #F7FAFC;
             width: 100%;
@@ -137,21 +129,67 @@
             background: #4A5568;
         }
 
-        .site-footer {
-            width: 100%;
-            box-sizing: border-box;
+        footer.site-footer {
             background-color: #111;
             color: #eee;
-            padding: 0px 30px;
-
+            padding: 50px 30px;
+            font-size: 14px;
         }
 
         .footer-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
+            gap: 40px;
         }
 
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
+        .footer-links a:hover {
+            color: #0052a3;
+        }
+
+        .footer-newsletter button {
+            background-color: #0052a3;
+        }
+
+        .footer-newsletter button:hover {
+            background-color: #003d7a;
+        }
+
+        /* Form elements styling */
+        .footer-newsletter h4 {
+            font-size: 16px;
+            margin-bottom: 6px;
+            font-style: italic;
+            letter-spacing: 0.1rem;
+        }
+
+        input[type=email] {
+            background-color: inherit;
+            color: #ccc;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px 0px;
+        }
+
+        label {
+            margin: 10px 0px;
+            padding: 10px 0px;
+        }
+
+        button {
+            margin: 10px 0px;
+            background-color: inherit;
+            padding: 7px 15px;
+            border-radius: 15px;
+            border-width: 4px;
+        }
 
         @media (max-width: 800px) {
             .footer-container {
@@ -169,63 +207,6 @@
                 padding: 20px 5px;
             }
         }
-
-        .footer-links h4,
-        .footer-newsletter h4 {
-            margin-bottom: 12px;
-            color: #F7FAFC;
-            font-size: 1.2rem;
-        }
-
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 2px;
-        }
-
-        .footer-links a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.9rem;
-        }
-
-        .footer-links a:hover {
-            color: #d6001c;
-        }
-
-        .footer-newsletter input[type="email"] {
-            padding: 8px;
-            width: 100%;
-            max-width: 250px;
-            margin-top: 5px;
-            margin-bottom: 10px;
-            border: none;
-            border-radius: 4px;
-        }
-
-        .footer-newsletter label {
-            display: block;
-            margin-bottom: 10px;
-            color: #bbb;
-        }
-
-        .footer-newsletter button {
-            background-color: #d6001c;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            font-weight: bold;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .footer-newsletter button:hover {
-            background-color: #a00015;
-        }
     </style>
 </head>
 
@@ -235,10 +216,10 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li class="active"><a href="about_us.html">Contact Us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Packages</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="packages.html">Packages</a></li>
             </ul>
         </nav>
         <button class="join-btn" onclick="window.location.href='login.html'">Sign In</button>
@@ -277,7 +258,7 @@
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <h1 class="logo">Herculean Gym</h1>
+                <div class="logo">Herculean Gym</div>
                 <p>&copy; 2025 Herculean Gym. All rights reserved.</p>
             </div>
             <div class="footer-links">
@@ -294,16 +275,11 @@
                 <h4>Stay up to date</h4>
                 <p>Subscribe now and get the latest news!</p>
                 <form>
-                    <input type="email" placeholder="Email" required />
-                    <br />
-                    <label>
-                        <input type="checkbox" /> Are you an existing customer?
-                    </label>
-                    <br />
+                    <input type="email" placeholder="Email" required><br />
+                    <label><input type="checkbox"> Are you an existing customer?</label><br />
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
-        </div>
         </div>
     </footer>
     <script>
