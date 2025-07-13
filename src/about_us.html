@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Herculean Gym</title>
     <style>
-        html, body {
+        html,
+        body {
             height: 100%;
             margin: 0;
             padding: 0;
         }
+
         body {
             background: #dbeafe;
             font-family: Helvetica, Arial, sans-serif;
@@ -17,278 +20,314 @@
             flex-direction: column;
             min-height: 100vh;
         }
+
         header {
-            background-color: #fff;
-            padding: 18px 24px;
+            background-color: #ffffff;
+            padding: 15px 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid #e2e8f0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border-bottom: 1px solid #ccc;
+            flex-wrap: wrap;
         }
+
         .logo {
             font-weight: bold;
-            color: #d6001c;
-            font-size: 2.1rem;
-            letter-spacing: 2px;
+            color: #0052a3;
+            font-size: 24px;
         }
+
         nav ul {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
             list-style: none;
-            font-size: 1.13rem;
-            margin: 0;
-            padding: 0;
+            display: flex;
+            gap: 25px;
         }
+
         nav ul li a {
-            color: #1A202C;
             text-decoration: none;
-            padding: 6px 12px;
-            border-radius: 4px;
-            transition: background 0.2s, color 0.2s;
+            color: black;
+            font-weight: 600;
+            transition: color 0.3s, border-bottom 0.3s;
         }
-        nav ul li a:hover, nav ul li.active a {
-            color: #fff;
-            background: #3182ce;
+
+        nav ul li a:hover {
+            color: #0052a3;
+            border-bottom: 2px solid #0052a3;
+            padding-bottom: 4px;
         }
+
+        /* Sign In Button */
         .join-btn {
-            background-color: #d6001c;
-            color: #fff;
-            padding: 10px 20px;
-            font-size: 1.1rem;
+            background-color: #0052a3;
+            color: white;
+            padding: 10px 16px;
             border: none;
             font-weight: bold;
             cursor: pointer;
-            border-radius: 4px;
-            transition: background 0.2s;
+            border-radius: 3px;
+            margin-top: 10px;
         }
-        .join-btn:hover {
-            background-color: #a00015;
+
+        /* Back to Top Button */
+        #backToTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            background-color: #0052a3;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 12px 16px;
+            border-radius: 50%;
+            display: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
-        main {
-            flex: 1 0 auto;
-            width: 100%;
+
+        #backToTopBtn:hover {
+            background-color: #003d7a;
         }
+
+
+
         section {
-            color: #1A202C;
             padding: 36px 0 20px 0;
         }
-        h1, h2 {
+
+        h1,
+        h2 {
             text-align: center;
 
         }
+
         h1 {
             font-size: 2rem;
-            color: #26326f;
-            margin-bottom: 12px;
+            color: black;
+
         }
+
         h2 {
             font-size: 1.3rem;
             color: #3751b5;
             font-weight: 600;
             margin-bottom: 30px;
         }
+
         .our-story {
-            background: rgba(255,255,255,0.8);
             margin: 0 auto;
-            max-width: 700px;
+            max-width: 1000px;
             border-radius: 12px;
-            padding: 24px 30px;
+            padding: 5px 30px;
             text-align: justify;
             font-size: 1.08rem;
             line-height: 1.7;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
+
+        .our-story p {
+            line-height: 2.4rem;
+        }
+
         .flex-container {
             width: 100%;
             margin: 0 auto;
+            max-width: 70vw;
             background: none;
-            color: #1A202C;
             padding-top: 26px;
         }
+
         .flex-container h1 {
             margin-bottom: 38px;
-            color: #26326f;
         }
+
         .team-flex {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
             gap: 38px;
             margin: 0 auto 60px auto;
         }
+
         .member {
-            background: #fff;
+            background: white;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-            flex-basis: 250px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+            flex-basis: 400px;
             flex-grow: 1;
-            max-width: 340px;
+            max-width: 800px;
             min-width: 220px;
             text-align: center;
             padding: 28px 16px;
             margin-bottom: 0;
             transition: box-shadow 0.2s, transform 0.2s;
         }
+
         .member:hover {
-            box-shadow: 0 6px 20px rgba(49,130,206,0.13);
+            box-shadow: 0 6px 20px rgba(49, 130, 206, 0.13);
             transform: translateY(-6px) scale(1.03);
         }
+
         .member img {
             width: 90px;
             height: 90px;
             object-fit: cover;
             border-radius: 50%;
             margin-bottom: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.11);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.11);
         }
+
         .member p {
             font-size: 0.98rem;
             line-height: 1.5rem;
             color: #26326f;
             margin-top: 0;
         }
+
         /* Footer styles */
-        .site-footer {
-            width: 100%;
-            box-sizing: border-box;
+        footer.site-footer {
             background-color: #111;
             color: #eee;
-            padding: 20px 50px;
-
+            padding: 50px 30px;
+            font-size: 14px;
         }
 
         .footer-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
-        }
-
- 
-        .footer-links h4,
-        .footer-newsletter h4 {
-            margin-bottom: 12px;
-            color: #F7FAFC;
-            font-size: 1.2rem;
-        }
-
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 2px;
+            gap: 40px;
         }
 
         .footer-links a {
             color: #ccc;
             text-decoration: none;
             transition: color 0.3s;
-            font-size: 0.9rem;
         }
 
         .footer-links a:hover {
-            color: #d6001c;
-        }
-
-        .footer-newsletter input[type="email"] {
-            padding: 8px;
-            width: 100%;
-            max-width: 250px;
-            margin-top: 5px;
-            margin-bottom: 10px;
-            border: none;
-            border-radius: 4px;
-        }
-
-        .footer-newsletter label {
-            display: block;
-            margin-bottom: 10px;
-            color: #bbb;
+            color: #0052a3;
         }
 
         .footer-newsletter button {
-            background-color: #d6001c;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            font-weight: bold;
-            border-radius: 4px;
-            cursor: pointer;
+            background-color: #0052a3;
         }
 
         .footer-newsletter button:hover {
-            background-color: #a00015;
+            background-color: #003d7a;
         }
+
+        /* Form elements styling */
+        .footer-newsletter h4 {
+            font-size: 16px;
+            margin-bottom: 6px;
+            font-style: italic;
+            letter-spacing: 0.1rem;
+        }
+
+        input[type=email] {
+            background-color: inherit;
+            color: #ccc;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px 0px;
+        }
+
+        label {
+            margin: 10px 0px;
+            padding: 10px 0px;
+        }
+
+        button {
+            margin: 10px 0px;
+            background-color: inherit;
+            padding: 7px 15px;
+            border-radius: 15px;
+            border-width: 4px;
+        }
+
         /* Responsive styles */
         @media (max-width: 1200px) {
+
             .team-flex,
             .footer-container {
                 max-width: 990px;
             }
         }
+
         @media (max-width: 900px) {
+
             .team-flex,
             .footer-container {
-                max-width: 700px;
+                max-width: 90vw;
             }
+
             .our-story {
-                max-width: 92vw;
+                max-width: 80vw;
                 padding: 18px 10px;
             }
         }
+
         @media (max-width: 800px) {
             .team-flex {
                 flex-direction: column;
-                margin: 0 8px 36px 8px;
+
                 gap: 22px;
                 align-items: center;
             }
+
             .member {
-                max-width: 96vw;
+                max-width: 80vw;
                 min-width: 0;
             }
+
             .footer-container {
                 flex-direction: column;
                 text-align: center;
                 gap: 24px;
                 padding: 20px 0 10px 0;
             }
+
             .footer-brand,
             .footer-links,
             .footer-newsletter {
                 min-width: 0;
             }
+
             .site-footer {
                 padding: 16px 5px;
             }
+
             nav ul {
                 gap: 12px;
                 font-size: 1rem;
             }
         }
+
         @media (max-width: 500px) {
             header {
                 flex-direction: column;
                 align-items: flex-start;
                 padding: 10px 5px;
             }
+
             nav ul {
                 flex-direction: column;
                 gap: 7px;
                 padding: 0;
                 margin: 7px 0 0 0;
             }
+
             .join-btn {
                 margin-top: 6px;
             }
+
             .our-story {
                 padding: 8px 2vw;
             }
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="logo">Herculean Gym</div>
@@ -309,31 +348,21 @@
             <h2>What brings us here</h2>
             <div class="our-story">
                 <p>
-                    Once I was seven years old, my mama told me,
-                    Go hit that playground, run hard, make friends and keep it healthy.
-                    Once I was seven years old.
-                </p>
-                <p>
-                    It was a big, big world, but I got even bigger,
-                    Started with some push-ups, now my bench is getting slicker.
-                    By eleven years old, my friends and I would race,
-                    Who could run the fastest, who would finish in first place?
-                </p>
-                <p>
-                    Once I was eleven years old, my daddy told me,
-                    Go lift those weights, stay strong, and eat your protein.
-                    Once I was eleven years old.
-                </p>
-                <p>
-                    I always had that dream, just like my coach before me,
-                    So I started training early, kept that motivation on me.
-                    By twenty years old, I hit my first 10K,
-                    Running through the city, nothing standing in my way.
-                </p>
-                <p>
-                    Soon I'll be thirty years old, still running every morning,
-                    My body's feeling strong, and my energy's still soaring.
-                    Soon I'll be thirty years old.
+Once upon a time, in a bustling city, there were two strangers named Alex and Jamie. Both shared a passion for fitness, but their paths had never crossed—until one rainy Monday evening at a local gym.
+
+Alex was wrapping up his workout when he noticed Jamie struggling with her deadlift form. He approached with a friendly smile and offered some tips. Jamie appreciated the advice, and soon they found themselves chatting about their favorite exercises, fitness goals, and the frustrations of overcrowded gyms.
+
+Over the next few weeks, Alex and Jamie became workout buddies. They motivated each other, shared routines, and laughed through every drop of sweat. Their friendship grew stronger with every session, but they also noticed they weren’t alone in their complaints about the gym’s lack of space and outdated equipment.
+
+One day, sitting together after a tough workout, Jamie turned to Alex and said, “What if we opened our own gym? One where people like us could feel at home.”
+
+Alex’s eyes lit up. He’d always dreamed of creating a space where fitness enthusiasts could thrive. Together, they began planning—brainstorming ideas, visiting other gyms, and even surveying fellow gym-goers for input.
+
+They combined their savings, found a small warehouse, and poured their hearts into transforming it. Alex handled the equipment and layout, while Jamie focused on building a welcoming community. They called their new venture “Lift & Connect”—a place where everyone could find fitness and friendship.
+
+Lift & Connect quickly became more than just a gym; it was a family. Alex and Jamie’s partnership showed that when two people meet by chance, share a passion, and work together, they can build something truly special.
+
+And it all started with a simple act of kindness—and a shared love for lifting.
                 </p>
             </div>
         </section>
@@ -343,9 +372,12 @@
                 <div class="member">
                     <img src="images_pang/bombardiro-crocodilo.webp" alt="Bombardiro Crocodilo">
                     <p>
-                        Bombardiro Crocodilo refers to a series of brainrot-style AI videos and memes of an anthropomorphic
-                        crocodile military bomber plane narrated by a male Italian text-to-speech voice that rhymes words
-                        similar to the Bitcoin Burger IbraTV French meme. The meme started in mid-February 2025 on TikTok,
+                        Bombardiro Crocodilo refers to a series of brainrot-style AI videos and memes of an
+                        anthropomorphic
+                        crocodile military bomber plane narrated by a male Italian text-to-speech voice that rhymes
+                        words
+                        similar to the Bitcoin Burger IbraTV French meme. The meme started in mid-February 2025 on
+                        TikTok,
                         spawning other anthropomorphic characters, such as Bombombini Gusini, following the same rhyming
                         text-to-speech soundbite jokes.
                     </p>
@@ -353,7 +385,8 @@
                 <div class="member">
                     <img src="images_pang/brr-brr-patapim.webp" alt="Brr Brr Patapim">
                     <p>
-                        Brr Brr Patapim refers to an AI-generated Italian Brainrot character that's a hybrid between a tree
+                        Brr Brr Patapim refers to an AI-generated Italian Brainrot character that's a hybrid between a
+                        tree
                         forest and a monkey with large feet. The meme became popular on TikTok and YouTube in late March
                         2025. Brr Brr Patapim was often powerscaled against Tung Tung Tung Sahur which was a similar
                         brainrot character but from Indonesian meme creators. Other Italian Brainrot characters like
@@ -363,15 +396,22 @@
                 <div class="member">
                     <img src="images_pang/tung-tung-tung-sahur.webp" alt="Tung Tung Tung Sahur">
                     <p>
-                        Tung Tung Tung Sahur is a series of brainrot-style AI videos and memes of an anthropomorphic wooden
-                        creature holding a baseball bat alongside an Indonesian voice-over. The meme is part of a series of
-                        brainrot memes from early 2025 in which a male Italian text-to-speech voice presents viewers with
-                        fantastical AI-generated creatures, like Bombardiro Crocodilo (an anthropomorphic crocodile military
+                        Tung Tung Tung Sahur is a series of brainrot-style AI videos and memes of an anthropomorphic
+                        wooden
+                        creature holding a baseball bat alongside an Indonesian voice-over. The meme is part of a series
+                        of
+                        brainrot memes from early 2025 in which a male Italian text-to-speech voice presents viewers
+                        with
+                        fantastical AI-generated creatures, like Bombardiro Crocodilo (an anthropomorphic crocodile
+                        military
                         bomber plane) and Tralalero Tralala (a shark wearing Nike shoes). Tung Tung Tung Sahur was often
                         powerscaled against Brr Brr Patapim (a monkey creature covered in trees and moss). Similar
-                        Indonesian brainrot characters like Hotspot Bro trended during the same timeframe. The meme may have
-                        been inspired by French Bitcoin Burger IbraTV videos with a similar text-to-speech word association
-                        style. In Indonesian and Malaysian culture, a large double-headed drum called a "bedug" is employed
+                        Indonesian brainrot characters like Hotspot Bro trended during the same timeframe. The meme may
+                        have
+                        been inspired by French Bitcoin Burger IbraTV videos with a similar text-to-speech word
+                        association
+                        style. In Indonesian and Malaysian culture, a large double-headed drum called a "bedug" is
+                        employed
                         to signal prayer times and, during Ramadan, to announce Suhoor. "Tung tung tung" is onomatopoeia
                         made to resemble the sound of the drum.
                     </p>
@@ -380,45 +420,45 @@
                     <img src="images_pang/tralalero-tralala.webp" alt="Tralalero Tralala">
                     <p>
                         Tralalero Tralala (rarely "Tralalelo Tralala") (Italian: Trallallero Trallallà) is one of the
-                        original italian brainrot animals. He has a son, Merdardo, who is friends with Zip Zip Gnoccolino.
+                        original italian brainrot animals. He has a son, Merdardo, who is friends with Zip Zip
+                        Gnoccolino.
                         He was considered brother in arms by Libyan dictator, Muammar Gaddaffi. He also met Benito
-                        Mussolini. He has a son, Merdardo, who is friends with Zip Zip Gnoccolino. He was considered brother
+                        Mussolini. He has a son, Merdardo, who is friends with Zip Zip Gnoccolino. He was considered
+                        brother
                         in arms by Libyan dictator, Muammar Gaddaffi. He also met Benito Mussolini.
                     </p>
                 </div>
             </div>
         </div>
     </main>
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h1 class="logo">Herculean Gym</h1>
-                <p>&copy; 2025 Herculean Gym. All rights reserved.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Packages</a></li>
-                </ul>
-            </div>
-            <div class="footer-newsletter">
-                <h4>Stay up to date</h4>
-                <p>Subscribe now and get the latest news!</p>
-                <form>
-                    <input type="email" placeholder="Email" required />
-                    <br />
-                    <label>
-                        <input type="checkbox" /> Are you an existing customer?
-                    </label>
-                    <br />
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-    </footer>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="logo">Herculean Gym</div>
+        <p>&copy; 2025 Herculean Gym. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="packages.html">Packages</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Stay up to date</h4>
+        <p>Subscribe now and get the latest news!</p>
+        <form>
+          <input type="email" placeholder="Email" required><br/>
+          <label><input type="checkbox"> Are you an existing customer?</label><br/>
+          <button type="submit" style="color: aliceblue;">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
 </body>
+
 </html>
