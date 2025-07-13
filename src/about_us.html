@@ -186,64 +186,67 @@
         }
 
         /* Footer styles */
-footer.site-footer {
-  background-color: #111;
-  color: #eee;
-  padding: 50px 30px;
-  font-size: 14px;
-}
+        footer.site-footer {
+            background-color: #111;
+            color: #eee;
+            padding: 50px 30px;
+            font-size: 14px;
+        }
 
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
-}
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
 
-.footer-links a {
-  color: #ccc;
-  text-decoration: none;
-  transition: color 0.3s;
-}
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-.footer-links a:hover {
-  color: #0052a3;
-}
+        .footer-links a:hover {
+            color: #0052a3;
+        }
 
-.footer-newsletter button {
-  background-color: #0052a3;
-}
+        .footer-newsletter button {
+            background-color: #0052a3;
+        }
 
-.footer-newsletter button:hover {
-  background-color: #003d7a;
-}
+        .footer-newsletter button:hover {
+            background-color: #003d7a;
+        }
 
-/* Form elements styling */
-.footer-newsletter h4 {
-  font-size: 16px;
-  margin-bottom: 6px;
-  font-style: italic;
-  letter-spacing: 0.1rem;
-}
-input[type=email] {
-  background-color: inherit;
-  color: #ccc;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  padding: 10px;
-  margin: 10px 0px;
-}
-label {
-  margin: 10px 0px;
-  padding: 10px 0px;
-}
-button {
-  margin: 10px 0px;
-  background-color: inherit;
-  padding: 7px 15px;
-  border-radius: 15px;
-  border-width: 4px;
-}
+        /* Form elements styling */
+        .footer-newsletter h4 {
+            font-size: 16px;
+            margin-bottom: 6px;
+            font-style: italic;
+            letter-spacing: 0.1rem;
+        }
+
+        input[type=email] {
+            background-color: inherit;
+            color: #ccc;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px 0px;
+        }
+
+        label {
+            margin: 10px 0px;
+            padding: 10px 0px;
+        }
+
+        button {
+            margin: 10px 0px;
+            background-color: inherit;
+            padding: 7px 15px;
+            border-radius: 15px;
+            border-width: 4px;
+        }
 
         /* Responsive styles */
         @media (max-width: 1200px) {
@@ -272,7 +275,7 @@ button {
                 align-items: center;
             }
 
-          
+
 
             .footer-container {
                 flex-direction: column;
@@ -429,6 +432,8 @@ button {
             </div>
         </div>
     </main>
+    <button onclick="scrollToTop()" id="backToTopBtn" title="Back to Top">↑</button>
+
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -456,7 +461,16 @@ button {
             </div>
         </div>
     </footer>
+    <script>
+        window.onscroll = function () {
+            const btn = document.getElementById("backToTopBtn");
+            btn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+        };
 
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 
 </html>
