@@ -57,6 +57,7 @@ nav ul li a:hover {
   cursor: pointer;
   border-radius: 3px;
   margin-top: 10px;
+  text-decoration: none;
 }
 
 /* Back to Top Button */
