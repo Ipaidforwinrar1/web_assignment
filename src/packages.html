@@ -490,14 +490,26 @@
         <div class="logo">Herculean Gym</div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about_us.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="packages.html" class="active">Packages</a></li>
+                <li><a href="packages.html">Packages</a></li>
             </ul>
         </nav>
-        <a href="login.html" class="join-btn">Sign In</a>
+        <div class="user-dropdown" id="userDropdown" style="display: none;">
+            <button id="userBtn" class="user-btn">
+                <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="20"
+                    style="margin-right: 8px;">
+                <span id="userName">User</span>
+            </button>
+            <div class="dropdown-menu" id="dropdownMenu" style="display: none;">
+                <a href="#">My Profile</a>
+                <a href="#" onclick="logout()">Log Out</a>
+            </div>
+        </div>
+
+        <a href="login.html" class="join-btn" id="signInLink">Sign In</a>
     </header>
 
     <main>
@@ -905,6 +917,7 @@
             });
         }
     </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

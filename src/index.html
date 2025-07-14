@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HERCULEAN GYM</title>
   <link rel="stylesheet" href="style.css">
   <style>
@@ -189,6 +190,7 @@
     }
 
     @media screen and (max-width: 768px) {
+
       .text-box h1,
       .text-box h2 {
         font-size: 28px;
@@ -207,31 +209,32 @@
     }
   </style>
 </head>
+
 <body>
   <header>
-        <div class="logo">Herculean Gym</div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about_us.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="packages.html">Packages</a></li>
-            </ul>
-        </nav>
-        <div class="user-dropdown" id="userDropdown" style="display: none;">
-  <button id="userBtn" class="user-btn">
-    <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="20" style="margin-right: 8px;">
-    <span id="userName">User</span>
-  </button>
-  <div class="dropdown-menu" id="dropdownMenu" style="display: none;">
-    <a href="profile.html">My Profile</a>
-    <a href="#" onclick="logout()">Log Out</a>
-  </div>
-</div>
+    <div class="logo">Herculean Gym</div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about_us.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="packages.html">Packages</a></li>
+      </ul>
+    </nav>
+    <div class="user-dropdown" id="userDropdown" style="display: none;">
+      <button id="userBtn" class="user-btn">
+        <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="20" style="margin-right: 8px;">
+        <span id="userName">User</span>
+      </button>
+      <div class="dropdown-menu" id="dropdownMenu" style="display: none;">
+        <a href="#">My Profile</a>
+        <a href="#" onclick="logout()">Log Out</a>
+      </div>
+    </div>
 
-<a href="login.html" class="join-btn" id="signInLink">Sign In</a>
-    </header>
+    <a href="login.html" class="join-btn" id="signInLink">Sign In</a>
+  </header>
 
 
   <section class="home">
@@ -285,7 +288,8 @@
     <div class="testimonial-cards">
       <div class="testimonial-box">
         <img src="./resources/client1.jpeg" alt="Happy Customer">
-        <p>"Joining Herculean Gym changed my life especially with the help of their various coaches. The energy here is unmatched!"</p>
+        <p>"Joining Herculean Gym changed my life especially with the help of their various coaches. The energy here is
+          unmatched!"</p>
       </div>
       <div class="testimonial-box">
         <img src="./resources/client2.png" alt="Happy Customer">
@@ -324,8 +328,8 @@
         <h4>Stay up to date</h4>
         <p>Subscribe now and get the latest news!</p>
         <form>
-          <input type="email" placeholder="Email" required><br/>
-          <label><input type="checkbox"> Are you an existing customer?</label><br/>
+          <input type="email" placeholder="Email" required><br />
+          <label><input type="checkbox"> Are you an existing customer?</label><br />
           <button type="submit" style="color: aliceblue;">Subscribe</button>
         </form>
       </div>
@@ -345,7 +349,7 @@
     changeBackground();
     setInterval(changeBackground, 4000);
 
-    window.onscroll = function() {
+    window.onscroll = function () {
       const btn = document.getElementById("backToTopBtn");
       btn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
     };
@@ -356,4 +360,5 @@
   </script>
   <script src="script.js"></script>
 </body>
+
 </html>
