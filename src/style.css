@@ -61,8 +61,6 @@ nav ul li a:hover {
 }
 nav ul li a.active {
   color: #0052a3;
-  border-bottom: 2px solid #0052a3;
-  padding-bottom: 4px;
 }
 
 /* Back to Top Button */
