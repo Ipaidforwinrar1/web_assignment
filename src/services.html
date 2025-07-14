@@ -11,7 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     -->
     <style>
-        /* Styling for table */
+        /* Styling for table - deprecated?? */
         .service-table {
             width: 100%;
             margin-top: 20px;
@@ -21,12 +21,6 @@
             padding: 15px;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        /*.service-table td:nth-child(3), .service-table th:nth-child(3) {
-            background-color: rgb(7, 78, 140);
-        }
-        .service-table td:nth-child(4), .service-table th:nth-child(4) {
-            background-color: rgb(5, 96, 175);
-        }*/
         .service-table th, .service-table td {
             padding: 15px;
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -58,214 +52,227 @@
             flex-wrap: wrap;
             margin-bottom: 60px;
         }
-.highlight-section {
-    background-color: #eaf4fb;
-}
-.highlight-section h1 {
-    font-weight: bold;
-    font-size:  38px;
-}
-.highlight-card-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  padding: 60px 13%;
-}
-.explore-section {
-  padding: 60px 10%;
-  background-color: #1f2f4d;
-  color: #e0f4ff;
-  text-align: center;
-}
-
-.explore-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #ffffff;
-}
-
-
-    @media (max-width: 768px) {
-        header, .first-section, footer {
-            padding: 20px;
+        .highlight-section {
+            background-color: #eaf4fb;
+        }
+        .highlight-section h1 {
+            font-weight: bold;
+            font-size:  38px;
+        }
+        .highlight-card-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            padding: 60px 13%;
+        }
+        .explore-section {
+            padding: 60px 10%;
+            background-color: #1f2f4d;
+            color: #e0f4ff;
             text-align: center;
         }
-
-        .first-section {
-            flex-direction: column;
-            align-items: center;
+        .explore-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #ffffff;
         }
 
-        nav {
-            flex-direction: column;
-            gap: 10px;
+        /* Responsive layout */
+        @media (max-width: 768px) {
+            header, .first-section, footer {
+                padding: 20px;
+                text-align: center;
+            }
+            .first-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .signup-login {
+                justify-content: center;
+            }
         }
 
+        /******** TEMPORARY *********/
+        /* Elements of Header styling */
+        /*
+        nav button {
+            float: right;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+        main a:hover {
+            color: #0f5888;
+            text-decoration: underline;
+        }
+        header a:hover {
+            color: #9797e7;
+            text-decoration: underline;
+        }
         .signup-login {
-            justify-content: center;
+            display: flex;
+            gap: 10px;
+            font-size: 0.95rem;
         }
-}
+        img {
+            border-radius: 8px;
+        }
+        /* Card styles */
+        .card {
+            background-color: rgb(5, 77, 140);
+            color: rgb(164, 203, 240);
+            border-radius: 6px;
+            padding: 30px;
+            max-width: 500px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: rgb(217, 240, 254);
+        }
+        .card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        /* Small Card Container */
+        .small-card-holder {
+            width: 100%;
+            max-width: 260px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .small-card-holder:hover {
+            transform: translateY(-5px);
+        }
+        /* Image Styling */
+        .small-card-holder img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+            border-radius: 0px;
+        }
+        /* Card Content */
+        .small-card {
+            background-color: #0f5888;
+            color: #e0f4ff;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .small-card h3 {
+            margin: 5px 0;
+            font-size: 1.05rem;
+            color: #ffffff;
+        }
+        .small-card p {
+            font-size: 0.9rem;
+            color: #d0eaff;
+        }
+        .small-card a {
+            font-size: 0.85rem;
+            color: #aee2ff;
+            text-decoration: underline;
+            align-self: flex-start;
+            transition: color 0.3s ease;
+        }
+        .small-card a:hover {
+            color: #ffffff;
+        }
 
-/******** TEMPORARY *********/
-/* Elements of Header styling */
-nav button {
-    float: right;
-}
-a {
-    color: inherit;
-    text-decoration: none;
-    font-family: inherit;
-    transition: 0.3s;
-}
-main a:hover {
-    color: #0f5888;
-    text-decoration: underline;
-}
-header a:hover {
-    color: #9797e7;
-    text-decoration: underline;
-}
-.signup-login {
-    display: flex;
-    gap: 10px;
-    font-size: 0.95rem;
-}
-img {
-    border-radius: 8px;
-}
-/* Card styles */
-.card {
-    background-color: rgb(5, 77, 140);
-    color: rgb(164, 203, 240);
-    border-radius: 6px;
-    padding: 30px;
-    max-width: 500px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card h1 {
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-    color: rgb(217, 240, 254);
-}
-.card p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-/* Small Card Container */
-.small-card-holder {
-  width: 100%;
-  max-width: 260px;
-  background-color: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.small-card-holder:hover {
-  transform: translateY(-5px);
-}
-
-/* Image Styling */
-.small-card-holder img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  display: block;
-  border-radius: 0px;
-}
-
-/* Card Content */
-.small-card {
-  background-color: #0f5888;
-  color: #e0f4ff;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.small-card h3 {
-  margin: 5px 0;
-  font-size: 1.05rem;
-  color: #ffffff;
-}
-
-.small-card p {
-  font-size: 0.9rem;
-  color: #d0eaff;
-}
-
-.small-card a {
-  font-size: 0.85rem;
-  color: #aee2ff;
-  text-decoration: underline;
-  align-self: flex-start;
-  transition: color 0.3s ease;
-}
-
-.small-card a:hover {
-  color: #ffffff;
-}
-
-.class-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-.class-card {
-  background-color: #0f5888;
-  color: white;
-  border-radius: 8px;
-  width: 260px;
-  overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.class-card:hover {
-  box-shadow: 0 9px 18px rgba(0, 0, 0, 0.4);
-}
-
-.class-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  display: block;
-}
-
-.class-card h3 {
-  margin: 15px;
-  font-size: 1.25rem;
-}
-
-.class-card p {
-  margin: 0 15px 20px;
-  font-size: 0.95rem;
-  color: #d0eaff;
-}
-
-.class-card a:hover {
-    color: #aee2ff;
-}
-
-
-/* Semantic Elements styles */
-main {
-    /*color: rgb(34, 34, 34);*/
-    color: rgb(31, 49, 150);
-    min-height: 90%;
-    font-size: x-large;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 0px 0px;
-    padding: 0px;
-}
+        /* Explore Classes Section */
+        .class-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .class-card {
+            background-color: #0f5888;
+            color: white;
+            border-radius: 8px;
+            width: 260px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .class-card:hover {
+            box-shadow: 0 9px 18px rgba(0, 0, 0, 0.4);
+        }
+        .class-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+        }
+        .class-card h3 {
+            margin: 15px;
+            font-size: 1.25rem;
+        }
+        .class-card p {
+            margin: 0 15px 20px;
+            font-size: 0.95rem;
+            color: #d0eaff;
+        }
+        .class-card a:hover {
+            color: #aee2ff;
+        }
+        
     </style>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const userData = JSON.parse(localStorage.getItem("users")) || [];
+    const currentEmail = localStorage.getItem("loggedInUser");
+    const loggedIn = localStorage.getItem("loggedIn") === "true";
+
+    if (loggedIn && currentEmail) {
+      const user = userData.find(u => u.email === currentEmail);
+      if (user) {
+        document.getElementById("signInLink").style.display = "none";
+        document.getElementById("userDropdown").style.display = "inline-block";
+        document.getElementById("userName").textContent = user.firstName || "User";
+      }
+    }
+
+   
+    const userBtn = document.getElementById("userBtn");
+    const dropdown = document.getElementById("dropdownMenu");
+
+    if (userBtn && dropdown) {
+      userBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+      });
+
+      window.addEventListener("click", function (e) {
+        if (!userBtn.contains(e.target)) {
+          dropdown.style.display = "none";
+        }
+      });
+    }
+  });
+
+  function logout() {
+    localStorage.removeItem("loggedIn");
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "login.html";
+  }
+</script>
 </head>
 <body>
     <header>
@@ -279,7 +286,17 @@ main {
                 <li><a href="packages.html">Packages</a></li>
             </ul>
         </nav>
-        <a href="login.html" class="join-btn">Sign In</a>
+        <div class="user-dropdown" id="userDropdown" style="display: none;">
+            <button id="userBtn" class="user-btn">
+                <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="20" style="margin-right: 8px;">
+                <span id="userName">User</span>
+            </button>
+            <div class="dropdown-menu" id="dropdownMenu" style="display: none;">
+                <a href="profile.html">My Profile</a>
+                <a href="#" onclick="logout()">Log Out</a>
+            </div>
+        </div>
+        <a href="login.html" class="join-btn" id="signInLink">Sign In</a>
     </header>
     
     <main>
@@ -306,41 +323,41 @@ main {
         </div>
 
         <div class="highlight-section">
-        <h1>Highlights:</h1>
-        <div class="highlight-card-list">
-            <div class="small-card-holder">
-                <img src="../asset/30_gym.jpg" alt="">
-                <div class="small-card">
-                    <p>Combat your way to tougher body</p>
-                    <h3>Martial Arts Combat</h3>
-                    <a href="#">View Session Details</a>
+            <h1>Highlights:</h1>
+            <div class="highlight-card-list">
+                <div class="small-card-holder">
+                    <img src="../asset/30_gym.jpg" alt="">
+                    <div class="small-card">
+                        <p>Combat your way to tougher body</p>
+                        <h3>Martial Arts Combat</h3>
+                        <a href="#">View Session Details</a>
+                    </div>
+                </div>
+                <div class="small-card-holder">
+                    <img src="../asset/action-athlete-barbell-841130.jpg" alt="">
+                    <div class="small-card">
+                        <p>Hone your muscles</p>
+                        <h3>Strength Training</h3>
+                        <a href="#">View Session Details</a>
+                    </div>
+                </div>
+                <div class="small-card-holder">
+                    <img src="../asset/Gym-full-HD.jpg" alt="">
+                    <div class="small-card">
+                        <p>Flex your body and mind</p>
+                        <h3>Yoga Flex</h3>
+                        <a href="#">View Session Details</a>
+                    </div>
+                </div>
+                <div class="small-card-holder">
+                    <img src="../asset/personal-trainer-1-compressor.jpg" alt="">
+                    <div class="small-card">
+                        <p>Soaring through</p>
+                        <h3>Athletic Cycling</h3>
+                        <a href="#">View Session Details</a>
+                    </div>
                 </div>
             </div>
-            <div class="small-card-holder">
-                <img src="../asset/action-athlete-barbell-841130.jpg" alt="">
-                <div class="small-card">
-                    <p>Hone your muscles</p>
-                    <h3>Strength Training</h3>
-                    <a href="#">View Session Details</a>
-                </div>
-            </div>
-            <div class="small-card-holder">
-                <img src="../asset/Gym-full-HD.jpg" alt="">
-                <div class="small-card">
-                    <p>Flex your body and mind</p>
-                    <h3>Yoga Flex</h3>
-                    <a href="#">View Session Details</a>
-                </div>
-            </div>
-            <div class="small-card-holder">
-                <img src="../asset/personal-trainer-1-compressor.jpg" alt="">
-                <div class="small-card">
-                    <p>Soaring through</p>
-                    <h3>Athletic Cycling</h3>
-                    <a href="#">View Session Details</a>
-                </div>
-            </div>
-        </div>
         </div>
 
         <section class="explore-section">
@@ -379,31 +396,31 @@ main {
     </main>
 
     <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <div class="logo">Herculean Gym</div>
-        <p>&copy; 2025 Herculean Gym. All rights reserved.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="packages.html">Packages</a></li>
-        </ul>
-      </div>
-      <div class="footer-newsletter">
-        <h4>Stay up to date</h4>
-        <p>Subscribe now and get the latest news!</p>
-        <form>
-          <input type="email" placeholder="Email" required><br/>
-          <label><input type="checkbox"> Are you an existing customer?</label><br/>
-          <button type="submit" style="color: aliceblue;">Subscribe</button>
-        </form>
-      </div>
-    </div>
-  </footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">Herculean Gym</div>
+                <p>&copy; 2025 Herculean Gym. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Stay up to date</h4>
+                <p>Subscribe now and get the latest news!</p>
+                <form>
+                    <input type="email" placeholder="Email" required><br/>
+                    <label><input type="checkbox"> Are you an existing customer?</label><br/>
+                    <button type="submit" style="color: aliceblue;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
