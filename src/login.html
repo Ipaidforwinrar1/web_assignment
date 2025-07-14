@@ -110,12 +110,52 @@
     input[type="date"] {
       color: black;
     }
+
+    .user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.user-btn {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 1000;
+   width: 120px;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #0052a3;
+  font-weight: bold;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f2f2f2;
+}
+
     
   </style>
 </head>
 
 <body>
-  <!-- Header (same as homepage) -->
+  
   <header>
     <div class="logo">Herculean Gym</div>
     <nav>
@@ -127,7 +167,20 @@
         <li><a href="packages.html">Packages</a></li>
       </ul>
     </nav>
-    <a href="login.html" class="join-btn">Sign In</a>
+    
+    <div class="user-dropdown" id="userDropdown" style="display: none;">
+ <button id="userBtn" class="user-btn">
+  <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="20" style="margin-right: 8px;">
+  <span id="userName">User</span>
+</button>
+  <div class="dropdown-menu" id="dropdownMenu" style="display: none;">
+    <a href="profile.html">My Profile</a>
+    <a href="#" onclick="logout()">Log Out</a>
+  </div>
+</div>
+
+<a href="login.html" class="join-btn" id="signInLink">Sign In</a>
+
   </header>
 
   <!-- Main Sign In / Sign Up -->
@@ -265,7 +318,10 @@ const matchedUser = users.find(user => user.email === email && user.password ===
 if (matchedUser) {
   message.innerHTML = "<div class='success-message'>Sign in successful! Redirecting...</div>";
   localStorage.setItem("loggedIn", "true");
+  localStorage.setItem("loggedInUser", email);
+  localStorage.setItem("loggedInUserFirstName", matchedUser.firstName); // ✅ Add this line
   setTimeout(redirectToHome, 1500);
+
 } else {
   message.innerHTML = "<div class='error-message'>Invalid email or password.</div>";
 }
@@ -305,13 +361,58 @@ if (existingUser) {
   return;
 }
 
-users.push({ email, password });
+const firstName = document.getElementById("first-name").value.trim();
+users.push({ email, password, firstName });
 localStorage.setItem("users", JSON.stringify(users));
+localStorage.setItem("loggedIn", "true");
+localStorage.setItem("loggedInUser", email);
+localStorage.setItem("loggedInUserFirstName", firstName);
 
 // Redirect after success
 message.innerHTML = "<div class='success-message'>Registration successful! Redirecting...</div>";
 setTimeout(redirectToHome, 1500);
     });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const userData = JSON.parse(localStorage.getItem("users")) || [];
+  const currentEmail = localStorage.getItem("loggedInUser");
+  const loggedIn = localStorage.getItem("loggedIn") === "true";
+
+  if (loggedIn && currentEmail) {
+    const user = userData.find(u => u.email === currentEmail);
+    if (user) {
+      document.getElementById("signInLink").style.display = "none";
+      document.getElementById("userDropdown").style.display = "inline-block";
+      document.getElementById("userName").textContent = user.firstName || "User";
+    }
+  }
+
+  // Toggle dropdown menu
+  const userBtn = document.getElementById("userBtn");
+  const dropdown = document.getElementById("dropdownMenu");
+  if (userBtn) {
+    userBtn.addEventListener("click", () => {
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    });
+
+    // Close menu if clicked outside
+    window.addEventListener("click", function (e) {
+      if (!userBtn.contains(e.target)) {
+        dropdown.style.display = "none";
+      }
+    });
+  }
+});
+
+// Log out function
+function logout() {
+  localStorage.removeItem("loggedIn");
+  localStorage.removeItem("loggedInUser");
+  localStorage.removeItem("loggedInUserFirstName");
+  window.location.href = "login.html";
+}
+
   </script>
 
 
