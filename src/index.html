@@ -219,7 +219,18 @@
                 <li><a href="packages.html">Packages</a></li>
             </ul>
         </nav>
-        <a href="login.html" class="join-btn">Sign In</a>
+        <div class="user-dropdown" id="userDropdown" style="display: none;">
+  <button id="userBtn" class="user-btn">
+    <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="20" style="margin-right: 8px;">
+    <span id="userName">User</span>
+  </button>
+  <div class="dropdown-menu" id="dropdownMenu" style="display: none;">
+    <a href="profile.html">My Profile</a>
+    <a href="#" onclick="logout()">Log Out</a>
+  </div>
+</div>
+
+<a href="login.html" class="join-btn" id="signInLink">Sign In</a>
     </header>
 
 
