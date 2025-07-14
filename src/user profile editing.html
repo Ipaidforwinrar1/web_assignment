@@ -1,0 +1,97 @@
+<!-- Replace the current sign-in button in the header with the following HTML. -->
+<div class="user-dropdown" id="userDropdown" style="display: none;">
+  <button id="userBtn" class="user-btn">
+    <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="20" style="margin-right: 8px;">
+    <span id="userName">User</span>
+  </button>
+  <div class="dropdown-menu" id="dropdownMenu" style="display: none;">
+    <a href="profile.html">My Profile</a>
+    <a href="#" onclick="logout()">Log Out</a>
+  </div>
+</div>
+
+<a href="login.html" class="join-btn" id="signInLink">Sign In</a>
+
+<!-- Add inside a <style> tag in the <head>,-->
+
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.user-btn {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  color: black; /* Change to black */
+  font-size: 16px; /* Adjust size */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 1000;
+  width: 180px; /* Adjust width as needed */
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #0052a3;
+  font-weight: bold;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f2f2f2;
+}
+
+<!-- Add This JavaScript Before </body> in script on Every Page -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const userData = JSON.parse(localStorage.getItem("users")) || [];
+    const currentEmail = localStorage.getItem("loggedInUser");
+    const loggedIn = localStorage.getItem("loggedIn") === "true";
+
+    if (loggedIn && currentEmail) {
+      const user = userData.find(u => u.email === currentEmail);
+      if (user) {
+        document.getElementById("signInLink").style.display = "none";
+        document.getElementById("userDropdown").style.display = "inline-block";
+        document.getElementById("userName").textContent = user.firstName || "User";
+      }
+    }
+
+   
+    const userBtn = document.getElementById("userBtn");
+    const dropdown = document.getElementById("dropdownMenu");
+
+    if (userBtn && dropdown) {
+      userBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+      });
+
+      window.addEventListener("click", function (e) {
+        if (!userBtn.contains(e.target)) {
+          dropdown.style.display = "none";
+        }
+      });
+    }
+  });
+
+  function logout() {
+    localStorage.removeItem("loggedIn");
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "login.html";
+  }
+</script>
