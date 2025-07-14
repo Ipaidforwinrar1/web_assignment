@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Herculean Gym | Sign In / Sign Up</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Google Fonts -->
+  
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
 
-  <!-- CSS Reset -->
+ 
   <style>
     *,
     *::before,
@@ -103,6 +103,14 @@
     .success-message {
       color: green;
     }
+
+    input[type="email"],
+    input[type="text"],
+    input[type="password"],
+    input[type="date"] {
+      color: black;
+    }
+    
   </style>
 </head>
 
@@ -250,9 +258,17 @@
         return;
       }
 
-      // Redirect after "success"
-      message.innerHTML = "<div class='success-message'>Sign in successful! Redirecting...</div>";
-      setTimeout(redirectToHome, 1500); // delay to show message
+      // Check if user exists
+let users = JSON.parse(localStorage.getItem("users")) || [];
+const matchedUser = users.find(user => user.email === email && user.password === password);
+
+if (matchedUser) {
+  message.innerHTML = "<div class='success-message'>Sign in successful! Redirecting...</div>";
+  localStorage.setItem("loggedIn", "true");
+  setTimeout(redirectToHome, 1500);
+} else {
+  message.innerHTML = "<div class='error-message'>Invalid email or password.</div>";
+}
     });
 
     // Sign Up Validation + Redirect
@@ -280,9 +296,21 @@
         return;
       }
 
-      // Redirect after "success"
-      message.innerHTML = "<div class='success-message'>Registration successful! Redirecting...</div>";
-      setTimeout(redirectToHome, 1500); // delay to show message
+      // Store user
+let users = JSON.parse(localStorage.getItem("users")) || [];
+const existingUser = users.find(user => user.email === email);
+
+if (existingUser) {
+  message.innerHTML = "<div class='error-message'>Email already exists. Try signing in.</div>";
+  return;
+}
+
+users.push({ email, password });
+localStorage.setItem("users", JSON.stringify(users));
+
+// Redirect after success
+message.innerHTML = "<div class='success-message'>Registration successful! Redirecting...</div>";
+setTimeout(redirectToHome, 1500);
     });
   </script>
 
