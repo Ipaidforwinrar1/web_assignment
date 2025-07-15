@@ -59,11 +59,13 @@ nav ul li a:hover {
   margin-top: 10px;
   text-decoration: none;
 }
+
 nav ul li a.active {
   color: #0052a3;
   border-bottom: none;
   padding-bottom: 0;
 }
+
 .user-dropdown {
   position: relative;
   display: inline-block;
@@ -73,8 +75,10 @@ nav ul li a.active {
   background-color: transparent;
   border: none;
   font-weight: bold;
-  color: black; /* Change to black */
-  font-size: 16px; /* Adjust size */
+  color: black;
+  /* Change to black */
+  font-size: 16px;
+  /* Adjust size */
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -85,11 +89,12 @@ nav ul li a.active {
   top: 120%;
   right: 0;
   background-color: white;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   overflow: hidden;
   z-index: 1000;
-  width: 180px; /* Adjust width as needed */
+  width: 180px;
+  /* Adjust width as needed */
 }
 
 .dropdown-menu a {
@@ -165,6 +170,7 @@ footer.site-footer {
   font-style: italic;
   letter-spacing: 0.1rem;
 }
+
 input[type=email] {
   background-color: inherit;
   color: #ccc;
@@ -173,10 +179,12 @@ input[type=email] {
   padding: 10px;
   margin: 10px 0px;
 }
+
 label {
   margin: 10px 0px;
   padding: 10px 0px;
 }
+
 button {
   margin: 10px 0px;
   background-color: inherit;
@@ -194,8 +202,10 @@ button {
   background-color: transparent;
   border: none;
   font-weight: bold;
-  color: black; /* Change to black */
-  font-size: 16px; /* Adjust size */
+  color: black;
+  /* Change to black */
+  font-size: 16px;
+  /* Adjust size */
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -206,11 +216,12 @@ button {
   top: 120%;
   right: 0;
   background-color: white;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   overflow: hidden;
   z-index: 1000;
-  width: 180px; /* Adjust width as needed */
+  width: 180px;
+  /* Adjust width as needed */
 }
 
 .dropdown-menu a {
@@ -242,4 +253,31 @@ button {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+.btn {
+  display: inline-block;
+  color: white;
+  cursor: pointer;
+  background-color: #0052a3;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease, box-shadow 0.2s ease-in-out;
+  border: none;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.btn a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #003d7a;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.3);
 }
