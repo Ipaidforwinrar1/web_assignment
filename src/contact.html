@@ -15,13 +15,15 @@
             --heading-dark: #22304e;
             --accent-orange: #ea5e2a;
             --body-gray: #31435a;
-            --contact-left-bg: var(--main-bg);
+            --contact-left-bg: linear-gradient(135deg, #eef2fa 0%, #f8faff 100%);
             --contact-right-bg: #fff;
             --input-border: #b8c7e7;
             --input-bg: #f7faff;
             --input-focus: var(--main-blue);
             --link-blue: #0052a3;
             --icon-gray: #222;
+            --card-shadow: 0 8px 32px rgba(34, 88, 164, 0.15);
+            --hover-shadow: 0 12px 48px rgba(34, 88, 164, 0.2);
         }
 
         * {
@@ -32,6 +34,46 @@
             font-weight: 500;
         }
 
+        /* Hero Section */
+        .contact-hero {
+            background: linear-gradient(135deg, var(--main-blue) 0%, var(--main-blue-dark) 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><polygon points="0,0 1000,100 1000,0"/></svg>');
+            background-size: cover;
+        }
+
+        .contact-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
         .contact-main {
             width: 100vw;
             min-height: 80vh;
@@ -40,123 +82,280 @@
             justify-content: center;
             background: var(--main-bg);
             margin: 0;
+            padding: 60px 0;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            gap: 40px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .contact-left {
-            flex: 1.10 1 0;
+            flex: 1;
             background: var(--contact-left-bg);
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            padding: 60px 60px 60px 120px;
-            border-right: 2px solid #e2e6ed;
+            justify-content: flex-start;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: hidden;
         }
 
-        .contact-left h1 {
+        .contact-left::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 0%, rgba(234, 94, 42, 0.05) 100%);
+            pointer-events: none;
+        }
+
+        .contact-left h2 {
             color: var(--main-blue-dark);
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 18px;
+            margin-bottom: 25px;
             letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.3;
+            word-wrap: break-word;
+            padding-top: 5px;
+        }
+
+        .contact-left h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-orange), var(--main-blue));
+            border-radius: 2px;
         }
 
         .contact-left p {
             color: var(--body-gray);
-            font-size: 1.13rem;
-            margin-bottom: 26px;
-            max-width: 420px;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
         }
 
-        .contact-info {
-            margin-bottom: 22px;
-            font-size: 1.08rem;
-            color: var(--body-gray);
+        .location-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 1;
         }
 
-        .contact-info b {
-            font-weight: bold;
+        .location-section h3 {
             color: var(--main-blue-dark);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            line-height: 1.4;
+            word-wrap: break-word;
         }
 
-        .contact-info a {
+        .location-section h3 i {
+            color: var(--accent-orange);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .address-info {
+            margin-bottom: 20px;
+        }
+
+        .address-info p {
+            color: var(--body-gray);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .address-info a {
             color: var(--link-blue);
-            text-decoration: underline;
-            font-size: 1.08rem;
-            transition: color 0.2s;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
         }
 
-        .contact-info a:hover {
+        .address-info a:hover {
             color: var(--accent-orange);
         }
 
+        .contact-map {
+            width: 100%;
+            height: 250px;
+            border: none;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            filter: grayscale(0.2);
+            transition: filter 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-map:hover {
+            filter: grayscale(0);
+        }
+
         .contact-links {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
-            margin-top: 18px;
+            position: relative;
+            z-index: 1;
         }
 
         .contact-links a {
             color: var(--icon-gray);
             text-decoration: none;
-            font-size: 1.08rem;
+            font-size: 1rem;
             display: flex;
             align-items: center;
             gap: 10px;
-            transition: color 0.2s;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(184, 199, 231, 0.3);
         }
 
         .contact-links a:hover {
             color: var(--accent-orange);
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(234, 94, 42, 0.2);
+        }
+
+        .contact-links i {
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+            flex-shrink: 0;
         }
 
         .contact-right {
-            flex: 1.3 1 0;
+            flex: 1;
             background: var(--contact-right-bg);
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            padding: 60px 120px 60px 60px;
-            box-shadow: 0 2px 14px rgba(34, 88, 164, 0.03);
+            justify-content: flex-start;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: visible;
+            min-height: fit-content;
+        }
+
+        .contact-right::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(34, 88, 164, 0.03) 100%);
+            pointer-events: none;
         }
 
         .contact-right h2 {
             color: var(--accent-orange);
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            margin-bottom: 14px;
-            letter-spacing: 1px;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.3;
+            word-wrap: break-word;
+            word-break: break-word;
+            hyphens: auto;
+            padding-top: 10px;
+            overflow: visible;
         }
 
         .contact-right p {
-            font-size: 1.08rem;
+            font-size: 1.1rem;
             color: var(--body-gray);
-            margin-bottom: 18px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
         }
 
         .whatsapp-btn {
-            background: var(--accent-orange);
+            background: linear-gradient(135deg, var(--accent-orange), #ff6b35);
             color: #fff;
-            font-weight: bold;
+            font-weight: 600;
             border: none;
-            border-radius: 6px;
-            padding: 14px 0;
-            font-size: 1.13rem;
-            margin-bottom: 22px;
+            border-radius: 15px;
+            padding: 18px 20px;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
             text-align: center;
             width: 100%;
-            transition: background-color 0.4s;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             cursor: pointer;
             text-decoration: none;
-            box-shadow: 0 2px 4px rgba(234, 94, 42, 0.08);
+            box-shadow: 0 4px 15px rgba(234, 94, 42, 0.3);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            line-height: 1.4;
+            min-height: 56px;
+        }
+
+        .whatsapp-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .whatsapp-btn:hover::before {
+            left: 100%;
         }
 
         .whatsapp-btn:hover {
-            background: var(--main-blue-dark);
+            background: linear-gradient(135deg, var(--main-blue-dark), var(--main-blue));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(234, 94, 42, 0.4);
+        }
+
+        .whatsapp-btn i {
+            flex-shrink: 0;
+        }
+
+        .whatsapp-btn span {
+            word-break: break-word;
         }
 
         .contact-form {
@@ -165,80 +364,174 @@
             margin: 0;
             display: flex;
             flex-direction: column;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
         }
 
         .contact-form label {
             color: var(--main-blue-dark);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
         }
 
         .contact-form input,
         .contact-form textarea {
             width: 100%;
             box-sizing: border-box;
-            border-radius: 6px;
-            border: 1.5px solid var(--input-border);
-            padding: 15px 12px;
-            margin-bottom: 18px;
-            font-size: 1.05rem;
+            border-radius: 12px;
+            border: 2px solid var(--input-border);
+            padding: 18px 16px;
+            font-size: 1.1rem;
             background: var(--input-bg);
             color: var(--body-gray);
-            transition: border 0.2s;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .contact-form input:focus,
         .contact-form textarea:focus {
-            border: 1.5px solid var(--accent-orange);
+            border: 2px solid var(--accent-orange);
             outline: none;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(234, 94, 42, 0.1);
         }
 
         .contact-form textarea {
-            min-height: 90px;
+            min-height: 120px;
             resize: vertical;
         }
 
         .submit-btn {
-            background: var(--main-blue);
+            background: linear-gradient(135deg, var(--main-blue), var(--main-blue-dark));
             color: #fff;
-            border-radius: 6px;
+            border-radius: 12px;
             border: none;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            padding: 15px 0;
+            padding: 18px 20px;
             width: 100%;
-            margin-top: 8px;
+            margin-top: 10px;
             cursor: pointer;
-            transition: background-color 0.4s;
-            box-shadow: 0 2px 4px rgba(34, 88, 164, 0.09);
-            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(34, 88, 164, 0.3);
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            line-height: 1.4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 56px;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
         }
 
         .submit-btn:hover {
-            background: var(--accent-orange);
+            background: linear-gradient(135deg, var(--accent-orange), #ff6b35);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(34, 88, 164, 0.4);
+        }
+
+        .submit-btn i {
+            flex-shrink: 0;
+        }
+
+        .submit-btn span {
+            word-break: break-word;
         }
 
         #error-message {
             color: #ac4830;
             font-size: 1rem;
             margin: 7px 0 0 0;
+            padding: 10px;
+            background: rgba(172, 72, 48, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #ac4830;
+            display: none;
         }
 
-        .contact-map {
-            width: 100vw;
-            min-height: 220px;
-            height: 300px;
-            border: none;
-            display: block;
-            margin: 0;
-            border-radius: 0;
-            box-shadow: none;
+        /* Success Message */
+        .success-message {
+            background: linear-gradient(135deg, #4caf50, #45a049);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Floating Elements */
+        .floating-icon {
+            position: absolute;
+            color: rgba(34, 88, 164, 0.1);
+            font-size: 2rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-icon:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: -2s;
+        }
+
+        .floating-icon:nth-child(2) {
+            top: 70%;
+            right: 15%;
+            animation-delay: -4s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         /* Footer */
         footer.site-footer {
-            background-color: #111;
+            background: linear-gradient(135deg, #111, #1a1a1a);
             color: #eee;
             padding: 50px 30px;
             font-size: 14px;
+            margin-top: 0;
         }
 
         .footer-container {
@@ -259,11 +552,13 @@
         }
 
         .footer-newsletter button {
-            background-color: var(--main-blue);
+            background: linear-gradient(135deg, var(--main-blue), var(--main-blue-dark));
+            transition: all 0.3s ease;
         }
 
         .footer-newsletter button:hover {
-            background-color: var(--main-blue-dark);
+            background: linear-gradient(135deg, var(--accent-orange), #ff6b35);
+            transform: translateY(-2px);
         }
 
         .footer-newsletter h4 {
@@ -274,76 +569,393 @@
         }
 
         .input-subscription {
-            background-color: inherit;
-            color: black;
-            border: 2px solid #ccc;
-            border-radius: 4px;
-            padding: 10px;
-            margin: 10px 0px;
+            background-color: #333;
+            color: white;
+            border: 2px solid #555;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .input-subscription:focus {
+            border-color: var(--main-blue);
+            outline: none;
         }
 
         label {
-            margin: 10px 0px;
-            padding: 10px 0px;
+            margin: 10px 0;
+            padding: 10px 0;
         }
 
         button {
-            margin: 10px 0px;
+            margin: 10px 0;
             background-color: inherit;
-            padding: 7px 15px;
-            border-radius: 15px;
-            border-width: 4px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 2px solid var(--main-blue);
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
+        /* Responsive Design */
+        
+        /* Tablet Styles */
         @media (max-width: 1100px) {
-            .contact-main {
+            .contact-container {
                 flex-direction: column;
-                align-items: stretch;
-                min-height: unset;
+                gap: 30px;
+                padding: 0 30px;
             }
 
             .contact-left,
             .contact-right {
-                padding: 38px 18px;
+                padding: 40px 30px;
             }
 
-            .contact-right {
-                padding-bottom: 28px;
-            }
-        }
-
-        @media (max-width:900px) {
-            .contact-main {
-                flex-direction: column;
-                gap: 0;
-                padding: 0 0;
+            .contact-hero h1 {
+                font-size: 2.8rem;
             }
 
-            .contact-left,
-            .contact-right {
-                padding: 28px 10px 18px 10px;
+            .contact-hero p {
+                font-size: 1.2rem;
+            }
+
+            .contact-links {
+                grid-template-columns: 1fr;
             }
 
             .contact-map {
-                height: 160px;
-                margin: 0;
-                border-radius: 5px;
+                height: 200px;
             }
 
-            header {
-                flex-direction: column;
-                align-items: flex-start;
+            .contact-right h2 {
+                font-size: 2rem;
+                line-height: 1.3;
+                padding-top: 5px;
             }
 
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-                margin: 10px 0;
+            .whatsapp-btn {
+                font-size: 1.05rem;
+                padding: 16px 18px;
+            }
+
+            .submit-btn {
+                font-size: 1.05rem;
+                padding: 16px 18px;
+            }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .contact-hero {
+                padding: 50px 15px;
+            }
+
+            .contact-hero h1 {
+                font-size: 2.2rem;
+                margin-bottom: 15px;
+                letter-spacing: 1px;
+            }
+
+            .contact-hero p {
+                font-size: 1.1rem;
+                line-height: 1.5;
+            }
+
+            .contact-main {
+                padding: 30px 0;
+            }
+
+            .contact-container {
+                gap: 20px;
+                padding: 0 15px;
+            }
+
+            .contact-left,
+            .contact-right {
+                padding: 30px 20px;
+                border-radius: 15px;
+            }
+
+            .contact-left h2 {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+                line-height: 1.3;
+                word-break: break-word;
+                padding-top: 0;
+            }
+
+            .contact-right {
+                padding: 30px 20px 35px 20px;
+            }
+
+            .contact-right h2 {
+                font-size: 1.6rem;
+                margin-bottom: 20px;
+                line-height: 1.4;
+                word-break: break-word;
+                hyphens: auto;
+                padding-top: 0;
+                letter-spacing: 0.3px;
+            }
+
+            .contact-left p,
+            .contact-right p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+
+            .location-section {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .location-section h3 {
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+                line-height: 1.3;
+            }
+
+            .address-info p {
+                font-size: 1rem;
+            }
+
+            .contact-map {
+                height: 180px;
+                margin-bottom: 15px;
+            }
+
+            .contact-links {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .contact-links a {
+                padding: 15px;
+                font-size: 0.95rem;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .whatsapp-btn {
+                font-size: 1rem;
+                padding: 16px 15px;
+                margin-bottom: 25px;
+                line-height: 1.4;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            .contact-form label {
+                font-size: 0.95rem;
+                margin-bottom: 6px;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                padding: 15px 14px;
+                font-size: 1rem;
+                border-radius: 10px;
+            }
+
+            .contact-form textarea {
+                min-height: 100px;
+            }
+
+            .submit-btn {
+                font-size: 1rem;
+                padding: 16px 15px;
+                line-height: 1.4;
             }
 
             .footer-container {
                 flex-direction: column;
                 align-items: flex-start;
+                gap: 25px;
+            }
+
+            footer.site-footer {
+                padding: 30px 15px;
+            }
+
+            .floating-icon {
+                display: none;
+            }
+        }
+
+        /* Small Mobile Styles */
+        @media (max-width: 480px) {
+            .contact-hero {
+                padding: 40px 10px;
+            }
+
+            .contact-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-hero p {
+                font-size: 1rem;
+            }
+
+            .contact-container {
+                padding: 0 10px;
+            }
+
+            .contact-left,
+            .contact-right {
+                padding: 25px 15px;
+            }
+
+            .contact-left h2 {
+                font-size: 1.5rem;
+                line-height: 1.3;
+            }
+
+            .contact-right h2 {
+                font-size: 1.4rem;
+                line-height: 1.3;
+                word-break: break-word;
+                letter-spacing: 0.2px;
+            }
+
+            .location-section {
+                padding: 15px;
+            }
+
+            .location-section h3 {
+                font-size: 1.1rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .contact-map {
+                height: 150px;
+            }
+
+            .contact-links a {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+
+            .contact-links i {
+                font-size: 1.1rem;
+            }
+
+            .whatsapp-btn {
+                font-size: 0.9rem;
+                padding: 14px 12px;
+                gap: 8px;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                padding: 12px;
+                font-size: 0.95rem;
+            }
+
+            .submit-btn {
+                font-size: 0.9rem;
+                padding: 14px 12px;
+                gap: 8px;
+            }
+        }
+
+        /* Extra Small Mobile Styles */
+        @media (max-width: 360px) {
+            .contact-hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .contact-left h2 {
+                font-size: 1.3rem;
+                line-height: 1.3;
+            }
+
+            .contact-right h2 {
+                font-size: 1.2rem;
+                line-height: 1.3;
+                word-break: break-word;
+                letter-spacing: 0.1px;
+            }
+
+            .location-section h3 {
+                font-size: 1rem;
+            }
+
+            .contact-map {
+                height: 120px;
+            }
+
+            .contact-links a {
+                font-size: 0.85rem;
+                padding: 10px;
+            }
+
+            .whatsapp-btn {
+                font-size: 0.85rem;
+                padding: 12px 10px;
+                gap: 6px;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            .submit-btn {
+                font-size: 0.85rem;
+                padding: 12px 10px;
+                gap: 6px;
+            }
+        }
+
+        /* Touch-friendly improvements for mobile */
+        @media (max-width: 768px) {
+            .contact-links a,
+            .whatsapp-btn,
+            .submit-btn {
+                min-height: 44px;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 16px;
+            }
+
+            body {
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+
+        /* Landscape mobile orientation */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .contact-hero {
+                padding: 30px 15px;
+            }
+
+            .contact-hero h1 {
+                font-size: 2rem;
+            }
+
+            .contact-map {
+                height: 120px;
+            }
+
+            .contact-main {
+                padding: 20px 0;
             }
         }
     </style>
@@ -372,51 +984,104 @@
                 <a href="#" onclick="logout()">Log Out</a>
             </div>
         </div>
-
         <a href="login.html" class="join-btn" id="signInLink">Sign In</a>
     </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="floating-icon"><i class="fas fa-dumbbell"></i></div>
+        <div class="floating-icon"><i class="fas fa-phone"></i></div>
+        <h1>Get in Touch</h1>
+        <p>We bridge the gap between gym training and personal wellness. Let's start your fitness journey together!</p>
+    </section>
+
     <div class="contact-main">
-        <div class="contact-left">
-            <h1>Get in touch</h1>
-            <p>We bridge the gap between gym training and personal wellness.</p>
-            <div class="contact-info">
-                <b>Herculean Gym, Level 2, Sunway University</b><br>
-                <a href="https://maps.google.com/?q=Sunway+University" target="_blank">Jalan Universiti, Bandar Sunway,
-                    47500 Subang Jaya</a>
+        <div class="contact-container">
+            <div class="contact-left">
+                <h2>Visit Our Gym</h2>
+                <p>Located in the heart of Sunway University, we're here to help you achieve your fitness goals with state-of-the-art equipment and expert guidance.</p>
+                
+                <div class="location-section">
+                    <h3><i class="fas fa-map-marker-alt"></i> <span>Location & Map</span></h3>
+                    
+                    <div class="address-info">
+                        <p><strong>Herculean Gym, Level 2, Sunway University</strong></p>
+                        <p><a href="https://maps.google.com/?q=Sunway+University" target="_blank">Jalan Universiti, Bandar Sunway, 47500 Subang Jaya</a></p>
+                    </div>
+
+                    <iframe class="contact-map"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1992.050360287958!2d101.6032468!3d3.067749!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4c8f5d98b46d%3A0xed55e2cca5c2d394!2sSunway%20University!5e0!3m2!1sen!2smy!4v1752021026547!5m2!1sen!2smy"
+                        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Sunway University Location"></iframe>
+                </div>
+
+                <div class="contact-links">
+                    <a href="mailto:info@sunway.edu.my">
+                        <i class="fas fa-envelope"></i> 
+                        <span>Email Us</span>
+                    </a>
+                    <a href="https://api.whatsapp.com/send/?phone=60193867863&text=Say+hello%21&type=phone_number&app_absent=0">
+                        <i class="fab fa-whatsapp"></i> 
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="https://www.facebook.com/sunwayuniversity">
+                        <i class="fab fa-facebook"></i> 
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/sunwayuniversity">
+                        <i class="fab fa-instagram"></i> 
+                        <span>Instagram</span>
+                    </a>
+                </div>
             </div>
-            <div class="contact-links">
-                <a href="mailto:info@sunway.edu.my"><i class="fa-regular fa-envelope"></i> info@sunway.edu.my</a>
-                <a
-                    href="https://api.whatsapp.com/send/?phone=60193867863&text=Say+hello%21&type=phone_number&app_absent=0"><i
-                        class="fa-brands fa-whatsapp"></i> Whatsapp</a>
-                <a href="https://www.facebook.com/sunwayuniversity"><i class="fa-brands fa-facebook"></i> Facebook</a>
-                <a
-                    href="https://www.instagram.com/sunwayuniversity?utm_source=ig_web_button_share_sheet&igsh=MW1qemE2amtnb2FjdA=="><i
-                        class="fa-brands fa-instagram"></i> Instagram</a>
+
+            <div class="contact-right">
+                <h2>Book A Discovery Session</h2>
+                <p>Ready to transform your fitness journey? Get in touch with us for a personalized consultation and discover what Herculean Gym can do for you.</p>
+                
+                <a class="whatsapp-btn" href="https://api.whatsapp.com/send/?phone=60193867863&text=Say+hello%21&type=phone_number&app_absent=0">
+                    <i class="fab fa-whatsapp"></i> 
+                    <span>WhatsApp Us for Instant Reply</span>
+                </a>
+                
+                <p style="color: var(--body-gray); margin-bottom: 20px; text-align: center;">
+                    <em>Or fill out the form below and we'll get back to you within 24 hours</em>
+                </p>
+                
+                <form class="contact-form" id="feedbackForm" autocomplete="off">
+                    <div class="form-group">
+                        <label for="fname">Full Name *</label>
+                        <input type="text" id="fname" name="fname" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fmail">Email Address *</label>
+                        <input type="email" id="fmail" name="fmail" placeholder="Enter your email address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fphone">Phone Number</label>
+                        <input type="tel" id="fphone" name="fphone" placeholder="Enter your phone number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="feedback">Your Message *</label>
+                        <textarea id="feedback" name="feedback" placeholder="Tell us about your fitness goals or any questions you have..." required></textarea>
+                    </div>
+                    
+                    <button class="submit-btn" type="submit">
+                        <i class="fas fa-paper-plane"></i> <span>Send Message</span>
+                    </button>
+                    
+                    <div id="error-message" aria-live="assertive"></div>
+                    <div id="success-message" class="success-message">
+                        <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. We'll get back to you soon!
+                    </div>
+                </form>
             </div>
-        </div>
-        <div class="contact-right">
-            <h2>Contact Us To Book A Discovery Session</h2>
-            <p>For faster replies, please reach out to us via WhatsApp.</p>
-            <a class="whatsapp-btn"
-                href="https://api.whatsapp.com/send/?phone=60193867863&text=Say+hello%21&type=phone_number&app_absent=0"><i
-                    class="fa-brands fa-whatsapp"></i> WhatsApp Us Here</a>
-            <p style="color: var(--body-gray); margin-bottom: 10px;">For more inquiries, please leave a message below.
-            </p>
-            <form class="contact-form" id="feedbackForm" autocomplete="off">
-                <input type="text" id="fname" name="fname" placeholder="Full name" required>
-                <input type="email" id="fmail" name="fmail" placeholder="Email" required>
-                <input type="tel" id="fphone" name="fphone" placeholder="Phone">
-                <textarea id="feedback" name="feedback" placeholder="Message" required></textarea>
-                <button class="submit-btn" type="submit">Submit Message</button>
-                <p id="error-message" aria-live="assertive"></p>
-            </form>
         </div>
     </div>
-    <iframe class="contact-map"
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1992.050360287958!2d101.6032468!3d3.067749!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4c8f5d98b46d%3A0xed55e2cca5c2d394!2sSunway%20University!5e0!3m2!1sen!2smy!4v1752021026547!5m2!1sen!2smy"
-        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        title="Sunway University Location"></iframe>
+
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -437,42 +1102,84 @@
                 <h4>Stay up to date</h4>
                 <p>Subscribe now and get the latest news!</p>
                 <form>
-                    <input class="input-subscription" type="email" placeholder="Email" required
-                        aria-label="Newsletter Email"><br />
-                    <label><input type="checkbox"> Are you an existing customer?</label><br />
+                    <input class="input-subscription" type="email" placeholder="Email" required aria-label="Newsletter Email">
+                    <br>
+                    <label><input type="checkbox"> Are you an existing customer?</label>
+                    <br>
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
         </div>
     </footer>
+
     <script>
         document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            
             var name = document.getElementById("fname").value.trim();
             var email = document.getElementById("fmail").value.trim();
             var phone = document.getElementById("fphone").value.trim();
             var feedback = document.getElementById("feedback").value.trim();
             var errorMessage = document.getElementById("error-message");
+            var successMessage = document.getElementById("success-message");
+            
+            // Hide previous messages
+            errorMessage.style.display = "none";
+            successMessage.style.display = "none";
+            
             if (name.length === 0) {
-                event.preventDefault();
                 errorMessage.textContent = "Full name cannot be empty.";
+                errorMessage.style.display = "block";
                 document.getElementById("fname").focus();
             } else if (email.length === 0) {
-                event.preventDefault();
                 errorMessage.textContent = "Email cannot be empty.";
+                errorMessage.style.display = "block";
                 document.getElementById("fmail").focus();
             } else if (feedback.length === 0) {
-                event.preventDefault();
                 errorMessage.textContent = "Message cannot be empty.";
+                errorMessage.style.display = "block";
                 document.getElementById("feedback").focus();
             } else if (feedback.length < 10) {
-                event.preventDefault();
                 errorMessage.textContent = "Message must be at least 10 characters.";
+                errorMessage.style.display = "block";
                 document.getElementById("feedback").focus();
             } else {
-                errorMessage.textContent = "";
-                alert("Message submitted!");
+                // Show success message
+                successMessage.style.display = "block";
+                
+                // Reset form
+                document.getElementById("feedbackForm").reset();
+                
+                // Hide success message after 5 seconds
+                setTimeout(function() {
+                    successMessage.style.display = "none";
+                }, 5000);
             }
         });
+
+        // Add some interactive effects
+        document.querySelectorAll('.contact-links a').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px) scale(1.02)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Mobile touch optimization
+        if ('ontouchstart' in window) {
+            document.querySelectorAll('.contact-links a, .whatsapp-btn, .submit-btn').forEach(function(element) {
+                element.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                element.addEventListener('touchend', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        }
     </script>
     <script src="script.js"></script>
 </body>

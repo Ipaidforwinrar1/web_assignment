@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Herculean Gym</title>
+    <title>About Us - Herculean Gym</title>
     <link rel="stylesheet" href="style.css">
     <style>
         body {
@@ -13,141 +13,383 @@
         main {
             background: transparent;
         }
-        .main-section {
-            padding: 36px 0 20px 0;
-        }
-        .main-section h1 {
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 60vh;
+            background: linear-gradient(135deg, rgba(34, 88, 164, 0.8), rgba(34, 48, 78, 0.9)), url('resources/team-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
             text-align: center;
-            font-size: 2.25rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* Story Section */
+        .main-section {
+            padding: 60px 20px;
+        }
+
+        .story-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .story-header h1 {
+            font-size: 2.5rem;
             color: #22304e;
             font-weight: 700;
-            margin-bottom: 0.7rem;
+            margin-bottom: 1rem;
             letter-spacing: 1px;
         }
-        .main-section h2 {
-            text-align: center;
+
+        .story-header h2 {
             color: #2258a4;
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             font-weight: 600;
-            margin-bottom: 1.3rem;
             letter-spacing: 0.5px;
         }
+
         .our-story {
             margin: 0 auto;
             max-width: 1000px;
             border-radius: 16px;
-            padding: 24px 36px;
-            text-align: justify;
-            font-size: 1.14rem;
-            line-height: 1.75;
+            padding: 40px;
             background: #f6faff;
             color: #31435a;
-            box-shadow: 0 2px 12px rgba(34,88,164,0.06);
+            box-shadow: 0 4px 20px rgba(34,88,164,0.08);
+            position: relative;
         }
+
+        .our-story p {
+            font-size: 1.14rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* Team Section */
         .meet-team-container {
             width: 100%;
             margin: 0 auto;
             max-width: 1200px;
-            padding-top: 36px;
+            padding: 60px 20px;
         }
+
         .meet-team-container h1 {
             text-align: center;
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #22304e;
             font-weight: 700;
-            margin-bottom: 36px;
+            margin-bottom: 50px;
             letter-spacing: 1px;
         }
+
         .team-flex {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 36px;
+            gap: 30px;
             margin-bottom: 50px;
         }
+
         .member {
             background: #fff;
             border-radius: 16px;
-            box-shadow: 0 4px 18px rgba(34,88,164,0.12);
-            flex: 1 1 360px;
-            max-width: 500px;
-            min-width: 220px;
+            box-shadow: 0 4px 20px rgba(34,88,164,0.12);
+            flex: 1 1 350px;
+            max-width: 400px;
+            min-width: 300px;
             text-align: center;
-            padding: 36px 22px 20px 22px;
-            transition: box-shadow 0.2s, transform 0.2s;
-            border: 1.5px solid #e2e6ed;
+            padding: 30px;
+            transition: all 0.3s ease;
+            border: 2px solid #e2e6ed;
+            position: relative;
+            overflow: hidden;
         }
+
         .member:hover {
-            box-shadow: 0 6px 24px rgba(34,88,164,0.18);
-            transform: translateY(-3px) scale(1.021);
+            box-shadow: 0 8px 30px rgba(34,88,164,0.2);
+            transform: translateY(-5px);
+            border-color: #2258a4;
         }
+
         .member img {
-            width: 90px;
-            height: 90px;
+            width: 120px;
+            height: 120px;
             object-fit: cover;
             border-radius: 50%;
-            margin-bottom: 16px;
-            box-shadow: 0 2px 8px rgba(34,88,164,0.13);
-            border: 2px solid #e9f0fc;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(34,88,164,0.15);
+            border: 3px solid #e9f0fc;
+            transition: transform 0.3s ease;
         }
+
+        .member:hover img {
+            transform: scale(1.05);
+        }
+
         .member h3 {
             color: #2258a4;
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 2px;
+            margin-bottom: 5px;
             letter-spacing: 0.5px;
         }
+
         .member h5 {
             color: #ea5e2a;
-            font-weight: 500;
-            margin-bottom: 10px;
+            font-weight: 600;
+            margin-bottom: 15px;
             font-size: 1rem;
             letter-spacing: 0.5px;
         }
+
+        .credentials {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 6px;
+            margin-bottom: 20px;
+            flex-wrap: nowrap;
+            min-height: 32px;
+            overflow: hidden;
+        }
+
+        .badge {
+            background: #e9f0fc;
+            color: #2258a4;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+            display: inline-block;
+            flex-shrink: 0;
+            line-height: 1.2;
+        }
+
+        /* Special handling for longer badges */
+        .badge:first-child {
+            max-width: 48%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .badge:last-child {
+            max-width: 48%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
         .member p {
             color: #31435a;
-            font-size: 1.04rem;
+            font-size: 1rem;
             text-align: justify;
+            line-height: 1.6;
         }
-        @media (max-width: 1050px) {
-            .team-flex {
-                flex-wrap: wrap;
-                gap: 26px;
-            }
-            .meet-team-container {
-                max-width: 98vw;
-            }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background: white;
+            padding: 60px 20px;
+            margin: 40px 0;
         }
-        @media (max-width: 900px) {
-            .main-section {
-                padding: 24px 0 10px 0;
-            }
-            .main-section h1 { font-size: 1.7rem; }
-            .main-section h2 { font-size: 1.15rem; margin-bottom: 1rem; }
-            .our-story {
-                max-width: 90vw;
-                padding: 18px 10px;
-            }
-            .meet-team-container {
-                max-width: 98vw;
-            }
+
+        .testimonials-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #22304e;
+            font-weight: 700;
+            margin-bottom: 50px;
         }
-        @media (max-width: 700px) {
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: #f6faff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(34,88,164,0.1);
+            border-left: 4px solid #2258a4;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .testimonial p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #31435a;
+            margin-bottom: 20px;
+            font-style: italic;
+            flex-grow: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: auto;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .testimonial-author h4 {
+            color: #2258a4;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-author span {
+            color: #31435a;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #2258a4, #22304e);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn.primary {
+            background: #ea5e2a;
+            color: white;
+        }
+
+        .btn.primary:hover {
+            background: #d4511e;
+            transform: translateY(-2px);
+        }
+
+        .btn.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn.secondary:hover {
+            background: white;
+            color: #2258a4;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.2rem;
+            }
+
             .team-flex {
                 flex-direction: column;
-                gap: 22px;
                 align-items: center;
             }
+
             .member {
-                padding: 26px 8px 18px 8px;
+                max-width: 100%;
+                min-width: 280px;
             }
-            .meet-team-container h1 { font-size: 1.2rem; margin-bottom: 20px;}
+
+            .credentials {
+                flex-wrap: wrap;
+                gap: 4px;
+            }
+
+            .badge {
+                font-size: 0.75rem;
+                padding: 4px 8px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 200px;
+            }
         }
+
         @media (max-width: 500px) {
-            .main-section h1 { font-size: 1.15rem; }
-            .main-section h2 { font-size: 1rem; }
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+
             .our-story {
-                padding: 10px 2vw;
+                padding: 20px;
+            }
+
+            .meet-team-container {
+                padding: 40px 10px;
+            }
+
+            .credentials {
+                flex-wrap: wrap;
+            }
+
+            .badge:first-child,
+            .badge:last-child {
+                max-width: 100%;
             }
         }
     </style>
@@ -164,12 +406,34 @@
                 <li><a href="packages.html">Packages</a></li>
             </ul>
         </nav>
-        <button class="join-btn" onclick="window.location.href='login.html'">Sign In</button>
+        <div class="user-dropdown" id="userDropdown" style="display: none;">
+            <button id="userBtn" class="user-btn">
+                <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="20" style="margin-right: 8px;">
+                <span id="userName">User</span>
+            </button>
+            <div class="dropdown-menu" id="dropdownMenu" style="display: none;">
+                <a href="#">My Profile</a>
+                <a href="#" onclick="logout()">Log Out</a>
+            </div>
+        </div>
+        <a href="login.html" class="join-btn" id="signInLink">Sign In</a>
     </header>
+
     <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>We are a group of people who enjoy staying healthy</h1>
+                <h2>Building a community where fitness meets friendship</h2>
+            </div>
+        </section>
+
+        <!-- Story Section -->
         <section class="main-section">
-            <h1>We are a group of people who enjoy staying healthy</h1>
-            <h2>What brings us here</h2>
+            <div class="story-header">
+                <h1>Our Story</h1>
+                <h2>What brings us here</h2>
+            </div>
             <div class="our-story">
                 <p>
                     Once upon a time, in a bustling city, there were two strangers named Alex and Jamie. Both shared a
@@ -199,71 +463,134 @@
                 </p>
             </div>
         </section>
+
+        <!-- Team Section -->
         <div class="meet-team-container">
             <h1>Meet Our Team</h1>
             <div class="team-flex">
                 <div class="member">
-                    <img src="resources/bombardiro-crocodilo.webp" alt="Alex Tan photo">
+                    <img src="resources/alex-tan.jpg" alt="Alex Tan photo">
                     <h3>ALEX TAN</h3>
                     <h5>Co-founder & Head of Strength Training</h5>
+                    <div class="credentials">
+                        <span class="badge">NASM Certified</span>
+                        <span class="badge">8+ Years Experience</span>
+                    </div>
                     <p>
                         Alex Tan is a passionate fitness enthusiast with a background in sports science from the
-                        University of Singapore. As an experienced strength trainer,
-                        Alex specializes in helping clients of all ages build functional strength and achieve their
-                        athletic goals. He believes in creating personalized programs that are both effective and
-                        enjoyable, guiding members to unlock their full potential.
+                        University of Singapore. As an experienced strength trainer, Alex specializes in helping clients of all ages build functional strength and achieve their athletic goals.
                     </p>
                 </div>
                 <div class="member">
-                    <img src="resources/brr-brr-patapim.webp" alt="Jamie Lee photo">
+                    <img src="resources/jamie-lee.jpg" alt="Jamie Lee photo">
                     <h3>Jamie Lee</h3>
                     <h5>Co-Founder & Head of Community Wellness</h5>
+                    <div class="credentials">
+                        <span class="badge">Wellness Coach</span>
+                        <span class="badge">Psychology Degree</span>
+                    </div>
                     <p>
                         Jamie Lee brings a holistic approach to fitness with her certification in wellness coaching and
                         a degree in psychology. Her focus is on building a supportive gym community where everyone feels
-                        motivated and included. Jamie organizes group classes and wellness events, ensuring that every
-                        member finds inspiration and support on their fitness journey.
+                        motivated and included.
                     </p>
                 </div>
                 <div class="member">
-                    <img src="resources/tung-tung-tung-sahur.webp" alt="Marcus Lim photo">
+                    <img src="resources/marcus-lim.jpg" alt="Marcus Lim photo">
                     <h3>Marcus Lim</h3>
                     <h5>Senior Personal Trainer</h5>
+                    <div class="credentials">
+                        <span class="badge">Certified Trainer</span>
+                        <span class="badge">Injury Prevention</span>
+                    </div>
                     <p>
                         Marcus Lim is a certified personal trainer with over 8 years of experience in the fitness
                         industry. He specializes in functional training and injury prevention, working closely with
-                        clients to develop safe and sustainable workout routines. Marcus is dedicated to helping
-                        individuals overcome obstacles and reach their personal fitness milestones through encouragement
-                        and expertise.
+                        clients to develop safe and sustainable workout routines.
                     </p>
                 </div>
                 <div class="member">
-                    <img src="resources/tralalero-tralala.webp" alt="Priya Nair photo">
+                    <img src="resources/priya-nair.jpg" alt="Priya Nair photo">
                     <h3>Priya Nair</h3>
                     <h5>Physiotherapy & Rehabilitation Specialist</h5>
+                    <div class="credentials">
+                        <span class="badge">Master's Physiotherapy</span>
+                        <span class="badge">Rehab Expert</span>
+                    </div>
                     <p>
                         Priya Nair holds a Master's degree in Physiotherapy and has extensive experience in
                         rehabilitation for sports injuries and chronic pain. She provides personalized physiotherapy
-                        assessments and recovery plans to help clients regain mobility and confidence. Priya's caring
-                        approach ensures every member receives the attention and guidance they need to stay healthy and
-                        active.
+                        assessments and recovery plans.
                     </p>
                 </div>
                 <div class="member">
-                    <img src="resources/bombardiro-crocodilo.webp" alt="Sarah Chen photo">
+                    <img src="resources/sarah-chen.jpg" alt="Sarah Chen photo">
                     <h3>Sarah Chen</h3>
                     <h5>Nutrition & Wellness Coach</h5>
+                    <div class="credentials">
+                        <span class="badge">Sports Nutrition</span>
+                        <span class="badge">Certified Nutritionist</span>
+                    </div>
                     <p>
                         Sarah Chen is a certified nutritionist and wellness coach with a Master's degree in Sports Nutrition. 
-                        She specializes in creating customized meal plans and nutritional strategies that complement fitness goals. 
-                        Sarah's approach combines evidence-based nutrition science with practical lifestyle solutions, helping 
-                        members optimize their energy levels and achieve sustainable results through balanced eating habits.
+                        She specializes in creating customized meal plans and nutritional strategies that complement fitness goals.
                     </p>
                 </div>
             </div>
         </div>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <h2>What Our Members Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"The team at Herculean Gym completely transformed my fitness journey. Alex's personalized training approach and Jamie's community events made me feel at home from day one."</p>
+                    <div class="testimonial-author">
+                        <img src="resources/tung-tung-tung-sahur.webp" alt="Sarah M.">
+                        <div>
+                            <h4>Sarah M.</h4>
+                            <span>Member since 2023</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Marcus helped me recover from a shoulder injury and get back stronger than ever. The expertise and care from this team is unmatched."</p>
+                    <div class="testimonial-author">
+                        <img src="resources/brr-brr-patapim.webp" alt="David L.">
+                        <div>
+                            <h4>David L.</h4>
+                            <span>Member since 2022</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Sarah's nutrition guidance combined with the training has helped me achieve goals I never thought possible. This gym is truly a family."</p>
+                    <div class="testimonial-author">
+                        <img src="resources/bombardiro-crocodilo.webp" alt="Maria K.">
+                        <div>
+                            <h4>Maria K.</h4>
+                            <span>Member since 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Start Your Fitness Journey?</h2>
+                <p>Join our community of fitness enthusiasts and let our expert team guide you to success.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn primary">Get Started Today</a>
+                    <a href="packages.html" class="btn secondary">View Packages</a>
+                </div>
+            </div>
+        </section>
     </main>
+
     <button onclick="scrollToTop()" id="backToTopBtn" title="Back to Top">↑</button>
+
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -291,6 +618,7 @@
             </div>
         </div>
     </footer>
+
     <script>
         window.onscroll = function () {
             const btn = document.getElementById("backToTopBtn");
@@ -298,6 +626,43 @@
         };
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // User dropdown functionality
+        document.addEventListener("DOMContentLoaded", function () {
+            const userData = JSON.parse(localStorage.getItem("users")) || [];
+            const currentEmail = localStorage.getItem("loggedInUser");
+            const loggedIn = localStorage.getItem("loggedIn") === "true";
+
+            if (loggedIn && currentEmail) {
+                const user = userData.find(u => u.email === currentEmail);
+                if (user) {
+                    document.getElementById("signInLink").style.display = "none";
+                    document.getElementById("userDropdown").style.display = "inline-block";
+                    document.getElementById("userName").textContent = user.firstName || "User";
+                }
+            }
+
+            const userBtn = document.getElementById("userBtn");
+            const dropdown = document.getElementById("dropdownMenu");
+            if (userBtn) {
+                userBtn.addEventListener("click", () => {
+                    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+                });
+
+                window.addEventListener("click", function (e) {
+                    if (!userBtn.contains(e.target)) {
+                        dropdown.style.display = "none";
+                    }
+                });
+            }
+        });
+
+        function logout() {
+            localStorage.removeItem("loggedIn");
+            localStorage.removeItem("loggedInUser");
+            localStorage.removeItem("loggedInUserFirstName");
+            window.location.href = "login.html";
         }
     </script>
 </body>
