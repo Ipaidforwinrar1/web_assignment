@@ -145,10 +145,21 @@ footer.site-footer {
   gap: 40px;
 }
 
+.footer-container h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  letter-spacing: 0.1rem;
+}
+
 .footer-links a {
   color: #ccc;
   text-decoration: none;
   transition: color 0.3s;
+}
+
+.footer-links li {
+  margin-left: 20px;
+  padding-left: 0;
 }
 
 .footer-links a:hover {
