@@ -5,62 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Herculean Fitness | Services</title>
     <link rel="stylesheet" href="style.css">
-    <!--<link rel="stylesheet" href="website.css"> one day... -->
-    <!-- maybe i will use these one day
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    -->
     <script src="script.js"></script>
     <style>
-        /* Styling for table - deprecated?? */
-        .service-table {
-            width: 100%;
-            margin-top: 20px;
-            border-collapse: collapse;
-        }
-        .service-table td, .service-table th {
-            padding: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .service-table th, .service-table td {
-            padding: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            text-align: center;
-            color: white;
-        }
-        .service-table tr:nth-child(even) {
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-        .service-table th {
-            background-color: rgba(0, 0, 0, 0.2);
-            font-weight: bold;
-        }
 
-        /* Styling for the main content's layout */
-        .first-section, .benefit-section, .third-section {
-            padding: 40px 13%;
-            margin-bottom: 40px;
-        }
+/* First Section */
+.first-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 13%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .highlight-section {
-            padding: 40px 13%;
-        }
-        
-        .benefit-section {
-            background-color: rgb(31, 49, 150);
-            color: rgb(203, 220, 250);
-        }
-        .first-section {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-bottom: 60px;
-        }
-        .highlight-section {
+.feature-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: #0f5888;
+    color: #e0f4ff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+    width: 100%; /* ensures it fits inside .first-section */
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+}
+
+.feature-card img {
+    width: 300px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.feature-text {
+    flex: 1;
+}
+
+.feature-text h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.feature-text p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.feature-card.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Highlights section */
+.highlight-section {
     background-color: #eaf4fb;
-    padding: 40px 10%; /* slightly narrower padding */
+    padding: 40px 10%;
 }
 
 .highlight-section h1 {
@@ -73,343 +79,11 @@
 
 .highlight-card-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* consistent card width */
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
-
-
-/* Responsive tweaks */
-@media (max-width: 768px) {
-    .highlight-section {
-        padding: 30px 5%;
-    }
-    .highlight-card-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-    .small-card-holder img {
-        height: 150px;
-    }
-}
-        .explore-section {
-            padding: 60px 15px;
-            background-color: #1f2f4d;
-            color: #e0f4ff;
-            text-align: center;
-        }
-        .explore-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #ffffff;
-        }
-        /* Container to hold search input and button side by side */
-#class-search-container {
-  display: flex;
-  align-items: center;
-  max-width: 400px;
-  margin: 15px auto;
-  gap: 0px;
-}
-
-/* Search input with rounded corners on the left side */
-#class-search {
-  flex: 1;
-  padding: 12px 20px;
-  font-size: 16px;
-  border: 2px solid #ccc;
-  border-radius: 25px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  background: #f9f9f9;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-}
-
-#class-search:focus {
-  border-color: #007bff;
-  outline: none;
-  background: #fff;
-  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
-}
-
-/* Circular submit button */
-#search-submit {
-  background-color: #007bff;
-  border: none;
-  color: white;
-  font-size: 18px;
-  padding: 12px 20px;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  height: 100%;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease;
-}
-
-#search-submit:hover {
-  background-color: #0056b3;
-}
-
-        .side-by-side {
-  display: grid;
-  grid-template-columns: minmax(140px, 200px) 1fr;
-  gap: 30px;
-  align-items: flex-start;
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-.class-card-grid {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-}
-.class-card {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-  background-color: #0f5888;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
-}
-.class-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.4);
-}
-.class-card img {
-  width: 100%;
-  height: 160px;
-  width: 100%;
-    height: 200px; /* Adjust the height as needed */
-    object-fit: cover;
-    border-radius: 8px; 
-  object-fit: cover;
-  display: block;
-  border-radius: 12px 12px 0 0;
-}
-.class-card-bottom {
-  background-color: rgb(169, 211, 255);
-  padding: 10px 15px;
-  height: 200px;
-  font-size: 1rem;
-  color: #010165;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.class-card-bottom h4 {
-  font-size: 1.2rem;
-  margin: 5px 0 10px;
-  font-weight: bold;
-  color: #010165;
-}
-.class-card-bottom p {
-  margin: 0 0 8px;
-  flex-grow: 1;
-}
-.class-card-bottom a {
-  color: #010165;
-  text-decoration: underline;
-  align-self: flex-start;
-  font-weight: 600;
-}
-.class-card-bottom a:hover {
-  color: #00008b;
-}
-
-        
-.category-list {
-  width: 100%;
-  max-width: 200px;
-}
-        .category-list button {
-  display: block;
-  width: 100%;
-  padding: 12px 18px;
-  margin: 6px 0;
-  font-size: 1rem;
-  font-weight: 600;
-  text-align: center;
-  color: #ffffff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.category-list button:hover,
-.category-list button:focus {
-  background-color: #0056b3;
-  transform: translateY(-1px);
-}
-
-.category-list button:active {
-  background-color: #003e80;
-  transform: translateY(0);
-}
-
-.category-list button.selected {
-  background-color: #28a745;
-  color: #fff;
-  font-weight: bold;
-}
-
-
-        /* Responsive layout */
-        @media (max-width: 768px) {
-            header, .first-section, footer {
-                padding: 20px;
-                text-align: center;
-            }
-            .first-section {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .signup-login {
-                justify-content: center;
-            }
-            
-        }
-        @media (max-width: 900px) {
-            .side-by-side {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%
-  }
-
-  .category-list {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .category-list button {
-    flex: 1 1 30%;
-    text-align: center;
-  }
-
-  .class-card-grid {
-    width: 100%;
-  }
-        }
-
-        /******** TEMPORARY *********/
-        /* Elements of Header styling */
-        /*
-        nav button {
-            float: right;
-        }
-        a {
-            color: inherit;
-            text-decoration: none;
-            font-family: inherit;
-            transition: 0.3s;
-        }
-        main a:hover {
-            color: #0f5888;
-            text-decoration: underline;
-        }
-        header a:hover {
-            color: #9797e7;
-            text-decoration: underline;
-        }
-        .signup-login {
-            display: flex;
-            gap: 10px;
-            font-size: 0.95rem;
-        }
-        img {
-            border-radius: 8px;
-        }
-        /* Card styles */
-        .first-section {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 40px 13%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.feature-card {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  background-color: #0f5888;
-  color: #e0f4ff;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  flex-wrap: wrap;
-  width: 100%; /* ensures it fits inside .first-section */
-  box-sizing: border-box;
-  transition: transform 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-4px);
-}
-
-.feature-card img {
-  width: 300px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-  flex-shrink: 0;
-}
-
-.feature-text {
-  flex: 1;
-}
-.feature-text h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-.feature-text p {
-  font-size: 1.1rem;
-  line-height: 1.5;
-}
-
-/* Alternate image placement */
-.feature-card.reverse {
-  flex-direction: row-reverse;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .feature-card, .feature-card.reverse {
-    flex-direction: column;
-    text-align: center;
-  }
-  .feature-card img {
-    width: 100%;
-    height: auto;
-  }
-}
-        /* Small Card Container */
-        .small-card-holder {
+.small-card-holder {
     background-color: white;
     border-radius: 16px;
     overflow: hidden;
@@ -470,43 +144,245 @@
     color: #ffffff;
 }
 
-        /* Explore Classes Section */
-        /*.class-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-        .class-card {
-            background-color: #0f5888;
-            color: white;
-            border-radius: 8px;
-            width: 260px;
-            overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-        .class-card:hover {
-            box-shadow: 0 9px 18px rgba(0, 0, 0, 0.4);
-        }
-        .class-card img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            display: block;
-        }
-        .class-card h3 {
-            margin: 15px;
-            font-size: 1.25rem;
-        }
-        .class-card p {
-            margin: 0 15px 20px;
-            font-size: 0.95rem;
-            color: #d0eaff;
-        }
-        .class-card a:hover {
-            color: #aee2ff;
-        } */
+/* Explore Classes Section */
+.explore-section {
+    padding: 60px 15px;
+    background-color: #1f2f4d;
+    color: #e0f4ff;
+    text-align: center;
+}
+.explore-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+#class-search-container {
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    margin: 15px auto;
+    gap: 0px;
+}
+
+#class-search {
+    flex: 1;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+#class-search:focus {
+    border-color: #007bff;
+    outline: none;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+#search-submit {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 12px 20px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 100%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+#search-submit:hover {
+    background-color: #0056b3;
+}
+
+.side-by-side {
+    display: grid;
+    grid-template-columns: minmax(140px, 200px) 1fr;
+    gap: 30px;
+    align-items: flex-start;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.class-card-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+.class-card {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    background-color: #0f5888;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+.class-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 9px 24px rgba(0, 0, 0, 0.4);
+}
+.class-card img {
+    width: 100%;
+    height: 160px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px; 
+    object-fit: cover;
+    display: block;
+    border-radius: 12px 12px 0 0;
+}
+.class-card-bottom {
+    background-color: rgb(169, 211, 255);
+    padding: 10px 15px;
+    height: 200px;
+    font-size: 1rem;
+    color: #010165;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.class-card-bottom h4 {
+    font-size: 1.2rem;
+    margin: 5px 0 10px;
+    font-weight: bold;
+    color: #010165;
+}
+.class-card-bottom p {
+    margin: 0 0 8px;
+    flex-grow: 1;
+}
+.class-card-bottom a {
+    color: #010165;
+    text-decoration: underline;
+    align-self: flex-start;
+    font-weight: 600;
+}
+.class-card-bottom a:hover {
+    color: #00008b;
+}
+
+        
+.category-list {
+    width: 100%;
+    max-width: 200px;
+}
+
+.category-list button {
+    display: block;
+    width: 100%;
+    padding: 12px 18px;
+    margin: 6px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.category-list button:hover,
+.category-list button:focus {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+.category-list button:active {
+    background-color: #003e80;
+    transform: translateY(0);
+}
+
+.category-list button.selected {
+    background-color: #28a745;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+    .highlight-section {
+        padding: 30px 5%;
+    }
+    .highlight-card-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .small-card-holder img {
+        height: 150px;
+    }
+    .first-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .signup-login {
+        justify-content: center;
+    }
+    .feature-card, .feature-card.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+    .feature-card img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .side-by-side {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%
+    }
+    .category-list {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .category-list button {
+        flex: 1 1 30%;
+        text-align: center;
+    }
+    .class-card-grid {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .highlight-card-list {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+}
 
     </style>
 </head>
@@ -542,21 +418,21 @@
                     <h1>Get Stronger!</h1>
                     <p>Choose the right service to gain some muscles!</p>
                 </div>
-                <img src="../asset/personal-trainer-1-compressor.jpg" alt="person training" class="" height="300">
+                <img src="../asset/Gym-full-HD.jpg" alt="person training" class="" height="300">
             </div>
             <div class="feature-card reverse">
                 <div class="feature-text">
                     <h1>Get Fitter!</h1>
                     <p>Choose the right service to lose those pounds!</p>
                 </div>
-                <img src="../asset/personal-trainer-1-compressor.jpg" alt="person training" class="" height="300">
+                <img src="../asset/19155413-gettyimages-1392310150_cover_1499x1000.jpg" class="" height="300">
             </div>
             <div class="feature-card">
                 <div class="feature-text">
                     <h1>Get Flexible!</h1>
                     <p>Choose the service that will make you more flexible and agile!</p>
                 </div>
-                <img src="../asset/personal-trainer-1-compressor.jpg" alt="person training" class="" height="300">
+                <img src="../asset/pexels-li-sun-2294361.jpg" alt="person training" class="" height="300">
             </div>
         </div>
 
@@ -564,7 +440,7 @@
             <h1>Highlights:</h1>
             <div class="highlight-card-list">
                 <div class="small-card-holder">
-                    <img src="../asset/30_gym.jpg" alt="">
+                    <img src="../asset/combat-3.jpg" alt="">
                     <div class="small-card">
                         <p>Combat your way to tougher body</p>
                         <h3>Martial Arts Combat</h3>
@@ -580,7 +456,7 @@
                     </div>
                 </div>
                 <div class="small-card-holder">
-                    <img src="../asset/Gym-full-HD.jpg" alt="">
+                    <img src="../asset/Yoga-2.jpg" alt="">
                     <div class="small-card">
                         <p>Flex your body and mind</p>
                         <h3>Yoga Flex</h3>
@@ -588,7 +464,7 @@
                     </div>
                 </div>
                 <div class="small-card-holder">
-                    <img src="../asset/personal-trainer-1-compressor.jpg" alt="">
+                    <img src="../asset/b0029540b1db112d53cf6048a7244805.jpg" alt="">
                     <div class="small-card">
                         <p>Soaring through</p>
                         <h3>Athletic Cycling</h3>
@@ -608,56 +484,72 @@
             </div>
             <div class="side-by-side">
                 <div class="category-list">
-                    <button>Combat</button>
+                    <button>Body Combat</button>
                     <button>Cycling</button>
-                    <button>Muscle Building</button>
+                    <button>Strength & Condition Building</button>
                 </div>
                 <div class="class-card-grid">
                     <div class="class-card">
-                        <img src="../asset/19155413-gettyimages-1392310150_cover_1499x1000.jpg" alt="Gym Photos">
-                        <div class="class-card-bottom">
-                            <h4>Pikachu</h4>
-                            <p>A lightning type pikeomon</p>
-                            <a href="#">More Info</a>
-                        </div>
-                    </div>
-                    <div class="class-card">
                         <img src="../asset/action-athlete-barbell-841130.jpg" alt="Gym Photos">
                         <div class="class-card-bottom">
-                            <h4>Cirno</h4>
-                            <p>A cool type faery</p>
+                            <h4>Body Pump</h4>
+                            <p>Strength & Condition Building</p>
                             <a href="#">More Info</a>
                         </div>
                     </div>
                     <div class="class-card">
-                        <img src="../asset/personal-trainer-1-compressor.jpg" alt="Gym Photos">
+                        <img src="../asset/b0029540b1db112d53cf6048a7244805.jpg" alt="Gym Photos">
                         <div class="class-card-bottom">
-                            <h4>Kirby</h4>
-                            <p>A derby type bloab</p>
+                            <h4>Athletic Cycling</h4>
+                            <p>Cycling</p>
                             <a href="#">More Info</a>
                         </div>
                     </div>
                     <div class="class-card">
-                        <img src="../asset/personal-trainer-1-compressor.jpg" alt="Gym Photos">
+                        <img src="../asset/ARC_5990-3-1024x683.jpg" alt="Gym Photos">
                         <div class="class-card-bottom">
-                            <h4>Kirby</h4>
-                            <p>A derby type bloab</p>
+                            <h4>Boxing</h4>
+                            <p>Body Combat</p>
                             <a href="#">More Info</a>
                         </div>
                     </div>
                     <div class="class-card">
-                        <img src="../asset/personal-trainer-1-compressor.jpg" alt="Gym Photos">
+                        <img src="../asset/intro-to-spinning-and-indoor-cycling.jpg" alt="Gym Photos">
                         <div class="class-card-bottom">
-                            <h4>Kirby</h4>
-                            <p>A derby type bloab</p>
+                            <h4>25 Race</h4>
+                            <p>Cycling</p>
                             <a href="#">More Info</a>
                         </div>
                     </div>
                     <div class="class-card">
-                        <img src="../asset/personal-trainer-1-compressor.jpg" alt="Gym Photos">
+                        <img src="../asset/shutterstock-167027126-cropped-1560943888.jpg" alt="Gym Photos">
                         <div class="class-card-bottom">
-                            <h4>Kirby</h4>
-                            <p>A derby type bloab</p>
+                            <h4>Relaxed Yoga</h4>
+                            <p>Yoga</p>
+                            <a href="#">More Info</a>
+                        </div>
+                    </div>
+                    <div class="class-card">
+                        <img src="../asset/combat-3.jpg" alt="Gym Photos">
+                        <div class="class-card-bottom">
+                            <h4>Mixed Martial Arts</h4>
+                            <p>Body Combat</p>
+                            <a href="#">More Info</a>
+                        </div>
+                    </div>
+                    <div class="class-card">
+                        <img src="../asset/Strength-training-programs.jpg" alt="Gym Photos">
+                        <div class="class-card-bottom">
+                            <h4>Peak Power Workout</h4>
+                            <p>Strength & Condition Building</p>
+                            <a href="#">More Info</a>
+                        </div>
+                    </div>
+                    <div class="class-card">
+                        <img src="../asset/Yoga-2.jpg" alt="Gym Photos">
+                        <div class="class-card-bottom">
+                            <h4>? Yoga</h4>
+                            <p>Yoga</p>
                             <a href="#">More Info</a>
                         </div>
                     </div>
