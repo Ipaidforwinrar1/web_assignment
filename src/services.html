@@ -59,20 +59,40 @@
             margin-bottom: 60px;
         }
         .highlight-section {
-            background-color: #eaf4fb;
-        }
-        .highlight-section h1 {
-            font-weight: bold;
-            font-size:  38px;
-        }
-        .highlight-card-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-            padding: 60px 13%;
-        }
+    background-color: #eaf4fb;
+    padding: 40px 10%; /* slightly narrower padding */
+}
+
+.highlight-section h1 {
+    font-weight: bold;
+    font-size: 38px;
+    margin-bottom: 30px;
+    color: #010165;
+    text-align: center;
+}
+
+.highlight-card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* consistent card width */
+    gap: 30px;
+}
+
+
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .highlight-section {
+        padding: 30px 5%;
+    }
+    .highlight-card-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+    .small-card-holder img {
+        height: 150px;
+    }
+}
         .explore-section {
-            padding: 60px 10%;
+            padding: 60px 15px;
             background-color: #1f2f4d;
             color: #e0f4ff;
             text-align: center;
@@ -82,6 +102,170 @@
             margin-bottom: 40px;
             color: #ffffff;
         }
+        /* Container to hold search input and button side by side */
+#class-search-container {
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  margin: 15px auto;
+  gap: 0px;
+}
+
+/* Search input with rounded corners on the left side */
+#class-search {
+  flex: 1;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+#class-search:focus {
+  border-color: #007bff;
+  outline: none;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Circular submit button */
+#search-submit {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 12px 20px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  height: 100%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+#search-submit:hover {
+  background-color: #0056b3;
+}
+
+        .side-by-side {
+  display: grid;
+  grid-template-columns: minmax(140px, 200px) 1fr;
+  gap: 30px;
+  align-items: flex-start;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.class-card-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.class-card {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  background-color: #0f5888;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+.class-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.4);
+}
+.class-card img {
+  width: 100%;
+  height: 160px;
+  width: 100%;
+    height: 200px; /* Adjust the height as needed */
+    object-fit: cover;
+    border-radius: 8px; 
+  object-fit: cover;
+  display: block;
+  border-radius: 12px 12px 0 0;
+}
+.class-card-bottom {
+  background-color: rgb(169, 211, 255);
+  padding: 10px 15px;
+  height: 200px;
+  font-size: 1rem;
+  color: #010165;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.class-card-bottom h4 {
+  font-size: 1.2rem;
+  margin: 5px 0 10px;
+  font-weight: bold;
+  color: #010165;
+}
+.class-card-bottom p {
+  margin: 0 0 8px;
+  flex-grow: 1;
+}
+.class-card-bottom a {
+  color: #010165;
+  text-decoration: underline;
+  align-self: flex-start;
+  font-weight: 600;
+}
+.class-card-bottom a:hover {
+  color: #00008b;
+}
+
+        
+.category-list {
+  width: 100%;
+  max-width: 200px;
+}
+        .category-list button {
+  display: block;
+  width: 100%;
+  padding: 12px 18px;
+  margin: 6px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.category-list button:hover,
+.category-list button:focus {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.category-list button:active {
+  background-color: #003e80;
+  transform: translateY(0);
+}
+
+.category-list button.selected {
+  background-color: #28a745;
+  color: #fff;
+  font-weight: bold;
+}
+
 
         /* Responsive layout */
         @media (max-width: 768px) {
@@ -100,6 +284,35 @@
             .signup-login {
                 justify-content: center;
             }
+            
+        }
+        @media (max-width: 900px) {
+            .side-by-side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%
+  }
+
+  .category-list {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .category-list button {
+    flex: 1 1 30%;
+    text-align: center;
+  }
+
+  .class-card-grid {
+    width: 100%;
+  }
         }
 
         /******** TEMPORARY *********/
@@ -131,78 +344,134 @@
             border-radius: 8px;
         }
         /* Card styles */
-        .card {
-            background-color: rgb(5, 77, 140);
-            color: rgb(164, 203, 240);
-            border-radius: 6px;
-            padding: 30px;
-            max-width: 500px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card h1 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-            color: rgb(217, 240, 254);
-        }
-        .card p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
+        .first-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 13%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background-color: #0f5888;
+  color: #e0f4ff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  flex-wrap: wrap;
+  width: 100%; /* ensures it fits inside .first-section */
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+
+.feature-card img {
+  width: 300px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  flex: 1;
+}
+.feature-text h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.feature-text p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Alternate image placement */
+.feature-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .feature-card, .feature-card.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+  .feature-card img {
+    width: 100%;
+    height: auto;
+  }
+}
         /* Small Card Container */
         .small-card-holder {
-            width: 100%;
-            max-width: 260px;
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        .small-card-holder:hover {
-            transform: translateY(-5px);
-        }
-        /* Image Styling */
-        .small-card-holder img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            display: block;
-            border-radius: 0px;
-        }
-        /* Card Content */
-        .small-card {
-            background-color: #0f5888;
-            color: #e0f4ff;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-        .small-card h3 {
-            margin: 5px 0;
-            font-size: 1.05rem;
-            color: #ffffff;
-        }
-        .small-card p {
-            font-size: 0.9rem;
-            color: #d0eaff;
-        }
-        .small-card a {
-            font-size: 0.85rem;
-            color: #aee2ff;
-            text-decoration: underline;
-            align-self: flex-start;
-            transition: color 0.3s ease;
-        }
-        .small-card a:hover {
-            color: #ffffff;
-        }
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.small-card-holder:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.small-card-holder img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+    display: block;
+}
+
+.small-card {
+    background-color: #0f5888;
+    color: #e0f4ff;
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0 0 16px 16px;
+}
+
+.small-card p {
+    font-size: 1rem;
+    margin: 0 0 12px 0;
+    flex-grow: 1;
+}
+
+.small-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.small-card a {
+    font-size: 0.9rem;
+    color: #aee2ff;
+    text-decoration: underline;
+    align-self: flex-start;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.small-card a:hover {
+    color: #ffffff;
+}
 
         /* Explore Classes Section */
-        .class-grid {
+        /*.class-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -237,7 +506,7 @@
         }
         .class-card a:hover {
             color: #aee2ff;
-        }
+        } */
 
     </style>
 </head>
@@ -268,25 +537,27 @@
     
     <main>
         <div class="first-section">
-            <div class="card">
-                <h1>Get Stronger!</h1>
-                <p>Choose the right service to gain some muscles!</p>
+            <div class="feature-card">
+                <div class="feature-text">
+                    <h1>Get Stronger!</h1>
+                    <p>Choose the right service to gain some muscles!</p>
+                </div>
+                <img src="../asset/personal-trainer-1-compressor.jpg" alt="person training" class="" height="300">
             </div>
-            <img src="../asset/personal-trainer-1-compressor.jpg" alt="person training" class="" height="300">
-        </div>
-        <div class="first-section">
-            <div class="card">
-                <h1>Get Fitter!</h1>
-                <p>Choose the right service to lose those pounds!</p>
+            <div class="feature-card reverse">
+                <div class="feature-text">
+                    <h1>Get Fitter!</h1>
+                    <p>Choose the right service to lose those pounds!</p>
+                </div>
+                <img src="../asset/personal-trainer-1-compressor.jpg" alt="person training" class="" height="300">
             </div>
-            <img src="../asset/personal-trainer-1-compressor.jpg" alt="person training" class="" height="300">
-        </div>
-        <div class="first-section">
-            <div class="card">
-                <h1>Get Flexible!</h1>
-                <p>Choose the service that will make you more flexible and agile!</p>
+            <div class="feature-card">
+                <div class="feature-text">
+                    <h1>Get Flexible!</h1>
+                    <p>Choose the service that will make you more flexible and agile!</p>
+                </div>
+                <img src="../asset/personal-trainer-1-compressor.jpg" alt="person training" class="" height="300">
             </div>
-            <img src="../asset/personal-trainer-1-compressor.jpg" alt="person training" class="" height="300">
         </div>
 
         <div class="highlight-section">
@@ -329,30 +600,67 @@
 
         <section class="explore-section">
             <h2>Explore Our Classes</h2>
-            <div class="class-grid">
-                <div class="class-card">
-                    <img src="../asset/yoga-class.jpg" alt="Yoga Class">
-                    <h3>Morning Yoga</h3>
-                    <p>Start your day with relaxing stretches and breathing techniques.</p>
-                    <a href="#">View Class</a>
+            <div id="class-search-container">
+                <input type="search" name="class-search" id="class-search" placeholder="Search for Class.">
+                <button type="submit" id="search-submit" aria-label="Submit search">
+                    🔍
+                </button>
+            </div>
+            <div class="side-by-side">
+                <div class="category-list">
+                    <button>Combat</button>
+                    <button>Cycling</button>
+                    <button>Muscle Building</button>
                 </div>
-                <div class="class-card">
-                    <img src="../asset/boxing.jpg" alt="Boxing">
-                    <h3>Boxing Bootcamp</h3>
-                    <p>High-intensity cardio mixed with strength and endurance training.</p>
-                    <a href="#">View Class</a>
-                </div>
-                <div class="class-card">
-                    <img src="../asset/spinning.jpg" alt="Spin Class">
-                    <h3>Spin Class</h3>
-                    <p>Get your heart pumping with high-energy indoor cycling sessions.</p>
-                    <a href="#">View Class</a>
-                </div>
-                <div class="class-card">
-                    <img src="../asset/hiit.jpg" alt="HIIT">
-                    <h3>HIIT Burn</h3>
-                    <p>Short bursts of max-effort exercises followed by quick rests.</p>
-                    <a href="#">View Class</a>
+                <div class="class-card-grid">
+                    <div class="class-card">
+                        <img src="../asset/19155413-gettyimages-1392310150_cover_1499x1000.jpg" alt="Gym Photos">
+                        <div class="class-card-bottom">
+                            <h4>Pikachu</h4>
+                            <p>A lightning type pikeomon</p>
+                            <a href="#">More Info</a>
+                        </div>
+                    </div>
+                    <div class="class-card">
+                        <img src="../asset/action-athlete-barbell-841130.jpg" alt="Gym Photos">
+                        <div class="class-card-bottom">
+                            <h4>Cirno</h4>
+                            <p>A cool type faery</p>
+                            <a href="#">More Info</a>
+                        </div>
+                    </div>
+                    <div class="class-card">
+                        <img src="../asset/personal-trainer-1-compressor.jpg" alt="Gym Photos">
+                        <div class="class-card-bottom">
+                            <h4>Kirby</h4>
+                            <p>A derby type bloab</p>
+                            <a href="#">More Info</a>
+                        </div>
+                    </div>
+                    <div class="class-card">
+                        <img src="../asset/personal-trainer-1-compressor.jpg" alt="Gym Photos">
+                        <div class="class-card-bottom">
+                            <h4>Kirby</h4>
+                            <p>A derby type bloab</p>
+                            <a href="#">More Info</a>
+                        </div>
+                    </div>
+                    <div class="class-card">
+                        <img src="../asset/personal-trainer-1-compressor.jpg" alt="Gym Photos">
+                        <div class="class-card-bottom">
+                            <h4>Kirby</h4>
+                            <p>A derby type bloab</p>
+                            <a href="#">More Info</a>
+                        </div>
+                    </div>
+                    <div class="class-card">
+                        <img src="../asset/personal-trainer-1-compressor.jpg" alt="Gym Photos">
+                        <div class="class-card-bottom">
+                            <h4>Kirby</h4>
+                            <p>A derby type bloab</p>
+                            <a href="#">More Info</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
