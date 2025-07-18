@@ -874,6 +874,7 @@
             </div>
         </div>
     </div>
+    <button onclick="scrollToTop()" id="backToTopBtn" title="Back to Top">↑</button>
 
     <footer class="site-footer">
         <div class="footer-container">
@@ -906,6 +907,17 @@
         </div>
     </footer>
 
+    <script>
+        // Back to Top button logic
+        window.onscroll = function () {
+            const btn = document.getElementById("backToTopBtn");
+            btn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
     <script>
         document.getElementById("feedbackForm").addEventListener("submit", function (event) {
             event.preventDefault();

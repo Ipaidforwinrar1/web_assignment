@@ -742,6 +742,7 @@
             </div>
         </section>
     </main>
+    <button onclick="scrollToTop()" id="backToTopBtn" title="Back to Top">↑</button>
 
     <footer class="site-footer">
         <div class="footer-container">
@@ -889,6 +890,17 @@
                     card.style.opacity = 1;
                 }, 200);
             });
+        }
+    </script>
+    <script>
+        // Back to Top button logic
+        window.onscroll = function () {
+            const btn = document.getElementById("backToTopBtn");
+            btn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
