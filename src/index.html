@@ -1,203 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Herculean Gym</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            background: #e9f0fc;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HERCULEAN GYM</title>
+  <link rel="stylesheet" href="style.css">
 
-        header, footer {
-            background-color: #002b5c;
-            color: white;
-            padding: 1em 0;
-            text-align: center;
-        }
+  <style>
+    /* === Hero Section === */
+    .home {
+      position: relative;
+      height: 500px;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
+    }
 
-        nav {
-            background-color: #004080;
-            display: flex;
-            justify-content: center;
-            padding: 10px;
-        }
+    .overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px 80px;
+      color: white;
+    }
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
+    .text-box {
+      max-width: 700px;
+      opacity: 0;
+      transform: translateX(-30px);
+      animation: slideIn 1.5s ease forwards;
+      animation-delay: 0.5s;
+    }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
 
-        .main-section {
-            padding: 40px 20px;
-            text-align: center;
-        }
+    .text-box h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
 
-        .hero-section {
-            background: linear-gradient(to bottom, #004080, #0059b3);
-            color: white;
-            padding: 60px 20px;
-        }
+    .fit {
+      background-color: black;
+      padding: 5px 10px;
+      margin-right: 5px;
+    }
 
-        .hero-section .text-box h1 {
-            font-size: 48px;
-            margin: 0;
-        }
+    .pass {
+      background-color: #0052a3;
+      padding: 5px 10px;
+    }
 
-        .hero-section .text-box h2 {
-            font-size: 24px;
-            margin-top: 10px;
-        }
+    .text-box h2 {
+      font-size: 38px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
 
-        .cta-btn {
-            background-color: #0052a3;
-            color: white;
-            padding: 12px 24px;
-            margin-top: 20px;
-            font-size: 18px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
+    .text-box p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
 
-        .cta-btn:hover {
-            background-color: #003d7a;
-            transform: scale(1.05);
-        }
+    .cta-btn {
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      background-color: #0052a3;
+      color: #fff;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
 
-        .cards-section, .testimonial-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 40px 20px;
-        }
+    .cta-btn:hover {
+      background-color: #003d7a;
+      transform: scale(1.05);
+    }
 
-        .card, .testimonial {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            width: 300px;
-            padding: 20px;
-            transition: transform 0.2s ease;
-        }
+    /* === Cards Section === */
+    .cards-section {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px 20px;
+    }
 
-        .card img, .testimonial img {
-            width: 100%;
-            border-radius: 10px;
-        }
+    .card {
+      position: relative;
+      width: 350px;
+      height: 250px;
+      overflow: hidden;
+      border-radius: 8px;
+      color: white;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.2s ease;
+    }
 
-        .testimonial {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    .card-content h3 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
 
-        .testimonial:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
+    .card-content p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
 
-        /* Fade-in animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
+    .card-content a {
+      color: white;
+      text-decoration: underline;
+      font-weight: bold;
+    }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    /* === Full-Width Image Section === */
+    .full-image-section {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background-image: url('./resources/gym8.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 20px;
+      margin-bottom: 60px;
+    }
+
+    .image-overlay {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 25px 35px;
+      margin-left: 60px;
+      border-radius: 8px;
+      max-width: 500px;
+      color: #000;
+    }
+
+    .image-overlay h2 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .image-overlay p {
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    /* === Testimonials === */
+    .testimonial-section {
+      display: flex;
+      padding: 60px 40px;
+      background-color: #f9f9f9;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .testimonial-text {
+      flex: 1 1 300px;
+      max-width: 350px;
+    }
+
+    .testimonial-text h2 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .testimonial-cards {
+      display: grid;
+      flex: 2 1 600px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .testimonial-box {
+      background-color: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      color: #333;
+    }
+
+    .testimonial-box img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    /* === Scroll Fade-In Effect === */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* === Responsive Design === */
+    @media screen and (max-width: 768px) {
+
+      .text-box h1,
+      .text-box h2 {
+        font-size: 28px;
+      }
+
+      .cards-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image-overlay {
+        margin-left: 0;
+        padding: 30px;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>Herculean Gym</h1>
-    </header>
-
+  <!-- Header with navigation and login -->
+  <header>
+    <div class="logo">Herculean Gym</div>
     <nav>
-        <a href="#home">Home</a>
-        <a href="#programs">Programs</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="packages.html">Packages</a></li>
+      </ul>
     </nav>
+    <div class="user-dropdown" id="userDropdown" style="display: none;">
+      <button id="userBtn" class="user-btn">
+        <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="20" style="margin-right: 8px;">
+        <span id="userName">User</span>
+      </button>
+      <div class="dropdown-menu" id="dropdownMenu" style="display: none;">
+        <a href="#">My Profile</a>
+        <a href="#" onclick="logout()">Log Out</a>
+      </div>
+    </div>
+    <a href="login.html" class="join-btn" id="signInLink">Sign In</a>
+  </header>
 
-    <section class="hero-section fade-in" id="home">
-        <div class="text-box">
-            <h1>START YOUR FITNESS JOURNEY NOW</h1>
-            <!-- Typewriter effect removed -->
-            <button class="cta-btn">Join Now</button>
-        </div>
-    </section>
+  <!-- Hero Section with typewriter -->
+  <section class="home">
+    <div class="overlay">
+      <div class="text-box">
+        <h1><span class="fit">Herculean</span><span class="pass">Gym</span></h1>
+        <h2><span id="typewriter"></span></h2>
+        <p>Get full access to all Herculean Gym clubs with our variety of memberships.</p>
+        <a href="packages.html" class="btn cta-btn">Explore Memberships</a>
+      </div>
+    </div>
+  </section>
 
-    <section class="cards-section fade-in" id="programs">
-        <div class="card">
-            <img src="gym.jpg" alt="Program 1">
-            <h3>Strength Training</h3>
-            <p>Build muscle and strength with our expert-led sessions.</p>
-        </div>
-        <div class="card">
-            <img src="gym.jpg" alt="Program 2">
-            <h3>Cardio Burn</h3>
-            <p>High-intensity cardio to help you burn fat fast.</p>
-        </div>
-        <div class="card">
-            <img src="gym.jpg" alt="Program 3">
-            <h3>Yoga & Flexibility</h3>
-            <p>Improve flexibility and reduce stress with calming yoga.</p>
-        </div>
-    </section>
+  <!-- Feature Cards -->
+  <section class="cards-section fade-in">
+    <div class="card" style="background-image: url('./resources/gym4.jpg');">
+      <div class="card-content">
+        <h3>MALAYSIA'S MOST SUCCESSFUL GYM COMMUNITY</h3>
+        <p>Official IFBB PRO, OLYMPIANS trainers.</p>
+        <a href="services.html">Learn More</a>
+      </div>
+    </div>
+    <div class="card" style="background-image: url('./resources/gym5.jpeg');">
+      <div class="card-content">
+        <h3>CONQUER YOUR PEAK SELF</h3>
+        <p>Join our intense training programs.</p>
+        <a href="packages.html">Learn More</a>
+      </div>
+    </div>
+    <div class="card" style="background-image: url('./resources/gym6.jpeg');">
+      <div class="card-content">
+        <h3>EVENTS & ACTIVITIES</h3>
+        <p>Check out our unique events, classes and experiences</p>
+        <a href="packages.html">Learn More</a>
+      </div>
+    </div>
+  </section>
 
-    <section class="testimonial-section fade-in" id="testimonials">
-        <div class="testimonial">
-            <img src="gym.jpg" alt="Client 1">
-            <h4>Sarah J.</h4>
-            <p>“Herculean Gym helped me become my best self. Amazing coaches!”</p>
-        </div>
-        <div class="testimonial">
-            <img src="gym.jpg" alt="Client 2">
-            <h4>Mike R.</h4>
-            <p>“I've never felt stronger or healthier. Highly recommend!”</p>
-        </div>
-    </section>
+  <!-- Full-width motivational image section -->
+  <section class="full-image-section fade-in">
+    <div class="image-overlay">
+      <h2>BE THE STRONGEST<br>VERSION OF YOURSELF</h2>
+      <p>You define your limits. Push beyond them.</p>
+      <a href="packages.html" class="btn cta-btn">Explore Memberships</a>
+    </div>
+  </section>
 
-    <footer>
+  <!-- Testimonials from clients -->
+  <section class="testimonial-section fade-in">
+    <div class="testimonial-text">
+      <h2>DON'T TAKE OUR WORD FOR IT</h2>
+      <p>Here's what our clients have to say about us.</p>
+    </div>
+    <div class="testimonial-cards">
+      <div class="testimonial-box">
+        <img src="./resources/client1.jpeg" alt="Happy Customer">
+        <p>"Joining Herculean Gym changed my life especially with the help of their various coaches. The energy here is unmatched!"</p>
+      </div>
+      <div class="testimonial-box">
+        <img src="./resources/client2.png" alt="Happy Customer">
+        <p>"Top-notch equipment, amazing classes, and the best trainers around."</p>
+      </div>
+      <div class="testimonial-box">
+        <img src="./resources/client3.jpeg" alt="Happy Customer">
+        <p>"I've never felt stronger or more supported. Highly recommend!"</p>
+      </div>
+      <div class="testimonial-box">
+        <img src="./resources/client4.jpeg" alt="Happy Customer">
+        <p>"Great value and a fantastic fitness community even for women of all ages."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scroll to top button -->
+  <button onclick="scrollToTop()" id="backToTopBtn" title="Back to Top">↑</button>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="logo">Herculean Gym</div>
         <p>&copy; 2025 Herculean Gym. All rights reserved.</p>
-    </footer>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="packages.html">Packages</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Stay up to date</h4>
+        <p>Subscribe now and get the latest news!</p>
+        <form>
+          <input type="email" placeholder="Email" required><br />
+          <label><input type="checkbox"> Are you an existing customer?</label><br />
+          <button type="submit" style="color: aliceblue;">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </footer>
 
-    <script>
-        // Fade-in on scroll
-        const fadeIns = document.querySelectorAll('.fade-in');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        });
+  <!-- === JavaScript Interactivity === -->
+  <script>
+    // Background image rotation for hero section
+    const home = document.querySelector('.home');
+    const images = ['./resources/gym1.jpg', './resources/gym2.jpg', './resources/gym3.jpg'];
+    let index = 0;
 
-        fadeIns.forEach(el => observer.observe(el));
+    function changeBackground() {
+      home.style.backgroundImage = `url(${images[index]})`;
+      index = (index + 1) % images.length;
+    }
 
-        // Optional: Hover tilt effect for cards (can keep or remove)
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / card.offsetWidth;
-                const y = (e.clientY - rect.top) / card.offsetHeight;
-                card.style.transform = `rotateY(${(x - 0.5) * 10}deg) rotateX(${(0.5 - y) * 10}deg)`;
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'rotateY(0deg) rotateX(0deg)';
-            });
-        });
-    </script>
+    changeBackground();
+    setInterval(changeBackground, 4000);
+
+    // Show "Back to Top" button after scrolling
+    window.onscroll = function () {
+      const btn = document.getElementById("backToTopBtn");
+      btn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Fade-in elements on scroll using IntersectionObserver
+    const fadeIns = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    fadeIns.forEach(el => observer.observe(el));
+
+    // Tilt card effect on mouse move
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / card.offsetWidth;
+        const y = (e.clientY - rect.top) / card.offsetHeight;
+        card.style.transform = `rotateY(${(x - 0.5) * 10}deg) rotateX(${(0.5 - y) * 10}deg)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateY(0deg) rotateX(0deg)';
+      });
+    });
+
+    // Typewriter effect
+    const typePhrases = ['START YOUR FITNESS JOURNEY NOW', 'GET FIT. STAY STRONG.', 'BECOME UNSTOPPABLE'];
+    let phraseIndex = 0;
+    let charIndex = 0;
+
+    function typeEffect() {
+      const currentPhrase = typePhrases[phraseIndex];
+      document.getElementById('typewriter').textContent = currentPhrase.substring(0, charIndex++);
+      if (charIndex > currentPhrase.length) {
+        charIndex = 0;
+        phraseIndex = (phraseIndex + 1) % typePhrases.length;
+        setTimeout(typeEffect, 1000);
+      } else {
+        setTimeout(typeEffect, 100);
+      }
+    }
+
+    typeEffect();
+  </script>
+  <script src="script.js"></script>
 </body>
 </html>
