@@ -7,8 +7,32 @@
     <title>About Us - Herculean Gym</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        :root {
+            /* Primary Brand Colors */
+            --primary-blue: #0052a3;
+            --primary-blue-dark: #003d7a;
+            --primary-blue-light: #e9f0fc;
+            
+            /* Accent Colors */
+            --accent-orange: #ea5e2a;
+            --accent-orange-dark: #d4511e;
+            
+            /* Neutral Colors */
+            --text-primary: #22304e;
+            --text-secondary: #31435a;
+            --background-main: #ffffff;
+            --background-light: #f0f7ff;
+            --background-dark: #111111;
+            
+            /* Utility Colors */
+            --border-color: #e2e6ed;
+            --shadow-color: rgba(0, 82, 163, 0.15);
+            --success-green: #4caf50;
+            --error-red: #ac4830;
+        }
+
         body {
-            background: #e9f0fc;
+            background: var(--background-light);
         }
 
         main {
@@ -19,7 +43,7 @@
         .hero-section {
             position: relative;
             height: 60vh;
-            background: linear-gradient(135deg, rgba(34, 88, 164, 0.8), rgba(34, 48, 78, 0.9)), url('resources/team-hero.jpg');
+            background: linear-gradient(135deg, rgba(0, 82, 163, 0.8), rgba(34, 48, 78, 0.9)), url('resources/team-hero.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -54,14 +78,14 @@
 
         .story-header h1 {
             font-size: 2.5rem;
-            color: #22304e;
+            color: var(--text-primary);
             font-weight: 700;
             margin-bottom: 1rem;
             letter-spacing: 1px;
         }
 
         .story-header h2 {
-            color: #2258a4;
+            color: var(--primary-blue);
             font-size: 1.4rem;
             font-weight: 600;
             letter-spacing: 0.5px;
@@ -73,8 +97,8 @@
             border-radius: 16px;
             padding: 40px;
             background: #f6faff;
-            color: #31435a;
-            box-shadow: 0 4px 20px rgba(34, 88, 164, 0.08);
+            color: var(--text-secondary);
+            box-shadow: 0 4px 20px var(--shadow-color);
             position: relative;
         }
 
@@ -95,7 +119,7 @@
         .meet-team-container h1 {
             text-align: center;
             font-size: 2.5rem;
-            color: #22304e;
+            color: var(--text-primary);
             font-weight: 700;
             margin-bottom: 50px;
             letter-spacing: 1px;
@@ -110,24 +134,24 @@
         }
 
         .member {
-            background: #fff;
+            background: var(--background-main);
             border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(34, 88, 164, 0.12);
+            box-shadow: 0 4px 20px var(--shadow-color);
             flex: 1 1 350px;
             max-width: 400px;
             min-width: 300px;
             text-align: center;
             padding: 30px;
             transition: all 0.3s ease;
-            border: 2px solid #e2e6ed;
+            border: 2px solid var(--border-color);
             position: relative;
             overflow: hidden;
         }
 
         .member:hover {
-            box-shadow: 0 8px 30px rgba(34, 88, 164, 0.2);
+            box-shadow: 0 8px 30px var(--shadow-color);
             transform: translateY(-5px);
-            border-color: #2258a4;
+            border-color: var(--primary-blue);
         }
 
         .member img {
@@ -136,8 +160,8 @@
             object-fit: cover;
             border-radius: 50%;
             margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(34, 88, 164, 0.15);
-            border: 3px solid #e9f0fc;
+            box-shadow: 0 4px 12px var(--shadow-color);
+            border: 3px solid var(--primary-blue-light);
             transition: transform 0.3s ease;
         }
 
@@ -146,7 +170,7 @@
         }
 
         .member h3 {
-            color: #2258a4;
+            color: var(--primary-blue);
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 5px;
@@ -154,7 +178,7 @@
         }
 
         .member h5 {
-            color: #ea5e2a;
+            color: var(--accent-orange);
             font-weight: 600;
             margin-bottom: 15px;
             font-size: 1rem;
@@ -173,8 +197,8 @@
         }
 
         .badge {
-            background: #e9f0fc;
-            color: #2258a4;
+            background: var(--primary-blue-light);
+            color: var(--primary-blue);
             padding: 6px 10px;
             border-radius: 20px;
             font-size: 0.8rem;
@@ -199,7 +223,7 @@
         }
 
         .member p {
-            color: #31435a;
+            color: var(--text-secondary);
             font-size: 1rem;
             text-align: justify;
             line-height: 1.6;
@@ -215,7 +239,7 @@
         .testimonials-section h2 {
             text-align: center;
             font-size: 2.5rem;
-            color: #22304e;
+            color: var(--text-primary);
             font-weight: 700;
             margin-bottom: 50px;
         }
@@ -232,8 +256,8 @@
             background: #f6faff;
             padding: 30px;
             border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(34, 88, 164, 0.1);
-            border-left: 4px solid #2258a4;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            border-left: 4px solid var(--primary-blue);
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -242,7 +266,7 @@
         .testimonial p {
             font-size: 1.1rem;
             line-height: 1.6;
-            color: #31435a;
+            color: var(--text-secondary);
             margin-bottom: 20px;
             font-style: italic;
             flex-grow: 1;
@@ -263,19 +287,19 @@
         }
 
         .testimonial-author h4 {
-            color: #2258a4;
+            color: var(--primary-blue);
             font-size: 1.1rem;
             margin-bottom: 5px;
         }
 
         .testimonial-author span {
-            color: #31435a;
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
 
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, #2258a4, #22304e);
+            background: linear-gradient(135deg, var(--primary-blue), var(--text-primary));
             color: white;
             padding: 60px 20px;
             text-align: center;
@@ -311,12 +335,12 @@
         }
 
         .btn.primary {
-            background: #ea5e2a;
+            background: var(--accent-orange);
             color: white;
         }
 
         .btn.primary:hover {
-            background: #d4511e;
+            background: var(--accent-orange-dark);
             transform: translateY(-2px);
         }
 
@@ -328,7 +352,7 @@
 
         .btn.secondary:hover {
             background: white;
-            color: #2258a4;
+            color: var(--primary-blue);
         }
 
         /* Responsive Design */

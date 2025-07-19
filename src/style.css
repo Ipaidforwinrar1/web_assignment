@@ -1,3 +1,28 @@
+/* CSS Custom Properties for Cohesive Color Scheme */
+:root {
+  /* Primary Brand Colors */
+  --primary-blue: #0052a3;
+  --primary-blue-dark: #003d7a;
+  --primary-blue-light: #e9f0fc;
+  
+  /* Accent Colors */
+  --accent-orange: #ea5e2a;
+  --accent-orange-dark: #d4511e;
+  
+  /* Neutral Colors */
+  --text-primary: #22304e;
+  --text-secondary: #31435a;
+  --background-main: #ffffff;
+  --background-light: #f0f7ff;
+  --background-dark: #111111;
+  
+  /* Utility Colors */
+  --border-color: #e2e6ed;
+  --shadow-color: rgba(0, 82, 163, 0.15);
+  --success-green: #4caf50;
+  --error-red: #ac4830;
+}
+
 /* Reset & Base */
 * {
   margin: 0;
@@ -8,12 +33,12 @@
 }
 
 body {
-  background-color: #fff;
+  background-color: var(--background-main);
 }
 
 /* Header & Navigation */
 header {
-  background-color: #ffffff;
+  background-color: var(--background-main);
   padding: 15px 30px;
   display: flex;
   align-items: center;
@@ -24,7 +49,7 @@ header {
 
 .logo {
   font-weight: bold;
-  color: #0052a3;
+  color: var(--primary-blue);
   font-size: 32px;
 }
 
@@ -42,14 +67,14 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #0052a3;
-  border-bottom: 2px solid #0052a3;
+  color: var(--primary-blue);
+  border-bottom: 2px solid var(--primary-blue);
   padding-bottom: 4px;
 }
 
 /* Sign In Button */
 .join-btn {
-  background-color: #0052a3;
+  background-color: var(--primary-blue);
   color: white;
   padding: 10px 16px;
   border: none;
@@ -61,7 +86,7 @@ nav ul li a:hover {
 }
 
 nav ul li a.active {
-  color: #0052a3;
+  color: var(--primary-blue);
   border-bottom: none;
   padding-bottom: 0;
 }
@@ -76,9 +101,7 @@ nav ul li a.active {
   border: none;
   font-weight: bold;
   color: black;
-  /* Change to black */
   font-size: 16px;
-  /* Adjust size */
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -94,14 +117,13 @@ nav ul li a.active {
   overflow: hidden;
   z-index: 1000;
   width: 180px;
-  /* Adjust width as needed */
 }
 
 .dropdown-menu a {
   display: block;
   padding: 12px 20px;
   text-decoration: none;
-  color: #0052a3;
+  color: var(--primary-blue);
   font-weight: bold;
 }
 
@@ -116,7 +138,7 @@ nav ul li a.active {
   right: 30px;
   z-index: 9999;
   font-size: 18px;
-  background-color: #0052a3;
+  background-color: var(--primary-blue);
   color: white;
   border: none;
   cursor: pointer;
@@ -127,12 +149,12 @@ nav ul li a.active {
 }
 
 #backToTopBtn:hover {
-  background-color: #003d7a;
+  background-color: var(--primary-blue-dark);
 }
 
 /* Footer */
 footer.site-footer {
-  background-color: #111;
+  background-color: var(--background-dark);
   color: #eee;
   padding: 50px 30px;
   font-size: 14px;
@@ -163,15 +185,15 @@ footer.site-footer {
 }
 
 .footer-links a:hover {
-  color: #0052a3;
+  color: var(--primary-blue);
 }
 
 .footer-newsletter button {
-  background-color: #0052a3;
+  background-color: var(--primary-blue);
 }
 
 .footer-newsletter button:hover {
-  background-color: #003d7a;
+  background-color: var(--primary-blue-dark);
 }
 
 /* Form elements styling */
@@ -204,49 +226,6 @@ button {
   border-width: 4px;
 }
 
-.user-dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.user-btn {
-  background-color: transparent;
-  border: none;
-  font-weight: bold;
-  color: black;
-  /* Change to black */
-  font-size: 16px;
-  /* Adjust size */
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 120%;
-  right: 0;
-  background-color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-  overflow: hidden;
-  z-index: 1000;
-  width: 180px;
-  /* Adjust width as needed */
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 12px 20px;
-  text-decoration: none;
-  color: #0052a3;
-  font-weight: bold;
-}
-
-.dropdown-menu a:hover {
-  background-color: #f2f2f2;
-}
-
 /* Responsive Layout */
 @media screen and (max-width: 768px) {
   header {
@@ -274,7 +253,7 @@ button {
   display: inline-block;
   color: white;
   cursor: pointer;
-  background-color: #0052a3;
+  background-color: var(--primary-blue);
   transition: background-color 0.3s ease-in-out, transform 0.2s ease, box-shadow 0.2s ease-in-out;
   border: none;
   font-weight: 600;
@@ -292,7 +271,7 @@ button {
 }
 
 .btn:hover {
-  background-color: #003d7a;
+  background-color: var(--primary-blue-dark);
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.3);
+  box-shadow: 0 4px 12px var(--shadow-color);
 }

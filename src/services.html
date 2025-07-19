@@ -8,6 +8,30 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <style>
+        :root {
+            /* Primary Brand Colors */
+            --primary-blue: #0052a3;
+            --primary-blue-dark: #003d7a;
+            --primary-blue-light: #e9f0fc;
+            
+            /* Accent Colors */
+            --accent-orange: #ea5e2a;
+            --accent-orange-dark: #d4511e;
+            
+            /* Neutral Colors */
+            --text-primary: #22304e;
+            --text-secondary: #31435a;
+            --background-main: #ffffff;
+            --background-light: #f0f7ff;
+            --background-dark: #111111;
+            
+            /* Utility Colors */
+            --border-color: #e2e6ed;
+            --shadow-color: rgba(0, 82, 163, 0.15);
+            --success-green: #4caf50;
+            --error-red: #ac4830;
+        }
+
         /* First Section */
         .first-section {
             display: flex;
@@ -22,14 +46,13 @@
             display: flex;
             align-items: center;
             gap: 40px;
-            background-color: #0f5888;
-            color: #e0f4ff;
+            background-color: var(--primary-blue);
+            color: var(--background-light);
             padding: 30px;
             border-radius: 16px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
             flex-wrap: wrap;
             width: 100%;
-            /* ensures it fits inside .first-section */
             box-sizing: border-box;
             transition: transform 0.3s ease;
         }
@@ -66,7 +89,7 @@
 
         /* Highlights section */
         .highlight-section {
-            background-color: #eaf4fb;
+            background-color: var(--background-light);
             padding: 40px 10%;
         }
 
@@ -74,7 +97,7 @@
             font-weight: bold;
             font-size: 38px;
             margin-bottom: 30px;
-            color: #010165;
+            color: var(--text-primary);
             text-align: center;
         }
 
@@ -109,8 +132,8 @@
         }
 
         .small-card {
-            background-color: #0f5888;
-            color: #e0f4ff;
+            background-color: var(--primary-blue);
+            color: var(--background-light);
             padding: 20px;
             flex-grow: 1;
             display: flex;
@@ -129,12 +152,12 @@
             margin: 0 0 10px 0;
             font-size: 1.2rem;
             font-weight: 700;
-            color: #ffffff;
+            color: var(--background-main);
         }
 
         .small-card a {
             font-size: 0.9rem;
-            color: #aee2ff;
+            color: var(--primary-blue-light);
             text-decoration: underline;
             align-self: flex-start;
             font-weight: 600;
@@ -142,21 +165,21 @@
         }
 
         .small-card a:hover {
-            color: #ffffff;
+            color: var(--background-main);
         }
 
         /* Explore Classes Section */
         .explore-section {
             padding: 60px 15px;
-            background-color: #1f2f4d;
-            color: #e0f4ff;
+            background-color: var(--text-primary);
+            color: var(--background-light);
             text-align: center;
         }
 
         .explore-section h2 {
             font-size: 2.5rem;
             margin-bottom: 40px;
-            color: #ffffff;
+            color: var(--background-main);
         }
 
         #class-search-container {
@@ -181,14 +204,14 @@
         }
 
         #class-search:focus {
-            border-color: #007bff;
+            border-color: var(--primary-blue);
             outline: none;
             background: #fff;
-            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+            box-shadow: 0 4px 8px var(--shadow-color);
         }
 
         #search-submit {
-            background-color: #007bff;
+            background-color: var(--primary-blue);
             border: none;
             color: white;
             font-size: 18px;
@@ -204,7 +227,7 @@
         }
 
         #search-submit:hover {
-            background-color: #0056b3;
+            background-color: var(--primary-blue-dark);
         }
 
         .side-by-side {
@@ -231,7 +254,7 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-            background-color: #0f5888;
+            background-color: var(--primary-blue);
             color: white;
             display: flex;
             flex-direction: column;
@@ -245,22 +268,18 @@
 
         .class-card img {
             width: 100%;
-            height: 160px;
-            width: 100%;
             height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
             object-fit: cover;
             display: block;
             border-radius: 12px 12px 0 0;
         }
 
         .class-card-bottom {
-            background-color: rgb(169, 211, 255);
+            background-color: var(--primary-blue-light);
             padding: 10px 15px;
             height: 200px;
             font-size: 1rem;
-            color: #010165;
+            color: var(--text-primary);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -270,7 +289,7 @@
             font-size: 1.2rem;
             margin: 5px 0 10px;
             font-weight: bold;
-            color: #010165;
+            color: var(--text-primary);
         }
 
         .class-card-bottom p {
@@ -279,14 +298,14 @@
         }
 
         .class-card-bottom a {
-            color: #010165;
+            color: var(--text-primary);
             text-decoration: underline;
             align-self: flex-start;
             font-weight: 600;
         }
 
         .class-card-bottom a:hover {
-            color: #00008b;
+            color: var(--primary-blue);
         }
 
         .category-list {
@@ -303,7 +322,7 @@
             font-weight: 600;
             text-align: center;
             color: #ffffff;
-            background-color: #007bff;
+            background-color: var(--primary-blue);
             border: none;
             border-radius: 12px;
             cursor: pointer;
@@ -313,17 +332,17 @@
 
         .category-list button:hover,
         .category-list button:focus {
-            background-color: #0056b3;
+            background-color: var(--primary-blue-dark);
             transform: translateY(-1px);
         }
 
         .category-list button:active {
-            background-color: #003e80;
+            background-color: var(--primary-blue-dark);
             transform: translateY(0);
         }
 
         .category-list button.selected {
-            background-color: #28a745;
+            background-color: var(--accent-orange);
             color: #fff;
             font-weight: bold;
         }

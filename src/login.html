@@ -7,8 +7,31 @@
   <title>Herculean Gym | Sign In / Sign Up</title>
   <link rel="stylesheet" href="style.css" />
 
-
   <style>
+    :root {
+      /* Primary Brand Colors */
+      --primary-blue: #0052a3;
+      --primary-blue-dark: #003d7a;
+      --primary-blue-light: #e9f0fc;
+      
+      /* Accent Colors */
+      --accent-orange: #ea5e2a;
+      --accent-orange-dark: #d4511e;
+      
+      /* Neutral Colors */
+      --text-primary: #22304e;
+      --text-secondary: #31435a;
+      --background-main: #ffffff;
+      --background-light: #f0f7ff;
+      --background-dark: #111111;
+      
+      /* Utility Colors */
+      --border-color: #e2e6ed;
+      --shadow-color: rgba(0, 82, 163, 0.15);
+      --success-green: #4caf50;
+      --error-red: #ac4830;
+    }
+
     *,
     *::before,
     *::after {
@@ -16,14 +39,13 @@
       margin: 0;
       padding: 0;
     }
-  </style>
-  <style>
+
     main {
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 60px 20px;
-      background: linear-gradient(to right, #eaf6ff, #ffffff);
+      background: linear-gradient(to right, var(--background-light), var(--background-main));
       min-height: 80vh;
     }
 
@@ -31,7 +53,7 @@
       background: white;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px var(--shadow-color);
       width: 100%;
       max-width: 500px;
     }
@@ -39,7 +61,7 @@
     .form-box h3 {
       text-align: center;
       margin-bottom: 20px;
-      color: #0052a3;
+      color: var(--primary-blue);
     }
 
     .form-box label {
@@ -59,7 +81,7 @@
     .form-box button[type="submit"] {
       width: 100%;
       margin-top: 20px;
-      background-color: #0052a3;
+      background-color: var(--primary-blue);
       color: white;
       padding: 12px;
       font-weight: bold;
@@ -69,7 +91,7 @@
     }
 
     .form-box button[type="submit"]:hover {
-      background-color: #003d7a;
+      background-color: var(--primary-blue-dark);
     }
 
     .switch-link {
@@ -78,7 +100,7 @@
     }
 
     .switch-link a {
-      color: #0052a3;
+      color: var(--primary-blue);
       text-decoration: none;
       font-weight: bold;
       cursor: pointer;
@@ -94,11 +116,11 @@
     }
 
     .error-message {
-      color: red;
+      color: var(--error-red);
     }
 
     .success-message {
-      color: green;
+      color: var(--success-green);
     }
 
     input[type="email"],
@@ -139,7 +161,7 @@
       display: block;
       padding: 10px 15px;
       text-decoration: none;
-      color: #0052a3;
+      color: var(--primary-blue);
       font-weight: bold;
     }
 
@@ -425,16 +447,6 @@
       message.innerHTML = `<div class='error-message'>Birthday cannot be before ${minYear}.</div>`;
       return;
     }
-
-    // (Optional) Minimum age check (uncomment to use)
-    // const minAge = 13;
-    // const ageDifMs = today - birthdayDate;
-    // const ageDate = new Date(ageDifMs);
-    // const age = Math.abs(ageDate.getUTCFullYear() - 1970);
-    // if (age < minAge) {
-    //   message.innerHTML = "<div class='error-message'>You must be at least 13 years old to sign up.</div>";
-    //   return;
-    // }
 
     // Check for existing user (case-insensitive email)
     let users = JSON.parse(localStorage.getItem("users")) || [];

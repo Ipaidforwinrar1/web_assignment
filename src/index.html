@@ -7,6 +7,30 @@
   <title>HERCULEAN GYM</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    :root {
+      /* Primary Brand Colors */
+      --primary-blue: #0052a3;
+      --primary-blue-dark: #003d7a;
+      --primary-blue-light: #e9f0fc;
+      
+      /* Accent Colors */
+      --accent-orange: #ea5e2a;
+      --accent-orange-dark: #d4511e;
+      
+      /* Neutral Colors */
+      --text-primary: #22304e;
+      --text-secondary: #31435a;
+      --background-main: #ffffff;
+      --background-light: #f0f7ff;
+      --background-dark: #111111;
+      
+      /* Utility Colors */
+      --border-color: #e2e6ed;
+      --shadow-color: rgba(0, 82, 163, 0.15);
+      --success-green: #4caf50;
+      --error-red: #ac4830;
+    }
+
     .home {
       position: relative;
       height: 500px;
@@ -42,7 +66,7 @@
     }
 
     .pass {
-      background-color: #0052a3;
+      background-color: var(--primary-blue);
       padding: 5px 10px;
     }
 
@@ -61,6 +85,11 @@
       padding: 12px 20px;
       font-size: 16px;
       border-radius: 8px;
+      background-color: var(--primary-blue);
+    }
+
+    .cta-btn:hover {
+      background-color: var(--primary-blue-dark);
     }
 
     .cards-section {
@@ -128,21 +157,23 @@
       font-size: 24px;
       font-weight: 800;
       margin-bottom: 10px;
+      color: var(--text-primary);
     }
 
     .image-overlay p {
       font-size: 16px;
       margin-bottom: 18px;
+      color: var(--text-secondary);
     }
 
     .image-overlay .cta-btn {
-      background-color: #0052a3;
+      background-color: var(--primary-blue);
     }
 
     .testimonial-section {
       display: flex;
       padding: 60px 40px;
-      background-color: #f9f9f9;
+      background-color: var(--background-light);
       flex-wrap: wrap;
       gap: 30px;
     }
@@ -156,7 +187,7 @@
       font-size: 26px;
       font-weight: 800;
       margin-bottom: 10px;
-      color: #111;
+      color: var(--text-primary);
     }
 
     .testimonial-cards {
@@ -172,7 +203,7 @@
       border-radius: 8px;
       box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
       text-align: center;
-      color: #333;
+      color: var(--text-secondary);
     }
 
     .testimonial-box img {

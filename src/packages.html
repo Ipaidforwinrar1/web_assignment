@@ -8,7 +8,6 @@
 
     <link href="style.css" rel="stylesheet">
 
-
     <!-- CSS Reset -->
     <style>
         *,
@@ -22,11 +21,34 @@
 
     <style>
         :root {
-            --primary-colour: #1f3196;
-            --background-colour: #f0f7ff;
+            /* Primary Brand Colors */
+            --primary-blue: #0052a3;
+            --primary-blue-dark: #003d7a;
+            --primary-blue-light: #e9f0fc;
+            
+            /* Accent Colors */
+            --accent-orange: #ea5e2a;
+            --accent-orange-dark: #d4511e;
+            
+            /* Neutral Colors */
+            --text-primary: #22304e;
+            --text-secondary: #31435a;
+            --background-main: #ffffff;
+            --background-light: #f0f7ff;
+            --background-dark: #111111;
+            
+            /* Utility Colors */
+            --border-color: #e2e6ed;
+            --shadow-color: rgba(0, 82, 163, 0.15);
+            --success-green: #4caf50;
+            --error-red: #ac4830;
+            
+            /* Legacy variables for compatibility */
+            --primary-colour: var(--primary-blue);
+            --background-colour: var(--background-light);
             --lite-color: #5785b1;
-            --regular-color: #2e2a2a;
-            --premium-color: #ac4830;
+            --regular-color: var(--text-secondary);
+            --premium-color: var(--accent-orange);
         }
 
         .hero-video {
@@ -94,6 +116,11 @@
             font-size: 1rem;
             border-radius: 8px;
             letter-spacing: 0.5px;
+            background-color: var(--primary-blue);
+        }
+
+        .join-now-button:hover {
+            background-color: var(--primary-blue-dark);
         }
 
         .flex-container {
@@ -138,7 +165,6 @@
             text-align: center;
             padding: 4rem 2rem;
             background: linear-gradient(to bottom, var(--background-colour), white);
-
         }
 
         .packages-heading {
@@ -239,6 +265,11 @@
             padding: 0.75rem 1.5rem;
             border-radius: 25px;
             font-weight: 600;
+            background-color: var(--primary-blue);
+        }
+
+        .purchase-btn:hover {
+            background-color: var(--primary-blue-dark);
         }
 
         .features-table-section {
@@ -286,13 +317,13 @@
 
         .features-table th.regular {
             font-size: large;
-            color: #2e2a2a;
+            color: var(--regular-color);
             padding-bottom: 0;
         }
 
         .features-table th.premium {
             font-size: large;
-            color: #ac4830;
+            color: var(--premium-color);
             padding-bottom: 0;
         }
 
@@ -376,6 +407,11 @@
             font-weight: 600;
             border-radius: 8px;
             text-decoration: none;
+            background-color: var(--primary-blue);
+        }
+
+        .contact-btn:hover {
+            background-color: var(--accent-orange);
         }
 
         .trial-content {
