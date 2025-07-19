@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Herculean Fitness | Packages & Memberships</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon/favicon-16x16.png">
     <link href="style.css" rel="stylesheet">
 
     <style>
@@ -415,13 +415,41 @@
         }
 
         @keyframes slideFullImages {
-            0%, 8% { transform: translateX(0); }
-            16%, 24% { transform: translateX(-100%); }
-            32%, 40% { transform: translateX(-200%); }
-            48%, 56% { transform: translateX(-300%); }
-            64%, 72% { transform: translateX(-400%); }
-            80%, 88% { transform: translateX(-500%); }
-            96%, 100% { transform: translateX(0); }
+
+            0%,
+            8% {
+                transform: translateX(0);
+            }
+
+            16%,
+            24% {
+                transform: translateX(-100%);
+            }
+
+            32%,
+            40% {
+                transform: translateX(-200%);
+            }
+
+            48%,
+            56% {
+                transform: translateX(-300%);
+            }
+
+            64%,
+            72% {
+                transform: translateX(-400%);
+            }
+
+            80%,
+            88% {
+                transform: translateX(-500%);
+            }
+
+            96%,
+            100% {
+                transform: translateX(0);
+            }
         }
     </style>
 </head>
@@ -471,7 +499,7 @@
             </div>
         </section>
         <hr style="height: 3px; background-color: var(--primary-blue); border: none;">
-        
+
         <!-- Statistics section -->
         <section class="flex-container stats-section" id="stats">
             <div class="stat-box">
@@ -685,7 +713,7 @@
                 </table>
             </div>
         </section>
-        
+
         <section class="free-trial-section">
             <div class="trial-content">
                 <div class="trial-text">
@@ -707,7 +735,7 @@
             </div>
         </section>
     </main>
-    
+
     <button onclick="scrollToTop()" id="backToTopBtn" title="Back to Top">↑</button>
 
     <footer class="site-footer">
@@ -859,7 +887,7 @@
             });
         }
     </script>
-    
+
     <!-- SHARED SCRIPT -->
     <script src="script.js"></script>
 </body>

@@ -23,7 +23,7 @@ function initializeUserDropdown() {
       const signInLink = document.getElementById("signInLink");
       const userDropdown = document.getElementById("userDropdown");
       const userName = document.getElementById("userName");
-      
+
       if (signInLink) signInLink.style.display = "none";
       if (userDropdown) userDropdown.style.display = "inline-block";
       if (userName) userName.textContent = user.firstName || "User";
@@ -62,7 +62,7 @@ function logout() {
 
 function initializeBackToTop() {
   // Show/hide back to top button on scroll
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', function () {
     const btn = document.getElementById("backToTopBtn");
     if (btn) {
       btn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
