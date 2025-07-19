@@ -5,10 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HERCULEAN GYM</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon/favicon-16x16.png">
   <link rel="stylesheet" href="style.css">
+
   <style>
+    /* === Hero Section === */
     .home {
       position: relative;
       height: 500px;
@@ -30,6 +30,17 @@
 
     .text-box {
       max-width: 700px;
+      opacity: 0;
+      transform: translateX(-30px);
+      animation: slideIn 1.5s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     .text-box h1 {
@@ -44,7 +55,7 @@
     }
 
     .pass {
-      background-color: var(--primary-blue);
+      background-color: #0052a3;
       padding: 5px 10px;
     }
 
@@ -63,13 +74,17 @@
       padding: 12px 20px;
       font-size: 16px;
       border-radius: 8px;
-      background-color: var(--primary-blue);
+      background-color: #0052a3;
+      color: #fff;
+      transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
     .cta-btn:hover {
-      background-color: var(--primary-blue-dark);
+      background-color: #003d7a;
+      transform: scale(1.05);
     }
 
+    /* === Cards Section === */
     .cards-section {
       display: flex;
       justify-content: center;
@@ -90,6 +105,7 @@
       padding: 20px;
       background-size: cover;
       background-position: center;
+      transition: transform 0.2s ease;
     }
 
     .card-content h3 {
@@ -108,6 +124,7 @@
       font-weight: bold;
     }
 
+    /* === Full-Width Image Section === */
     .full-image-section {
       position: relative;
       width: 100%;
@@ -135,23 +152,18 @@
       font-size: 24px;
       font-weight: 800;
       margin-bottom: 10px;
-      color: var(--text-primary);
     }
 
     .image-overlay p {
       font-size: 16px;
       margin-bottom: 18px;
-      color: var(--text-secondary);
     }
 
-    .image-overlay .cta-btn {
-      background-color: var(--primary-blue);
-    }
-
+    /* === Testimonials === */
     .testimonial-section {
       display: flex;
       padding: 60px 40px;
-      background-color: var(--background-light);
+      background-color: #f9f9f9;
       flex-wrap: wrap;
       gap: 30px;
     }
@@ -165,7 +177,7 @@
       font-size: 26px;
       font-weight: 800;
       margin-bottom: 10px;
-      color: var(--text-primary);
+      color: #111;
     }
 
     .testimonial-cards {
@@ -181,7 +193,7 @@
       border-radius: 8px;
       box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
       text-align: center;
-      color: var(--text-secondary);
+      color: #333;
     }
 
     .testimonial-box img {
@@ -192,6 +204,19 @@
       margin-bottom: 10px;
     }
 
+    /* === Scroll Fade-In Effect === */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* === Responsive Design === */
     @media screen and (max-width: 768px) {
 
       .text-box h1,
@@ -214,6 +239,7 @@
 </head>
 
 <body>
+  <!-- Header with navigation and login -->
   <header>
     <div class="logo">Herculean Gym</div>
     <nav>
@@ -238,18 +264,20 @@
     <a href="login.html" class="join-btn" id="signInLink">Sign In</a>
   </header>
 
+  <!-- Hero Section with typewriter -->
   <section class="home">
     <div class="overlay">
       <div class="text-box">
         <h1><span class="fit">Herculean</span><span class="pass">Gym</span></h1>
-        <h2>START YOUR FITNESS JOURNEY NOW</h2>
+        <h2><span id="typewriter"></span></h2>
         <p>Get full access to all Herculean Gym clubs with our variety of memberships.</p>
         <a href="packages.html" class="btn cta-btn">Explore Memberships</a>
       </div>
     </div>
   </section>
 
-  <section class="cards-section">
+  <!-- Feature Cards -->
+  <section class="cards-section fade-in">
     <div class="card" style="background-image: url('./resources/gym4.jpg');">
       <div class="card-content">
         <h3>MALAYSIA'S MOST SUCCESSFUL GYM COMMUNITY</h3>
@@ -273,7 +301,8 @@
     </div>
   </section>
 
-  <section class="full-image-section">
+  <!-- Full-width motivational image section -->
+  <section class="full-image-section fade-in">
     <div class="image-overlay">
       <h2>BE THE STRONGEST<br>VERSION OF YOURSELF</h2>
       <p>You define your limits. Push beyond them.</p>
@@ -281,7 +310,8 @@
     </div>
   </section>
 
-  <section class="testimonial-section">
+  <!-- Testimonials from clients -->
+  <section class="testimonial-section fade-in">
     <div class="testimonial-text">
       <h2>DON'T TAKE OUR WORD FOR IT</h2>
       <p>Here's what our clients have to say about us.</p>
@@ -289,8 +319,7 @@
     <div class="testimonial-cards">
       <div class="testimonial-box">
         <img src="./resources/client1.jpeg" alt="Happy Customer">
-        <p>"Joining Herculean Gym changed my life especially with the help of their various coaches. The energy here is
-          unmatched!"</p>
+        <p>"Joining Herculean Gym changed my life especially with the help of their various coaches. The energy here is unmatched!"</p>
       </div>
       <div class="testimonial-box">
         <img src="./resources/client2.png" alt="Happy Customer">
@@ -298,7 +327,7 @@
       </div>
       <div class="testimonial-box">
         <img src="./resources/client3.jpeg" alt="Happy Customer">
-        <p>"I&apos;ve never felt stronger or more supported. Highly recommend!"</p>
+        <p>"I've never felt stronger or more supported. Highly recommend!"</p>
       </div>
       <div class="testimonial-box">
         <img src="./resources/client4.jpeg" alt="Happy Customer">
@@ -307,8 +336,10 @@
     </div>
   </section>
 
+  <!-- Scroll to top button -->
   <button onclick="scrollToTop()" id="backToTopBtn" title="Back to Top">↑</button>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-brand">
@@ -337,9 +368,9 @@
     </div>
   </footer>
 
-  <!-- PAGE-SPECIFIC JAVASCRIPT -->
+  <!-- === JavaScript Interactivity === -->
   <script>
-    // Homepage background image rotation
+    // Background image rotation for hero section
     const home = document.querySelector('.home');
     const images = ['./resources/gym1.jpg', './resources/gym2.jpg', './resources/gym3.jpg'];
     let index = 0;
@@ -351,10 +382,61 @@
 
     changeBackground();
     setInterval(changeBackground, 4000);
-  </script>
 
-  <!-- SHARED SCRIPT (LAST) -->
+    // Show "Back to Top" button after scrolling
+    window.onscroll = function () {
+      const btn = document.getElementById("backToTopBtn");
+      btn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Fade-in elements on scroll using IntersectionObserver
+    const fadeIns = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    fadeIns.forEach(el => observer.observe(el));
+
+    // Tilt card effect on mouse move
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / card.offsetWidth;
+        const y = (e.clientY - rect.top) / card.offsetHeight;
+        card.style.transform = `rotateY(${(x - 0.5) * 10}deg) rotateX(${(0.5 - y) * 10}deg)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateY(0deg) rotateX(0deg)';
+      });
+    });
+
+    // Typewriter effect
+    const typePhrases = ['START YOUR FITNESS JOURNEY NOW', 'GET FIT. STAY STRONG.', 'BECOME UNSTOPPABLE'];
+    let phraseIndex = 0;
+    let charIndex = 0;
+
+    function typeEffect() {
+      const currentPhrase = typePhrases[phraseIndex];
+      document.getElementById('typewriter').textContent = currentPhrase.substring(0, charIndex++);
+      if (charIndex > currentPhrase.length) {
+        charIndex = 0;
+        phraseIndex = (phraseIndex + 1) % typePhrases.length;
+        setTimeout(typeEffect, 1000);
+      } else {
+        setTimeout(typeEffect, 100);
+      }
+    }
+
+    typeEffect();
+  </script>
   <script src="script.js"></script>
 </body>
-
 </html>
