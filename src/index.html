@@ -5,35 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HERCULEAN GYM</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="resources/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="stylesheet" href="style.css">
   <style>
-    :root {
-      /* Primary Brand Colors */
-      --primary-blue: #0052a3;
-      --primary-blue-dark: #003d7a;
-      --primary-blue-light: #e9f0fc;
-
-      /* Accent Colors */
-      --accent-orange: #ea5e2a;
-      --accent-orange-dark: #d4511e;
-
-      /* Neutral Colors */
-      --text-primary: #22304e;
-      --text-secondary: #31435a;
-      --background-main: #ffffff;
-      --background-light: #f0f7ff;
-      --background-dark: #111111;
-
-      /* Utility Colors */
-      --border-color: #e2e6ed;
-      --shadow-color: rgba(0, 82, 163, 0.15);
-      --success-green: #4caf50;
-      --error-red: #ac4830;
-    }
-
     .home {
       position: relative;
       height: 500px;
@@ -218,7 +193,6 @@
     }
 
     @media screen and (max-width: 768px) {
-
       .text-box h1,
       .text-box h2 {
         font-size: 28px;
@@ -260,10 +234,8 @@
         <a href="#" onclick="logout()">Log Out</a>
       </div>
     </div>
-
     <a href="login.html" class="join-btn" id="signInLink">Sign In</a>
   </header>
-
 
   <section class="home">
     <div class="overlay">
@@ -364,7 +336,9 @@
     </div>
   </footer>
 
+  <!-- PAGE-SPECIFIC JAVASCRIPT -->
   <script>
+    // Homepage background image rotation
     const home = document.querySelector('.home');
     const images = ['./resources/gym1.jpg', './resources/gym2.jpg', './resources/gym3.jpg'];
     let index = 0;
@@ -376,16 +350,9 @@
 
     changeBackground();
     setInterval(changeBackground, 4000);
-
-    window.onscroll = function () {
-      const btn = document.getElementById("backToTopBtn");
-      btn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
-    };
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
   </script>
+  
+  <!-- SHARED SCRIPT (LAST) -->
   <script src="script.js"></script>
 </body>
 

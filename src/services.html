@@ -5,36 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Herculean Fitness | Services</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="resources/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <style>
-        :root {
-            /* Primary Brand Colors */
-            --primary-blue: #0052a3;
-            --primary-blue-dark: #003d7a;
-            --primary-blue-light: #e9f0fc;
-
-            /* Accent Colors */
-            --accent-orange: #ea5e2a;
-            --accent-orange-dark: #d4511e;
-
-            /* Neutral Colors */
-            --text-primary: #22304e;
-            --text-secondary: #31435a;
-            --background-main: #ffffff;
-            --background-light: #f0f7ff;
-            --background-dark: #111111;
-
-            /* Utility Colors */
-            --border-color: #e2e6ed;
-            --shadow-color: rgba(0, 82, 163, 0.15);
-            --success-green: #4caf50;
-            --error-red: #ac4830;
-        }
-
         /* First Section */
         .first-section {
             display: flex;
@@ -369,15 +343,6 @@
                 align-items: center;
             }
 
-            nav {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .signup-login {
-                justify-content: center;
-            }
-
             .feature-card,
             .feature-card.reverse {
                 flex-direction: column;
@@ -455,7 +420,6 @@
     </header>
 
     <main>
-
         <div class="highlight-section">
             <h1>Highlights:</h1>
             <div class="highlight-card-list">
@@ -577,6 +541,7 @@
             </div>
         </section>
     </main>
+    
     <button onclick="scrollToTop()" id="backToTopBtn" title="Back to Top">↑</button>
 
     <footer class="site-footer">
@@ -607,17 +572,8 @@
         </div>
     </footer>
 
-    <script>
-        // Back to Top button logic
-        window.onscroll = function () {
-            const btn = document.getElementById("backToTopBtn");
-            btn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
-        };
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
+    <!-- SHARED SCRIPT -->
+    <script src="script.js"></script>
 </body>
 
 </html>

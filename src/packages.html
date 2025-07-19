@@ -5,54 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Herculean Fitness | Packages & Memberships</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="resources/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link href="style.css" rel="stylesheet">
 
-    <!-- CSS Reset -->
     <style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-
-    <style>
-        :root {
-            /* Primary Brand Colors */
-            --primary-blue: #0052a3;
-            --primary-blue-dark: #003d7a;
-            --primary-blue-light: #e9f0fc;
-            
-            /* Accent Colors */
-            --accent-orange: #ea5e2a;
-            --accent-orange-dark: #d4511e;
-            
-            /* Neutral Colors */
-            --text-primary: #22304e;
-            --text-secondary: #31435a;
-            --background-main: #ffffff;
-            --background-light: #f0f7ff;
-            --background-dark: #111111;
-            
-            /* Utility Colors */
-            --border-color: #e2e6ed;
-            --shadow-color: rgba(0, 82, 163, 0.15);
-            --success-green: #4caf50;
-            --error-red: #ac4830;
-            
-            /* Legacy variables for compatibility */
-            --primary-colour: var(--primary-blue);
-            --background-colour: var(--background-light);
-            --lite-color: #5785b1;
-            --regular-color: var(--text-secondary);
-            --premium-color: var(--accent-orange);
-        }
-
         .hero-video {
             position: relative;
             height: 70vh;
@@ -134,7 +91,7 @@
             justify-content: space-around;
             padding: 40px 10%;
             text-align: center;
-            background: linear-gradient(to bottom, #b0cdfc, var(--background-colour));
+            background: linear-gradient(to bottom, #b0cdfc, var(--background-light));
         }
 
         .stat-box {
@@ -153,7 +110,7 @@
         .stat-number {
             font-size: 4rem;
             font-weight: 900;
-            color: var(--primary-colour);
+            color: var(--primary-blue);
             margin-bottom: 10px;
         }
 
@@ -166,13 +123,13 @@
         .packages-section {
             text-align: center;
             padding: 4rem 2rem;
-            background: linear-gradient(to bottom, var(--background-colour), white);
+            background: linear-gradient(to bottom, var(--background-light), white);
         }
 
         .packages-heading {
             font-size: 2.5rem;
             margin-bottom: 2rem;
-            color: var(--primary-colour);
+            color: var(--primary-blue);
         }
 
         .selectors {
@@ -200,12 +157,12 @@
             background: transparent;
             cursor: pointer;
             font-weight: 600;
-            color: var(--primary-colour);
+            color: var(--primary-blue);
             transition: background-color 0.3s;
         }
 
         .selector.active {
-            background-color: var(--primary-colour);
+            background-color: var(--primary-blue);
             color: white;
         }
 
@@ -248,7 +205,7 @@
 
         .card-top h2 {
             margin: 1rem 0;
-            color: var(--primary-colour);
+            color: var(--primary-blue);
             font-size: 1.5rem;
         }
 
@@ -283,7 +240,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 2rem;
-            color: var(--primary-colour);
+            color: var(--primary-blue);
         }
 
         .features-table {
@@ -313,19 +270,19 @@
 
         .features-table th.lite {
             font-size: large;
-            color: var(--lite-color);
+            color: #5785b1;
             padding-bottom: 0;
         }
 
         .features-table th.regular {
             font-size: large;
-            color: var(--regular-color);
+            color: var(--text-secondary);
             padding-bottom: 0;
         }
 
         .features-table th.premium {
             font-size: large;
-            color: var(--premium-color);
+            color: var(--accent-orange);
             padding-bottom: 0;
         }
 
@@ -387,19 +344,19 @@
         .free-trial-section h2 {
             text-align: left;
             font-size: 2.5em;
-            color: var(--primary-colour);
+            color: var(--primary-blue);
             margin-bottom: 1.5em;
         }
 
         .free-trial-section h3 {
             font-size: 1.5rem;
-            color: var(--primary-colour);
+            color: var(--primary-blue);
             margin-bottom: 0.5rem;
         }
 
         .free-trial-section p {
             font-size: 1.1rem;
-            color: var(--primary-colour);
+            color: var(--primary-blue);
             margin-bottom: 2rem;
         }
 
@@ -458,41 +415,13 @@
         }
 
         @keyframes slideFullImages {
-
-            0%,
-            8% {
-                transform: translateX(0);
-            }
-
-            16%,
-            24% {
-                transform: translateX(-100%);
-            }
-
-            32%,
-            40% {
-                transform: translateX(-200%);
-            }
-
-            48%,
-            56% {
-                transform: translateX(-300%);
-            }
-
-            64%,
-            72% {
-                transform: translateX(-400%);
-            }
-
-            80%,
-            88% {
-                transform: translateX(-500%);
-            }
-
-            96%,
-            100% {
-                transform: translateX(0);
-            }
+            0%, 8% { transform: translateX(0); }
+            16%, 24% { transform: translateX(-100%); }
+            32%, 40% { transform: translateX(-200%); }
+            48%, 56% { transform: translateX(-300%); }
+            64%, 72% { transform: translateX(-400%); }
+            80%, 88% { transform: translateX(-500%); }
+            96%, 100% { transform: translateX(0); }
         }
     </style>
 </head>
@@ -520,7 +449,6 @@
                 <a href="#" onclick="logout()">Log Out</a>
             </div>
         </div>
-
         <a href="login.html" class="join-btn" id="signInLink">Sign In</a>
     </header>
 
@@ -542,7 +470,8 @@
                 </div>
             </div>
         </section>
-        <hr style="height: 3px; background-color: var(--primary-colour); border: none;">
+        <hr style="height: 3px; background-color: var(--primary-blue); border: none;">
+        
         <!-- Statistics section -->
         <section class="flex-container stats-section" id="stats">
             <div class="stat-box">
@@ -641,27 +570,27 @@
                         </tr>
                         <tr>
                             <td>24/7 Access</td>
-                            <td class="bold" style="color: var(--lite-color);">&check;</td>
-                            <td class="bold" style="color: var(--regular-color);">&check;</td>
-                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                            <td class="bold" style="color: #5785b1;">&check;</td>
+                            <td class="bold" style="color: var(--text-secondary);">&check;</td>
+                            <td class="bold" style="color: var(--accent-orange);">&check;</td>
                         </tr>
                         <tr>
                             <td>Locker Room</td>
-                            <td class="bold" style="color: var(--lite-color);">&check;</td>
-                            <td class="bold" style="color: var(--regular-color);">&check;</td>
-                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                            <td class="bold" style="color: #5785b1;">&check;</td>
+                            <td class="bold" style="color: var(--text-secondary);">&check;</td>
+                            <td class="bold" style="color: var(--accent-orange);">&check;</td>
                         </tr>
                         <tr>
                             <td>Free WiFi</td>
-                            <td class="bold" style="color: var(--lite-color);">&check;</td>
-                            <td class="bold" style="color: var(--regular-color);">&check;</td>
-                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                            <td class="bold" style="color: #5785b1;">&check;</td>
+                            <td class="bold" style="color: var(--text-secondary);">&check;</td>
+                            <td class="bold" style="color: var(--accent-orange);">&check;</td>
                         </tr>
                         <tr>
                             <td>Free Parking</td>
-                            <td class="bold" style="color: var(--lite-color);"></td>
-                            <td class="bold" style="color: var(--regular-color);">&check;</td>
-                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                            <td class="bold" style="color: #5785b1;"></td>
+                            <td class="bold" style="color: var(--text-secondary);">&check;</td>
+                            <td class="bold" style="color: var(--accent-orange);">&check;</td>
                         </tr>
                         <tr>
                             <td>Access to All Gyms <span class="tooltip">&#x1F6C8;
@@ -670,42 +599,41 @@
                             </td>
                             <td></td>
                             <td></td>
-                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                            <td class="bold" style="color: var(--accent-orange);">&check;</td>
                         </tr>
                         <tr class="category-separator">
                             <td colspan="4">Wellness & Recovery</td>
                         </tr>
                         <tr>
                             <td>Water Fountain</td>
-                            <td class="bold" style="color: var(--lite-color);">&check;</td>
-                            <td class="bold" style="color: var(--regular-color);">&check;</td>
-                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                            <td class="bold" style="color: #5785b1;">&check;</td>
+                            <td class="bold" style="color: var(--text-secondary);">&check;</td>
+                            <td class="bold" style="color: var(--accent-orange);">&check;</td>
                         </tr>
                         <tr>
                             <td>Free Massage Chairs <span class="tooltip">&#x1F6C8;<span class="tooltip-text">Relaxation
                                         chairs in rest areas.</span></span></td>
                             <td></td>
-                            <td class="bold" style="color: var(--regular-color);">&check;</td>
-                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                            <td class="bold" style="color: var(--text-secondary);">&check;</td>
+                            <td class="bold" style="color: var(--accent-orange);">&check;</td>
                         </tr>
                         <tr>
                             <td>Free Sauna</td>
                             <td></td>
-                            <td class="bold" style="color: var(--regular-color);">&check;</td>
-                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                            <td class="bold" style="color: var(--text-secondary);">&check;</td>
+                            <td class="bold" style="color: var(--accent-orange);">&check;</td>
                         </tr>
-
                         <tr>
                             <td>Free Refreshment Center</td>
                             <td></td>
                             <td></td>
-                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                            <td class="bold" style="color: var(--accent-orange);">&check;</td>
                         </tr>
                         <tr>
                             <td>Free Spa</td>
                             <td></td>
                             <td></td>
-                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                            <td class="bold" style="color: var(--accent-orange);">&check;</td>
                         </tr>
 
                         <!-- Services & Support -->
@@ -715,17 +643,16 @@
                         <tr>
                             <td>Free Nutrition Consultation</td>
                             <td></td>
-                            <td class="bold" style="color: var(--regular-color);">&check;</td>
-                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                            <td class="bold" style="color: var(--text-secondary);">&check;</td>
+                            <td class="bold" style="color: var(--accent-orange);">&check;</td>
                         </tr>
                         <tr>
                             <td>Free Personal Trainer <span class="tooltip">&#x1F6C8;<span class="tooltip-text">1-on-1
                                         coaching sessions with an expert.</span></span></td>
                             <td></td>
                             <td></td>
-                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                            <td class="bold" style="color: var(--accent-orange);">&check;</td>
                         </tr>
-
                         <tr>
                             <td>Premium Fitness App
                                 <span class="tooltip">&#x1F6C8;
@@ -735,8 +662,7 @@
                             </td>
                             <td></td>
                             <td></td>
-                            <td class="bold" style="color: var(--premium-color);">&check;</td>
-
+                            <td class="bold" style="color: var(--accent-orange);">&check;</td>
                         </tr>
 
                         <!-- Community & Programs -->
@@ -746,19 +672,20 @@
                         <tr>
                             <td>Free Gym Classes</td>
                             <td></td>
-                            <td class="bold" style="color: var(--regular-color);">&check;</td>
-                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                            <td class="bold" style="color: var(--text-secondary);">&check;</td>
+                            <td class="bold" style="color: var(--accent-orange);">&check;</td>
                         </tr>
                         <tr>
                             <td>Exclusive Member Events</td>
                             <td></td>
                             <td></td>
-                            <td class="bold" style="color: var(--premium-color);">&check;</td>
+                            <td class="bold" style="color: var(--accent-orange);">&check;</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
+        
         <section class="free-trial-section">
             <div class="trial-content">
                 <div class="trial-text">
@@ -780,6 +707,7 @@
             </div>
         </section>
     </main>
+    
     <button onclick="scrollToTop()" id="backToTopBtn" title="Back to Top">↑</button>
 
     <footer class="site-footer">
@@ -810,7 +738,9 @@
         </div>
     </footer>
 
+    <!-- PAGE-SPECIFIC JAVASCRIPT -->
     <script>
+        // Animated Statistics
         const animateCounter = (el, target, formatK, addPlus) => {
             const duration = 2000;
             const startTime = performance.now();
@@ -853,9 +783,8 @@
         });
 
         document.querySelectorAll(".stat-box").forEach(box => observer.observe(box));
-    </script>
 
-    <script>
+        // Dynamic Pricing
         const pricing = {
             individual: {
                 monthly: [
@@ -930,17 +859,8 @@
             });
         }
     </script>
-    <script>
-        // Back to Top button logic
-        window.onscroll = function () {
-            const btn = document.getElementById("backToTopBtn");
-            btn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
-        };
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
+    
+    <!-- SHARED SCRIPT -->
     <script src="script.js"></script>
 </body>
 

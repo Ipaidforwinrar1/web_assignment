@@ -5,44 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Herculean Gym | Sign In / Sign Up</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="resources/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    :root {
-      /* Primary Brand Colors */
-      --primary-blue: #0052a3;
-      --primary-blue-dark: #003d7a;
-      --primary-blue-light: #e9f0fc;
-
-      /* Accent Colors */
-      --accent-orange: #ea5e2a;
-      --accent-orange-dark: #d4511e;
-
-      /* Neutral Colors */
-      --text-primary: #22304e;
-      --text-secondary: #31435a;
-      --background-main: #ffffff;
-      --background-light: #f0f7ff;
-      --background-dark: #111111;
-
-      /* Utility Colors */
-      --border-color: #e2e6ed;
-      --shadow-color: rgba(0, 82, 163, 0.15);
-      --success-green: #4caf50;
-      --error-red: #ac4830;
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     main {
       display: flex;
       justify-content: center;
@@ -132,50 +99,10 @@
     input[type="date"] {
       color: black;
     }
-
-    .user-dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .user-btn {
-      background-color: transparent;
-      border: none;
-      font-weight: bold;
-      color: black;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-    }
-
-    .dropdown-menu {
-      position: absolute;
-      top: 120%;
-      right: 0;
-      background-color: white;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      border-radius: 6px;
-      overflow: hidden;
-      z-index: 1000;
-      width: 120px;
-    }
-
-    .dropdown-menu a {
-      display: block;
-      padding: 10px 15px;
-      text-decoration: none;
-      color: var(--primary-blue);
-      font-weight: bold;
-    }
-
-    .dropdown-menu a:hover {
-      background-color: #f2f2f2;
-    }
   </style>
 </head>
 
 <body>
-
   <header>
     <div class="logo">Herculean Gym</div>
     <nav>
@@ -200,7 +127,6 @@
     </div>
 
     <a href="login.html" class="join-btn" id="signInLink">Sign In</a>
-
   </header>
 
   <!-- Main Sign In / Sign Up -->
@@ -281,204 +207,4 @@
           <button type="submit" style="color: aliceblue;">Subscribe</button>
         </form>
       </div>
-    </div>
-  </footer>
-
-  <!-- JS for form toggling and validation -->
-  <script>
-    function showSignUp(e) {
-      e.preventDefault();
-      document.getElementById('signInForm').style.display = 'none';
-      document.getElementById('signUpForm').style.display = 'block';
-      document.getElementById('loginMessage').innerHTML = '';
-    }
-
-    function showSignIn(e) {
-      e.preventDefault();
-      document.getElementById('signUpForm').style.display = 'none';
-      document.getElementById('signInForm').style.display = 'block';
-      document.getElementById('signupMessage').innerHTML = '';
-    }
-
-    function isValidEmail(email) {
-      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return regex.test(email);
-    }
-
-    function redirectToHome() {
-      localStorage.setItem("loggedIn", "true");
-      window.location.href = "index.html";
-    }
-
-    // Set birthday min and max dynamically for better UX and browser-side validation
-    document.addEventListener("DOMContentLoaded", function () {
-      const birthdayInput = document.getElementById("birthday");
-      if (birthdayInput) {
-        const today = new Date();
-        const yyyy = today.getFullYear();
-        const mm = String(today.getMonth() + 1).padStart(2, '0');
-        const dd = String(today.getDate()).padStart(2, '0');
-        const maxDate = `${yyyy}-${mm}-${dd}`;
-        birthdayInput.setAttribute("max", maxDate);
-        birthdayInput.setAttribute("min", "1900-01-01");
-      }
-
-      // User Dropdown Functionality (for header)
-      const userData = JSON.parse(localStorage.getItem("users")) || [];
-      const currentEmail = localStorage.getItem("loggedInUser");
-      const loggedIn = localStorage.getItem("loggedIn") === "true";
-
-      if (loggedIn && currentEmail) {
-        const user = userData.find(u => u.email === currentEmail);
-        if (user) {
-          document.getElementById("signInLink").style.display = "none";
-          document.getElementById("userDropdown").style.display = "inline-block";
-          document.getElementById("userName").textContent = user.firstName || "User";
-        }
-      }
-
-      // Toggle dropdown menu
-      const userBtn = document.getElementById("userBtn");
-      const dropdown = document.getElementById("dropdownMenu");
-      if (userBtn) {
-        userBtn.addEventListener("click", () => {
-          dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-        });
-
-        // Close menu if clicked outside
-        window.addEventListener("click", function (e) {
-          if (!userBtn.contains(e.target)) {
-            dropdown.style.display = "none";
-          }
-        });
-      }
-    });
-
-    // Helper function to get 'YYYY-MM-DD' date string
-    function getDateString(date) {
-      return date.toISOString().slice(0, 10);
-    }
-
-    // Sign In Validation + Redirect
-    document.getElementById("loginForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const email = document.getElementById("signin-email").value.trim();
-      const password = document.getElementById("signin-password").value.trim();
-      const message = document.getElementById("loginMessage");
-
-      message.innerHTML = "";
-
-      if (!email || !password) {
-        message.innerHTML = "<div class='error-message'>Please enter both email and password.</div>";
-        return;
-      }
-
-      if (!isValidEmail(email)) {
-        message.innerHTML = "<div class='error-message'>Please enter a valid email address.</div>";
-        return;
-      }
-
-      // Check if user exists (case-insensitive email)
-      let users = JSON.parse(localStorage.getItem("users")) || [];
-      const matchedUser = users.find(user => user.email.toLowerCase() === email.toLowerCase() && user.password === password);
-
-      if (matchedUser) {
-        message.innerHTML = "<div class='success-message'>Sign in successful! Redirecting...</div>";
-        localStorage.setItem("loggedIn", "true");
-        localStorage.setItem("loggedInUser", matchedUser.email);
-        localStorage.setItem("loggedInUserFirstName", matchedUser.firstName);
-        setTimeout(redirectToHome, 1500);
-
-      } else {
-        message.innerHTML = "<div class='error-message'>Invalid email or password.</div>";
-      }
-    });
-
-    // Sign Up Validation + Redirect (IMPROVED)
-    document.getElementById("signupForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const email = document.getElementById("signup-email").value.trim();
-      const password = document.getElementById("signup-password").value;
-      const confirmPassword = document.getElementById("confirm-password").value;
-      const firstName = document.getElementById("first-name").value.trim();
-      const lastName = document.getElementById("last-name").value.trim();
-      const birthday = document.getElementById("birthday").value;
-      const message = document.getElementById("signupMessage");
-
-      message.innerHTML = "";
-
-      // Required fields
-      if (!email || !firstName || !lastName || !birthday || !password || !confirmPassword) {
-        message.innerHTML = "<div class='error-message'>Please fill out all fields.</div>";
-        return;
-      }
-
-      // Email format
-      if (!isValidEmail(email)) {
-        message.innerHTML = "<div class='error-message'>Please enter a valid email address.</div>";
-        return;
-      }
-
-      // Password rules
-      if (password.length < 6) {
-        message.innerHTML = "<div class='error-message'>Password must be at least 6 characters.</div>";
-        return;
-      }
-
-      if (password !== confirmPassword) {
-        message.innerHTML = "<div class='error-message'>Passwords do not match.</div>";
-        return;
-      }
-
-      // Birthday validation (compare 'YYYY-MM-DD' strings)
-      const birthdayDate = new Date(birthday);
-      const today = new Date();
-      const birthdayStr = getDateString(birthdayDate);
-      const todayStr = getDateString(today);
-      const minYear = 1900;
-
-      if (isNaN(birthdayDate.getTime())) {
-        message.innerHTML = "<div class='error-message'>Please enter a valid birthday.</div>";
-        return;
-      }
-      if (birthdayStr > todayStr) {
-        message.innerHTML = "<div class='error-message'>Birthday cannot be in the future.</div>";
-        return;
-      }
-      if (birthdayDate.getFullYear() < minYear) {
-        message.innerHTML = `<div class='error-message'>Birthday cannot be before ${minYear}.</div>`;
-        return;
-      }
-
-      // Check for existing user (case-insensitive email)
-      let users = JSON.parse(localStorage.getItem("users")) || [];
-      const existingUser = users.find(user => user.email.toLowerCase() === email.toLowerCase());
-
-      if (existingUser) {
-        message.innerHTML = "<div class='error-message'>Email already exists. Try signing in.</div>";
-        return;
-      }
-
-      // Save user (with more fields if you want)
-      users.push({ email, password, firstName, lastName, birthday });
-      localStorage.setItem("users", JSON.stringify(users));
-      localStorage.setItem("loggedIn", "true");
-      localStorage.setItem("loggedInUser", email);
-      localStorage.setItem("loggedInUserFirstName", firstName);
-
-      // Redirect after success
-      message.innerHTML = "<div class='success-message'>Registration successful! Redirecting...</div>";
-      setTimeout(redirectToHome, 1500);
-    });
-
-    function logout() {
-      localStorage.removeItem("loggedIn");
-      localStorage.removeItem("loggedInUser");
-      window.location.href = "login.html";
-    }
-  </script>
-
-</body>
-
-</html>
+    
