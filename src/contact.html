@@ -909,17 +909,8 @@
         </div>
     </footer>
 
-    <script>
-        // Back to Top button logic
-        window.onscroll = function () {
-            const btn = document.getElementById("backToTopBtn");
-            btn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
-        };
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
+    // Replace the existing form validation script in contact.html with this:
     <script>
         document.getElementById("feedbackForm").addEventListener("submit", function (event) {
             event.preventDefault();
@@ -941,6 +932,10 @@
                 document.getElementById("fname").focus();
             } else if (email.length === 0) {
                 errorMessage.textContent = "Email cannot be empty.";
+                errorMessage.style.display = "block";
+                document.getElementById("fmail").focus();
+            } else if (!isValidEmail(email)) {  // ← Using shared function!
+                errorMessage.textContent = "Please enter a valid email address.";
                 errorMessage.style.display = "block";
                 document.getElementById("fmail").focus();
             } else if (feedback.length === 0) {
@@ -975,19 +970,6 @@
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
-
-        // Mobile touch optimization
-        if ('ontouchstart' in window) {
-            document.querySelectorAll('.contact-links a, .whatsapp-btn, .submit-btn').forEach(function (element) {
-                element.addEventListener('touchstart', function () {
-                    this.style.transform = 'scale(0.98)';
-                });
-
-                element.addEventListener('touchend', function () {
-                    this.style.transform = 'scale(1)';
-                });
-            });
-        }
     </script>
     <script src="script.js"></script>
 </body>
