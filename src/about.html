@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Herculean Gym</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="stylesheet" href="style.css">
     <style>
         body {
@@ -111,6 +111,7 @@
             margin-bottom: 50px;
         }
 
+        /* Updated Team Member Card Styles - Centered image with full text display */
         .member {
             background: var(--background-main);
             border-radius: 16px;
@@ -123,7 +124,13 @@
             transition: all 0.3s ease;
             border: 2px solid var(--border-color);
             position: relative;
-            overflow: hidden;
+            overflow: visible;
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Center all content horizontally */
+            justify-content: flex-start;
         }
 
         .member:hover {
@@ -137,10 +144,14 @@
             height: 120px;
             object-fit: cover;
             border-radius: 50%;
-            margin-bottom: 20px;
+            margin: 0 auto 20px auto;
+            /* Center image and add bottom margin */
             box-shadow: 0 4px 12px var(--shadow-color);
             border: 3px solid var(--primary-blue-light);
             transition: transform 0.3s ease;
+            flex-shrink: 0;
+            display: block;
+            /* Ensure proper centering */
         }
 
         .member:hover img {
@@ -151,59 +162,68 @@
             color: var(--primary-blue);
             font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 5px;
+            margin: 0 auto 8px auto;
+            /* Center title */
             letter-spacing: 0.5px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            text-align: center;
+            width: 100%;
         }
 
         .member h5 {
             color: var(--accent-orange);
             font-weight: 600;
-            margin-bottom: 15px;
+            margin: 0 auto 15px auto;
+            /* Center subtitle */
             font-size: 1rem;
             letter-spacing: 0.5px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            line-height: 1.3;
+            text-align: center;
+            width: 100%;
         }
 
         .credentials {
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            gap: 6px;
-            margin-bottom: 20px;
-            flex-wrap: nowrap;
-            min-height: 32px;
-            overflow: hidden;
+            align-items: center;
+            gap: 8px;
+            margin: 0 auto 20px auto;
+            /* Center credentials */
+            flex-wrap: wrap;
+            min-height: auto;
+            width: 100%;
         }
 
         .badge {
             background: var(--primary-blue-light);
             color: var(--primary-blue);
-            padding: 6px 10px;
+            padding: 6px 12px;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
             white-space: nowrap;
             display: inline-block;
-            flex-shrink: 0;
             line-height: 1.2;
-        }
-
-        .badge:first-child {
-            max-width: 48%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .badge:last-child {
-            max-width: 48%;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            margin: 2px;
+            text-align: center;
         }
 
         .member p {
             color: var(--text-secondary);
             font-size: 1rem;
             text-align: justify;
+            /* Keep text justified for readability */
             line-height: 1.6;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            margin: 0;
+            width: 100%;
+            flex-grow: 1;
+            /* Allow text to expand */
         }
 
         /* Testimonials Section */
@@ -332,7 +352,7 @@
             color: var(--primary-blue);
         }
 
-        /* Responsive Design */
+        /* Enhanced Mobile Responsive Design */
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2rem;
@@ -345,21 +365,64 @@
             .team-flex {
                 flex-direction: column;
                 align-items: center;
+                gap: 25px;
             }
 
             .member {
                 max-width: 100%;
                 min-width: 280px;
+                padding: 25px;
+                margin: 0 15px;
+                min-height: auto;
+            }
+
+            .member img {
+                width: 100px;
+                height: 100px;
+                margin: 0 auto 15px auto;
+                /* Keep centered on mobile */
+            }
+
+            .member p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                text-align: left;
+                /* Left align on mobile for better readability */
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+
+            .member h3 {
+                font-size: 1.2rem;
+                word-wrap: break-word;
+                margin: 0 auto 10px auto;
+                text-align: center;
+                /* Keep titles centered */
+            }
+
+            .member h5 {
+                font-size: 0.9rem;
+                word-wrap: break-word;
+                margin: 0 auto 15px auto;
+                line-height: 1.4;
+                text-align: center;
+                /* Keep subtitles centered */
             }
 
             .credentials {
                 flex-wrap: wrap;
-                gap: 4px;
+                gap: 6px;
+                justify-content: center;
+                margin: 0 auto 20px auto;
+                width: 100%;
             }
 
             .badge {
                 font-size: 0.75rem;
-                padding: 4px 8px;
+                padding: 5px 10px;
+                max-width: 48%;
+                text-align: center;
+                margin: 2px;
             }
 
             .cta-buttons {
@@ -385,14 +448,71 @@
                 padding: 40px 10px;
             }
 
-            .credentials {
-                flex-wrap: wrap;
+            .member {
+                min-width: 260px;
+                padding: 20px;
             }
 
-            .badge:first-child,
-            .badge:last-child {
-                max-width: 100%;
+            .member img {
+                width: 90px;
+                height: 90px;
+                margin: 0 auto 15px auto;
+                /* Keep centered on very small screens */
             }
+
+            .member p {
+                font-size: 0.85rem;
+                line-height: 1.4;
+                text-align: left;
+                /* Left align for small screens */
+            }
+
+            .member h3 {
+                font-size: 1.1rem;
+                text-align: center;
+                margin: 0 auto 8px auto;
+            }
+
+            .member h5 {
+                font-size: 0.85rem;
+                line-height: 1.3;
+                text-align: center;
+                margin: 0 auto 15px auto;
+            }
+
+            .credentials {
+                flex-wrap: wrap;
+                gap: 4px;
+                margin: 0 auto 15px auto;
+                justify-content: center;
+            }
+
+            .badge {
+                font-size: 0.7rem;
+                padding: 4px 8px;
+                max-width: 48%;
+            }
+        }
+
+        /* Additional fix for text overflow */
+        .member * {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+
+        /* Ensure proper spacing and centering */
+        .member>* {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .member>*:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .member>*:last-child {
+            margin-bottom: 0;
         }
     </style>
 </head>
