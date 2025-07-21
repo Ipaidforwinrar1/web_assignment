@@ -29,12 +29,20 @@
             justify-content: center;
             color: white;
             text-align: center;
+            padding: 40px 20px; /* Added padding for edge spacing */
+        }
+
+        .hero-content {
+            max-width: 1200px; /* Limit max width for better readability */
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 40px; /* Additional inner padding */
         }
 
         .hero-content h1 {
             font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
@@ -42,6 +50,9 @@
             font-size: 1.5rem;
             font-weight: 400;
             opacity: 0.9;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 900px; /* Limit width for better reading */
         }
 
         /* Story Section */
@@ -354,12 +365,24 @@
 
         /* Enhanced Mobile Responsive Design */
         @media (max-width: 768px) {
+            .hero-section {
+                padding: 30px 15px; /* Reduced padding for mobile */
+                height: 50vh; /* Slightly reduce height on mobile */
+            }
+
+            .hero-content {
+                padding: 0 20px; /* Reduced inner padding for mobile */
+            }
+
             .hero-content h1 {
                 font-size: 2rem;
+                margin-bottom: 1rem;
             }
 
             .hero-content h2 {
                 font-size: 1.2rem;
+                line-height: 1.5;
+                max-width: 100%; /* Allow full width on mobile */
             }
 
             .team-flex {
@@ -436,8 +459,22 @@
         }
 
         @media (max-width: 500px) {
+            .hero-section {
+                padding: 20px 10px; /* Further reduced padding for very small screens */
+                height: 45vh;
+            }
+
+            .hero-content {
+                padding: 0 15px; /* Minimal inner padding */
+            }
+
             .hero-content h1 {
                 font-size: 1.5rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1rem;
+                line-height: 1.4;
             }
 
             .our-story {
@@ -548,9 +585,7 @@
         <section class="hero-section">
             <div class="hero-content">
                 <h1>The Herculean Way</h1>
-                <h2>We believe that every person who steps into our gym carries the potential for greatness within them. At Herculean Gym, we don't just count reps—we build legends, transforming bodies and mindsets to awaken the warrior spirit in every member.
-
-</h2>
+                <h2>We believe that every person who steps into our gym carries the potential for greatness within them. At Herculean Gym, we don't just count reps—we build legends, transforming bodies and mindsets to awaken the warrior spirit in every member.</h2>
             </div>
         </section>
 
