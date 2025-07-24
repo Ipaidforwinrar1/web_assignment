@@ -85,6 +85,10 @@ nav ul li a:hover {
   text-decoration: none;
 }
 
+.join-btn:hover {
+  background-color: var(--primary-blue-dark);
+}
+
 nav ul li a.active {
   color: var(--primary-blue);
   border-bottom: none;
