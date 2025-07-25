@@ -455,6 +455,44 @@
                 transform: translateX(0);
             }
         }
+
+        /* Medium screens */
+        @media screen and (max-width: 1024px) {
+            .features-table {
+              max-width: 95%;
+              font-size: 0.95rem;
+            }
+        }
+
+        /* Small screens */
+        @media screen and (max-width: 768px) {
+            .features-table {
+              max-width: 100%;
+              font-size: 0.9rem;
+            }
+
+            .selector-group {
+              overflow-x: auto;
+              flex-wrap: nowrap;
+              justify-content: flex-start;
+              gap: 8px;
+            }
+
+            .selector-group button {
+              flex: 0 0 auto;
+              font-size: 0.9rem;
+            }
+        }
+
+        /* Very small screens */
+        @media screen and (max-width: 480px) {
+            .features-table {
+              max-width: 100%;
+              font-size: 0.8rem;
+              display: block;
+              overflow-x: auto;
+            }
+        }
     </style>
 </head>
 
@@ -553,7 +591,7 @@
                     <div class="card-bottom">
                         <p class="price">RM 149.99/mo</p>
                         <p>Great for getting started<br>Ideal for beginners and teens.</p>
-                        <button class="btn purchase-btn">Select Plan</button>
+                        <a href="contact.html" class="btn purchase-btn">Select Plan</a>
                     </div>
                 </div>
 
@@ -565,7 +603,7 @@
                     <div class="card-bottom">
                         <p class="price">RM 249.99/mo</p>
                         <p>Most loved by members<br>The perfect balance of value and variety.</p>
-                        <button class="btn purchase-btn">Select Plan</button>
+                        <a href="contact.html" class="btn purchase-btn">Select Plan</a>
                     </div>
                 </div>
 
@@ -577,7 +615,7 @@
                     <div class="card-bottom">
                         <p class="price">RM 299.99/mo</p>
                         <p>Elite package for serious goals<br>Train harder, recover smarter, achieve more.</p>
-                        <button class="btn purchase-btn">Select Plan</button>
+                        <a href="contact.html" class="btn purchase-btn">Select Plan</a>
                     </div>
                 </div>
             </div>
