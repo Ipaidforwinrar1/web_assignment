@@ -586,7 +586,9 @@
         <section class="features-table-section">
             <div class="features-table">
                 <table>
-                    <caption class="features-heading">Compare the different perks</caption>
+                    <caption>
+                        <h2 class="features-heading">Compare the different perks</h2>
+                    </caption>
                     <thead>
                         <tr>
                             <th></th>
@@ -861,7 +863,7 @@
                 document.querySelector("#type-selector .active").classList.remove("active");
                 btn.classList.add("active");
                 currentType = btn.dataset.type;
-                updatePrices();
+                updatePricesAndDescription();
             });
         });
 
@@ -870,11 +872,11 @@
                 document.querySelector("#duration-selector .active").classList.remove("active");
                 btn.classList.add("active");
                 currentDuration = btn.dataset.duration;
-                updatePrices();
+                updatePricesAndDescription();
             });
         });
 
-        function updatePrices() {
+        function updatePricesAndDescription() {
             const priceList = pricing[currentType][currentDuration];
             document.querySelectorAll(".package-card").forEach((card, index) => {
                 const priceEl = card.querySelector(".price");
