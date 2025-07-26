@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeUserDropdown();
   initializeBackToTop();
   addHoverEffects();
+  document.querySelector("footer form").addEventListener("submit", function (event) {
+    alert("Subscribed successfully!");
+  });
 });
 
 // ================================
