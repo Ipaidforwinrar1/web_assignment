@@ -256,7 +256,7 @@
     <div class="user-dropdown" id="userDropdown" style="display: none;">
       <button id="userBtn" class="user-btn">
         <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="20" style="margin-right: 8px;"
-        alt="User Profile">
+          alt="User Profile">
         <span id="userName">User</span>
       </button>
       <div class="dropdown-menu" id="dropdownMenu" style="display: none;">
@@ -364,7 +364,8 @@
         <h4>Stay up to date</h4>
         <p>Subscribe now and get the latest news!</p>
         <form>
-          <input type="email" placeholder="Email" required><br />
+          <input class="input-subscription" type="email" placeholder="Email" required
+          aria-label="Newsletter Email"><br>
           <input type="checkbox" id="existingCustomer">
           <label for="existingCustomer"> Are you an existing customer?</label><br />
           <button type="submit" style="color: aliceblue;">Subscribe</button>

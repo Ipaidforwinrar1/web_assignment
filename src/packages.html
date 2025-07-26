@@ -10,6 +10,7 @@
     <link href="style.css" rel="stylesheet">
 
     <style>
+        /* HERO VIDEO SECTION */
         .hero-video {
             position: relative;
             height: 70vh;
@@ -318,8 +319,8 @@
 
         .tooltip .tooltip-text {
             visibility: hidden;
-            background-color: #444;
-            color: #fff;
+            background-color: #444444;
+            color: #ffffff;
             text-align: left;
             border-radius: 5px;
             padding: 8px 10px;
@@ -385,8 +386,6 @@
         }
 
         .trial-content {
-            display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
             gap: 2rem;
@@ -762,7 +761,7 @@
         </section>
 
         <section class="free-trial-section">
-            <div class="trial-content">
+            <div class="flex-container trial-content">
                 <div class="trial-text">
                     <h2>Still Not Convinced?</h2>
                     <h3>Start your 7-day trial</h3>
@@ -805,7 +804,8 @@
                 <h4>Stay up to date</h4>
                 <p>Subscribe now and get the latest news!</p>
                 <form>
-                    <input type="email" placeholder="Email" required><br />
+                    <input class="input-subscription" type="email" placeholder="Email" required
+                    aria-label="Newsletter Email"><br>
                     <input type="checkbox" id="existingCustomer">
                     <label for="existingCustomer"> Are you an existing customer?</label><br />
                     <button type="submit" style="color: aliceblue;">Subscribe</button>

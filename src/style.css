@@ -4,18 +4,18 @@
   --primary-blue: #0052a3;
   --primary-blue-dark: #003d7a;
   --primary-blue-light: #e9f0fc;
-  
+
   /* Accent Colors */
   --accent-orange: #ea5e2a;
   --accent-orange-dark: #d4511e;
-  
+
   /* Neutral Colors */
   --text-primary: #22304e;
   --text-secondary: #31435a;
   --background-main: #ffffff;
   --background-light: #f0f7ff;
   --background-dark: #111111;
-  
+
   /* Utility Colors */
   --border-color: #e2e6ed;
   --shadow-color: rgba(0, 82, 163, 0.15);
@@ -158,7 +158,7 @@ nav ul li a.active {
 
 /* Footer */
 footer.site-footer {
-  background-color: var(--background-dark);
+  background: linear-gradient(135deg, #111, #1a1a1a);
   color: #eee;
   padding: 50px 30px;
   font-size: 14px;
@@ -206,6 +206,21 @@ footer.site-footer {
   margin-bottom: 6px;
   font-style: italic;
   letter-spacing: 0.1rem;
+}
+
+.input-subscription {
+  background-color: #333;
+  color: white;
+  border: 2px solid #555;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.input-subscription:focus {
+  border-color: var(--primary-blue);
+  outline: none;
 }
 
 input[type=email] {
