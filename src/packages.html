@@ -83,6 +83,7 @@
             background-color: var(--primary-blue-dark);
         }
 
+        /* STATS SECTION */
         .flex-container {
             display: flex;
             flex-wrap: wrap;
@@ -121,6 +122,7 @@
             font-weight: 600;
         }
 
+        /* PACKAGES SECTION */
         .packages-section {
             text-align: center;
             padding: 4rem 2rem;
@@ -243,6 +245,7 @@
             background-color: var(--primary-blue-dark);
         }
 
+        /* FEATURES COMPARISON TABLE */
         .features-table-section {
             padding: 4rem 2rem;
             text-align: center;
@@ -348,6 +351,8 @@
             font-weight: bold;
         }
 
+
+        /* FREE TRIAL PROMO SECTION */
         .free-trial-section {
             background: #f5f8ff;
             padding: 4em 2.5em;
@@ -462,7 +467,7 @@
             }
         }
 
-        /* Medium screens */
+        /* Large screens */
         @media screen and (max-width: 1024px) {
             .features-table {
               max-width: 95%;
@@ -470,7 +475,7 @@
             }
         }
 
-        /* Small screens */
+        /* Medium screens */
         @media screen and (max-width: 768px) {
             .features-table {
               max-width: 100%;
@@ -486,7 +491,7 @@
             }
         }
 
-        /* Very small screens */
+        /* Small screens */
         @media screen and (max-width: 480px) {
             .features-table {
               max-width: 100%;
@@ -525,11 +530,13 @@
     </header>
 
     <main>
+        <!-- HERO VIDEO SECTION -->
         <section class="hero-video">
             <video autoplay muted loop playsinline>
                 <source src="resources/packages_hero_video.mp4" type="video/mp4">
                 Your browser doesn&apos;t support the video tag.
             </video>
+            <!-- This applies a dark tint on the whole video -->
             <div class="video-tint"></div>
             <div class="hero-overlay">
                 <h2>Memberships</h2>
@@ -543,8 +550,8 @@
             </div>
         </section>
         <hr style="height: 3px; background-color: var(--primary-blue); border: none;">
-
-        <!-- Statistics section -->
+        
+        <!-- STATS SECTION -->
         <section class="flex-container stats-section" id="stats">
             <div class="stat-box">
                 <div class="stat-number" data-target="18">0</div>
@@ -564,10 +571,11 @@
             </div>
         </section>
 
-        <!-- Packages -->
+        <!-- PACKAGES SECTION -->
         <section class="packages-section">
             <h1 class="packages-heading">Discover our packages</h1>
 
+            <!-- Allows user to select the package -->
             <div class="selectors">
                 <div class="selector-group" id="type-selector">
                     <button class="selector active" data-type="individual">Individual</button>
@@ -584,6 +592,7 @@
                 </div>
             </div>
 
+            <!-- Shows the package description and price  -->
             <div class="card-container">
                 <div class="package-card" data-plan="lite">
                     <div class="card-top">
@@ -623,6 +632,7 @@
             </div>
         </section>
 
+        <!-- FEATURES COMPARISON TABLE -->
         <section class="features-table-section">
             <div class="features-table">
                 <table>
@@ -631,7 +641,8 @@
                     </caption>
                     <thead>
                         <tr>
-                            <th></th>
+                            <!-- Need to add this so that the packages name start from the 2nd column -->
+                            <th></th> 
                             <th class="lite">Lite</th>
                             <th class="regular">Regular</th>
                             <th class="premium">Premium</th>
@@ -760,6 +771,8 @@
             </div>
         </section>
 
+
+        <!-- FREE TRIAL PROMO SECTION -->
         <section class="free-trial-section">
             <div class="flex-container trial-content">
                 <div class="trial-text">
@@ -816,8 +829,8 @@
 
     <!-- PAGE-SPECIFIC JAVASCRIPT -->
     <script>
-        // Animated Statistics
-        const animateCounter = (el, target, formatK, addPlus) => {
+        // Animate the metrics
+        const animateCounter = (element, target, formatK, addPlus) => {
             const duration = 2000;
             const startTime = performance.now();
 
@@ -830,8 +843,9 @@
                     value = Math.floor(value / 1000) + "k";
                 }
 
-                el.innerText = addPlus && progress === 1 ? value + "+" : value;
+                element.innerText = addPlus && progress === 1 ? value + "+" : value;
 
+                // when the animation is not completed, progress will be < 1
                 if (progress < 1) {
                     requestAnimationFrame(step);
                 }
@@ -840,6 +854,8 @@
             requestAnimationFrame(step);
         };
 
+        // This is to ensure the animation starts only when the user can see 90% of it.
+        // It would be useless to animate it otherwise.
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !entry.target.classList.contains("visible")) {
@@ -860,6 +876,7 @@
 
         document.querySelectorAll(".stat-box").forEach(box => observer.observe(box));
 
+        // data for the different types of packages
         const pricing = {
             individual: {
                 monthly: [
@@ -897,9 +914,12 @@
             }
         };
 
+        // This is the default type
         let currentType = "individual";
         let currentDuration = "monthly";
 
+
+        // Show that the new button has been selected and update prices and description
         document.querySelectorAll("#type-selector .selector").forEach(btn => {
             btn.addEventListener("click", () => {
                 document.querySelector("#type-selector .active").classList.remove("active");
